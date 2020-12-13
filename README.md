@@ -1,5 +1,6 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
+- https://docs.voidlinux.org/installation/guides/chroot.html
 - https://wiki.voidlinux.org/Manual_install_with_ZFS_root
 - https://github.com/nightah/void-install
 
