@@ -12,7 +12,7 @@ ARCH=x86_64
 
 # Install
 print "Install Void Linux"
-XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" base-system grub intel-ucode zfs
+XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" base-system intel-ucode zfs
 
 # Init chroot
 mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys
@@ -36,6 +36,15 @@ TIMEZONE="Europe/Paris"
 HARDWARECLOCK="UTC"
 EOF
 
+# Configure dracut
+print "Configure dracut"
+cat > /mnt/etc/dracut.conf.d/zol.conf <<"EOF"
+hostonly="yes"
+nofsck="yes"
+add_dracutmodules+=" zfs "'
+omit_dracutmodules+=" btrfs resume "'
+EOF
+
 # Generate zfs hostid
 ip link show | awk '/ether/ {gsub(":","",$2); print $2; exit}' > /mnt/etc/hostid
 
@@ -56,6 +65,9 @@ chroot /mnt/ /bin/bash -xe <<"EOF"
 
   # Generate fstab excluding zfs parts
   egrep -v "proc|sys|devtmpfs|pts|zfs" /proc/mounts > /etc/fstab
+
+  # Generate initramfs
+  xbps-reconfigure -fa
 EOF
 
 # Set root passwd
@@ -73,16 +85,3 @@ root ALL=(ALL) ALL
 user ALL=(ALL) ALL
 Defaults rootpw
 EOF
-
-# Configure dracut
-print "Configure dracut"
-cat > /mnt/etc/dracut.conf.d/zol.conf <<"EOF"
-hostonly="yes"
-nofsck="yes"
-add_dracutmodules+=" zfs "'
-omit_dracutmodules+=" btrfs resume "'
-EOF
-
-# Generate initramfs
-print "Generate initramfs"
-xbps-reconfigure -f linux4.14
