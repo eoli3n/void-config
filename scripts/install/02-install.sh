@@ -45,9 +45,6 @@ add_dracutmodules+=" zfs "'
 omit_dracutmodules+=" btrfs resume "'
 EOF
 
-# Generate zfs hostid
-ip link show | awk '/ether/ {gsub(":","",$2); print $2; exit}' > /mnt/etc/hostid
-
 # Run chroot
 chroot /mnt/ /bin/bash -xe <<"EOF"
 
@@ -85,3 +82,19 @@ root ALL=(ALL) ALL
 user ALL=(ALL) ALL
 Defaults rootpw
 EOF
+
+# Generate zfs hostid
+ip link show | awk '/ether/ {gsub(":","",$2); print $2; exit}' > /mnt/etc/hostid
+
+# Umount all parts
+print "Umount all parts"
+umount /mnt/boot
+umount /mnt/efi
+zfs umount -a
+
+# Export zpool
+print "Export zpool"
+zpool export zroot
+
+# Finish
+echo -e "\e[32mAll OK\033[0m"

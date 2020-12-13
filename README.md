@@ -11,6 +11,10 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 - [x] virt-install scripts
 - [x] git pre-commit hooks shellcheck
 - [ ] install scripts
+  - [x] zfs parts
+  - [x] system install
+  - [ ] network, dns
+  - [ ] bootloader
 - [ ] port arch-config playbook + git hook ansible-playbook --syntax-check
 - [ ] zectl with syslinux: https://github.com/johnramsden/zectl/issues/35
 - [ ] travis on playbook run
