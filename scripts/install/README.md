@@ -9,7 +9,7 @@
 
 ##### Boot latest arch iso
 
-``01-configure.sh`` will 
+``01-configure.sh`` will
 - Create partition scheme
 - Format everything
 - Mount partitions

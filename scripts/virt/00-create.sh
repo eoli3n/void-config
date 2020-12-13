@@ -4,7 +4,7 @@
 iso_path="/home/isos"
 
 if [[ "$1" == "musl" ]]
-then 
+then
 
   # Get latest musl iso name
   base_musl_iso=$(curl -s https://alpha.de.repo.voidlinux.org/live/current/ | grep -m 1 -Eo 'void-live-x86_64-musl-[0-9]{8}.iso' | head -n1)
