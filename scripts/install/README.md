@@ -22,14 +22,10 @@
 - Install and configure bootloader
 - Generate users and passwords
 
-Boot latest void linux iso
+Boot latest [hrmpf void linux iso](https://github.com/leahneukirchen/hrmpf/releases/latest)
 
 ```
-#login with root:voidlinux
 loadkeys fr
-bash
-xbps-install -S
-xbps-install -y git
 git clone https://github.com/eoli3n/void-config
 cd void-config/scripts/install
 ./01-configure.sh

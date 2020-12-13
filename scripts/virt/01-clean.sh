@@ -12,7 +12,10 @@ clean (){
 if virsh list | grep void-linux-glibc &>/dev/null
 then
   clean "void-linux-glibc"
-elif virsh list | grep void-linux-musl
+elif virsh list | grep void-linux-musl &>/dev/null
 then
   clean "void-linux-musl"
+elif virsh list | grep void-linux-hrmpf &>/dev/null
+then
+  clean "void-linux-hrmpf"
 fi
