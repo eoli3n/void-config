@@ -1,7 +1,7 @@
 [![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
 
-https://wiki.voidlinux.org/Manual_install_with_ZFS_root
-https://github.com/nightah/void-install
+- https://wiki.voidlinux.org/Manual_install_with_ZFS_root
+- https://github.com/nightah/void-install
 
 ```
 podman run --rm -it voidlinux/voidlinux /bin/sh
