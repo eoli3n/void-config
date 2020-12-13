@@ -75,7 +75,7 @@ virt-install \
   --vcpus=2 \
   --cpu host \
   --boot uefi \
-  --disk path=/var/lib/libvirt/images/${name}.img,bus=virtio,size=30 \
+  --disk path=/var/lib/libvirt/images/${name}.img,bus=sata,size=30 \
   --graphics spice \
   --video qxl \
   --channel spicevmc \
