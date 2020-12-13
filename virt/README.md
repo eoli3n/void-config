@@ -1,6 +1,6 @@
 ### Create VM
 
-It will download iso, create UEFI VM and run it.
+It will download iso, create UEFI VM and run it for Qemu/KVM.
 
 ```
 #glibc
