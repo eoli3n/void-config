@@ -3,6 +3,7 @@
 - https://docs.voidlinux.org/installation/guides/chroot.html
 - https://wiki.voidlinux.org/Manual_install_with_ZFS_root
 - https://github.com/nightah/void-install
+- neffi@freenode#voidlinux zfsbootmenu config: http://ix.io/2I4m
 
 ```
 podman run --rm -it voidlinux/voidlinux /bin/sh
@@ -18,4 +19,5 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
   - [ ] bootloader
 - [ ] port arch-config playbook + git hook ansible-playbook --syntax-check
 - [ ] zectl with syslinux: https://github.com/johnramsden/zectl/issues/35
+- [ ] no bootloader and zfsbootmenu test
 - [ ] travis on playbook run
