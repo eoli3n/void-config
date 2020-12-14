@@ -118,8 +118,11 @@ Kernel:
   CommandLine: ro quiet loglevel=0 spl_hostid=$(cat /mnt/etc/hostid)
 EOF
 
-# Generate ZBM
-chroot /mnt generate-zbm
+# Generate ZBM and install refind
+chroot /mnt/ /bin/bash -xe <<"EOF"
+generate-zbm
+refind-install
+EOF
 
 # Configure refind
 cat > /mnt/boot/efi/EFI/ZBM/refind_linux.conf <<EOF
