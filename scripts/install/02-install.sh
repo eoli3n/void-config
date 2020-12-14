@@ -14,6 +14,7 @@ ARCH=x86_64
 print "Install Void Linux"
 XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   base-system \
+  void-repo-nonfree \
   intel-ucode \
   zfs \
   zfsbootmenu \
