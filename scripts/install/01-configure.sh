@@ -105,14 +105,8 @@ zfs mount -a
 
 # Mount EFI part
 print "Mount EFI part"
-mkdir /mnt/efi
-mount "$EFI" /mnt/efi
-
-# Prepare zectl
-print "Prepare zectl"
-mkdir -p /mnt/efi/env/org.zectl-default
-mkdir /mnt/boot
-mount --bind /mnt/efi/env/org.zectl-default /mnt/boot
+mkdir -p /mnt/boot/efi
+mount "$EFI" /mnt/boot/efi
 
 # Copy ZFS cache
 print "Generate and copy zfs cache"

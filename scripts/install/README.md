@@ -7,7 +7,7 @@
   ZFS pool
 
 
-##### Boot latest arch iso
+##### Installation
 
 ``01-configure.sh`` will
 - Create partition scheme
@@ -15,11 +15,11 @@
 - Mount partitions
 
 ``02-install.sh`` will
-- Configure mirrors ???
+- Configure mirrors
 - Install Void Linux and kernel
 - Generate initramfs
 - Configure hostname, locales, keymap, network
-- Install and configure bootloader
+- Install and configure [zfsbootmenu](https://github.com/zbm-dev/zfsbootmenu)
 - Generate users and passwords
 
 Boot latest [hrmpf void linux iso](https://github.com/leahneukirchen/hrmpf/releases/latest)

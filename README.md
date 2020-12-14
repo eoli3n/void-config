@@ -16,8 +16,7 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
   - [x] zfs parts
   - [x] system install
   - [ ] network, dns
-  - [ ] bootloader
+  - [ ] no bootloader and zfsbootmenu test
 - [ ] port arch-config playbook + git hook ansible-playbook --syntax-check
 - [ ] zectl with syslinux: https://github.com/johnramsden/zectl/issues/35
-- [ ] no bootloader and zfsbootmenu test
-- [ ] travis on playbook run
+- [ ] travis/github actions on playbook run

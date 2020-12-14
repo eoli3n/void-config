@@ -10,9 +10,9 @@ print () {
 REPO=https://alpha.de.repo.voidlinux.org/current
 ARCH=x86_64
 
-# Install
+### Install
 print "Install Void Linux"
-XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" base-system intel-ucode zfs
+XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" base-system intel-ucode zfs zfsbootmenu efibootmgr gummiboot
 
 # Init chroot
 mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys
@@ -45,7 +45,7 @@ add_dracutmodules+=" zfs "'
 omit_dracutmodules+=" btrfs resume "'
 EOF
 
-# Run chroot
+### Chroot
 chroot /mnt/ /bin/bash -xe <<"EOF"
 
   # Upgrade
@@ -83,13 +83,41 @@ user ALL=(ALL) ALL
 Defaults rootpw
 EOF
 
+
+### Configure zfsbootmenu
+
+# Create dirs
+mkdir -p /mnt/boot/efi/EFI/void
+
 # Generate zfs hostid
 ip link show | awk '/ether/ {gsub(":","",$2); print $2; exit}' > /mnt/etc/hostid
 
+# Generate zfsbootmenu efi
+cat > /mnt/etc/zfsbootmenu/config.yaml <<"EOF"
+Global:
+  ManageImages: true
+  BootMountPoint: /boot/efi
+  DracutConfDir: /etc/zfsbootmenu/dracut.conf.d
+EFI:
+  ImageDir: /boot/efi/EFI/ZBM
+  Versions: 2
+  Enabled: false
+Kernel:
+  CommandLine: ro quiet loglevel=0
+EOF
+
+# Set zfsbootmenu as default boot
+efibootmgr --disk /dev/sda \
+  --part 1 \
+  --create \
+  --label "ZFSBootMenu" \
+  --loader /vmlinuz-0.7.5 \
+  --unicode "root=zfsbootmenu:POOL=zroot ro initrd=\EFI\void\initramfs.img quiet spl_hostid=$(cat /mnt/etc/hostid)" \
+  --verbose
+
 # Umount all parts
 print "Umount all parts"
-umount /mnt/boot
-umount /mnt/efi
+umount /mnt/boot/efi
 zfs umount -a
 
 # Export zpool
