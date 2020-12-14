@@ -12,7 +12,14 @@ ARCH=x86_64
 
 ### Install
 print "Install Void Linux"
-XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" base-system intel-ucode zfs zfsbootmenu efibootmgr gummiboot
+XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
+  base-system \
+  intel-ucode \
+  zfs \
+  zfsbootmenu \
+  efibootmgr \
+  gummiboot \
+  refind
 
 # Init chroot
 mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys
@@ -83,37 +90,42 @@ user ALL=(ALL) ALL
 Defaults rootpw
 EOF
 
-
 ### Configure zfsbootmenu
 
 # Create dirs
-mkdir -p /mnt/boot/efi/EFI/void
+mkdir -p /mnt/boot/efi/EFI/ZBM /mnt/boot/zfsbootmenu /etc/zfsbootmenu/dracut.conf.d
 
 # Generate zfs hostid
 ip link show | awk '/ether/ {gsub(":","",$2); print $2; exit}' > /mnt/etc/hostid
 
 # Generate zfsbootmenu efi
-cat > /mnt/etc/zfsbootmenu/config.yaml <<"EOF"
+cat > /mnt/etc/zfsbootmenu/config.yaml <<EOF
 Global:
   ManageImages: true
   BootMountPoint: /boot/efi
   DracutConfDir: /etc/zfsbootmenu/dracut.conf.d
+Components:
+  Enabled: true
+  ImageDir: /boot/zfsbootmenu
+  Versions: 2
+  syslinux:
+    Enabled: false
 EFI:
   ImageDir: /boot/efi/EFI/ZBM
   Versions: 2
   Enabled: false
 Kernel:
-  CommandLine: ro quiet loglevel=0
+  CommandLine: ro quiet loglevel=0 spl_hostid=$(cat /mnt/etc/hostid)
 EOF
 
-# Set zfsbootmenu as default boot
-efibootmgr --disk /dev/sda \
-  --part 1 \
-  --create \
-  --label "ZFSBootMenu" \
-  --loader /vmlinuz-0.7.5 \
-  --unicode "root=zfsbootmenu:POOL=zroot ro initrd=\EFI\void\initramfs.img quiet spl_hostid=$(cat /mnt/etc/hostid)" \
-  --verbose
+# Generate ZBM
+chroot /mnt generate-zbm
+
+# Configure refind
+cat > /mnt/boot/efi/EFI/ZBM/refind_linux.conf <<EOF
+"Boot Default BE" "ro quiet loglevel=0 timeout=0 root=zfsbootmenu:POOL=zroot spl_hostid=$(cat /mnt/etc/hostid)"
+"Select BE" "ro quiet loglevel=0 timeout=-1 root=zfsbootmenu:POOL=zroot spl_hostid=$(cat /mnt/etc/hostid)"
+EOF
 
 # Umount all parts
 print "Umount all parts"
