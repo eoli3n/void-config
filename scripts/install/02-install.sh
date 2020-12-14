@@ -15,7 +15,6 @@ print "Install Void Linux"
 XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   base-system \
   void-repo-nonfree \
-  intel-ucode \
   zfs \
   zfsbootmenu \
   efibootmgr \
@@ -59,7 +58,7 @@ chroot /mnt/ /bin/bash -xe <<"EOF"
   # Upgrade
   xbps-install -Su xbps
   xbps-install -u
-  xbps-install base-system
+  xbps-install base-system intel-ucode
   xbps-remove base-voidstrap
 
   # Generates locales
