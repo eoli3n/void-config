@@ -9,8 +9,9 @@ print () {
 print "Load ZFS module"
 modprobe zfs
 
-#print "Import zpool"
-#zpool import -d /dev/disk/by-id -R /mnt zroot -N
+print "Reimport zpool"
+zpool export zroot
+zpool import -d /dev/disk/by-id -R /mnt zroot -N
 
 print "Load ZFS keys"
 zfs load-key zroot
