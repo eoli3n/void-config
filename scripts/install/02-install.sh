@@ -52,6 +52,7 @@ EOF
 print "Prepare locales and keymap"
 echo "KEYMAP=fr" > /mnt/etc/vconsole.conf
 echo 'fr_FR.UTF-8 UTF-8' > /mnt/etc/default/libc-locales
+echo 'LANG="fr_FR.UTF-8"' > /mnt/etc/locale.conf
 
 # Configure system
 cat >> /mnt/etc/rc.conf << EOF
