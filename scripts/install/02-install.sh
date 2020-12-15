@@ -22,7 +22,8 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   zfsbootmenu \
   efibootmgr \
   gummiboot \
-  refind
+  refind \
+  connman
 
 # Init chroot
 mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys
@@ -33,6 +34,18 @@ mount --rbind /proc /mnt/proc && mount --make-rslave /mnt/proc
 echo "Please enter hostname :"
 read -r hostname
 echo "$hostname" > /mnt/etc/hostname
+
+# Configure network
+cat >> /mnt/etc/sv/connmand/conf <<"EOF"
+OPTS="--nodnsproxy"
+EOF
+chroot /mnt ln -s /etc/sv/connmand /var/service/
+
+# Configure DNS
+cat >> /mnt/etc/resolv.conf <<"EOF"
+nameserver 1.1.1.1
+nameserver 9.9.9.9
+EOF
 
 # Prepare locales and keymap
 print "Prepare locales and keymap"
@@ -118,7 +131,7 @@ EFI:
   Versions: 2
   Enabled: false
 Kernel:
-  CommandLine: ro quiet loglevel=0 spl_hostid=$(cat /mnt/etc/hostid)
+  CommandLine: ro quiet loglevel=0 spl_hostid=$(cat /mnt/etc/hostid) net.ifnames=0
 EOF
 
 # Generate ZBM and install refind
