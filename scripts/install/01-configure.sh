@@ -50,6 +50,9 @@ sleep 1
 print "Format EFI part"
 mkfs.vfat "$EFI"
 
+# Generate zfs hostid
+ip link show | awk '/ether/ {gsub(":","",$2); print $2; exit}' > /etc/hostid
+
 # Create ZFS pool
 print "Create ZFS pool"
 zpool create -f -o ashift=12           \

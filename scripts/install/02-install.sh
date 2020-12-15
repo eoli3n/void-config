@@ -111,8 +111,8 @@ EOF
 # Create dirs
 mkdir -p /mnt/boot/efi/EFI/ZBM /mnt/boot/zfsbootmenu /etc/zfsbootmenu/dracut.conf.d
 
-# Generate zfs hostid
-ip link show | awk '/ether/ {gsub(":","",$2); print $2; exit}' > /mnt/etc/hostid
+# Copy zfs hostid
+copy /etc/hostid /mnt/etc/hostid
 
 # Generate zfsbootmenu efi
 cat > /mnt/etc/zfsbootmenu/config.yaml <<EOF
