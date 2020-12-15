@@ -116,7 +116,7 @@ EOF
 mkdir -p /mnt/boot/efi/EFI/ZBM /mnt/boot/zfsbootmenu /etc/zfsbootmenu/dracut.conf.d
 
 # Copy zfs hostid
-copy /etc/hostid /mnt/etc/hostid
+cp /etc/hostid /mnt/etc/hostid
 
 # Generate zfsbootmenu efi
 cat > /mnt/etc/zfsbootmenu/config.yaml <<EOF
