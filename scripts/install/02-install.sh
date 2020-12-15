@@ -24,6 +24,7 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   gummiboot \
   refind \
   connman
+XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" intel-ucode
 
 # Init chroot
 mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys
@@ -70,12 +71,6 @@ EOF
 
 ### Chroot
 chroot /mnt/ /bin/bash -xe <<"EOF"
-
-  # Upgrade
-  xbps-install -Su xbps
-  xbps-install -u
-  xbps-install base-system intel-ucode
-  xbps-remove base-voidstrap
 
   # Generates locales
   xbps-reconfigure -f glibc-locales
