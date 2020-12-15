@@ -14,7 +14,7 @@ REPO=https://alpha.de.repo.voidlinux.org/current
 ARCH=x86_64
 
 ### Install base system
-print "Install Void Linux"
+print 'Install Void Linux'
 XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   base-system \
   void-repo-nonfree \
@@ -35,7 +35,7 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   connman
 
 # Set hostname
-echo "Please enter hostname :"
+echo 'Please enter hostname :'
 read -r hostname
 echo "$hostname" > /mnt/etc/hostname
 
@@ -52,10 +52,10 @@ nameserver 9.9.9.9
 EOF
 
 # Prepare locales and keymap
-print "Prepare locales and keymap"
-echo "KEYMAP=fr" > /mnt/etc/vconsole.conf
+print 'Prepare locales and keymap'
+echo 'KEYMAP=fr' > /mnt/etc/vconsole.conf
 echo 'fr_FR.UTF-8 UTF-8' > /mnt/etc/default/libc-locales
-echo 'LANG="fr_FR.utf8"' > /mnt/etc/locale.conf
+echo 'LANG="fr_FR.UTF-8"' > /mnt/etc/locale.conf
 
 # Configure system
 cat >> /mnt/etc/rc.conf << EOF
@@ -65,7 +65,7 @@ HARDWARECLOCK="UTC"
 EOF
 
 # Configure dracut
-print "Configure dracut"
+print 'Configure dracut'
 cat > /mnt/etc/dracut.conf.d/zol.conf <<"EOF"
 hostonly="yes"
 nofsck="yes"
@@ -95,15 +95,15 @@ tmpfs           /tmp        tmpfs   defaults,nosuid,nodev   0 0
 EOF
 
 # Set root passwd
-print "Set root password"
+print 'Set root password'
 chroot /mnt /bin/passwd
 
 # Set user passwd
-print "Set user password"
+print 'Set user password'
 chroot /mnt /bin/passwd user
 
 # Configure sudo
-print "Configure sudo"
+print 'Configure sudo'
 cat > /mnt/etc/sudoers <<"EOF"
 root ALL=(ALL) ALL
 user ALL=(ALL) ALL
@@ -119,6 +119,7 @@ mkdir -p /mnt/boot/efi/EFI/ZBM /mnt/boot/zfsbootmenu /etc/zfsbootmenu/dracut.con
 cp /etc/hostid /mnt/etc/hostid
 
 # Generate zfsbootmenu efi
+print 'Configure zfsbootmenu'
 cat > /mnt/etc/zfsbootmenu/config.yaml <<EOF
 Global:
   ManageImages: true
@@ -139,26 +140,28 @@ Kernel:
 EOF
 
 # Generate ZBM and install refind
+print 'Generate zbm and install refind'
 chroot /mnt/ /bin/bash -xe <<"EOF"
 generate-zbm
 refind-install
 EOF
 
 # Configure refind
+print 'Configure refind'
 cat > /mnt/boot/efi/EFI/ZBM/refind_linux.conf <<EOF
 "Boot Default BE" "ro quiet loglevel=0 timeout=0 root=zfsbootmenu:POOL=zroot spl_hostid=$(cat /mnt/etc/hostid)"
 "Select BE" "ro quiet loglevel=0 timeout=-1 root=zfsbootmenu:POOL=zroot spl_hostid=$(cat /mnt/etc/hostid)"
 EOF
 
 # Umount all parts
-print "Umount all parts"
+print 'Umount all parts'
 umount /mnt/boot/efi
 umount -n /mnt/{dev,sys,proc}
 zfs umount -a
 
 # Export zpool
-print "Export zpool"
+print 'Export zpool'
 zpool export zroot
 
 # Finish
-echo -e "\e[32mAll OK\033[0m"
+echo -e '\e[32mAll OK\033[0m'
