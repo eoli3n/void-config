@@ -149,6 +149,7 @@ EOF
 # Umount all parts
 print "Umount all parts"
 umount /mnt/boot/efi
+umount -n /mnt/{dev,sys,proc}
 zfs umount -a
 
 # Export zpool
