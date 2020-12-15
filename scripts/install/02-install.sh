@@ -84,8 +84,6 @@ chroot /mnt/ /bin/bash -xe <<"EOF"
   # Generate fstab excluding zfs parts
   egrep -v "proc|sys|devtmpfs|pts|zfs" /proc/mounts > /etc/fstab
 
-  # Generate initramfs
-  xbps-reconfigure -fa
 EOF
 
 # Configure /tmp
@@ -141,9 +139,18 @@ EOF
 # Generate ZBM and install refind
 print 'Generate zbm and install refind'
 chroot /mnt/ /bin/bash -xe <<"EOF"
-export LANG="fr_FR.UTF-8"
-generate-zbm
-refind-install
+
+  # Export locale
+  export LANG="fr_FR.UTF-8"
+
+  # Generate ZBM
+  generate-zbm
+
+  # Install bootloader
+  refind-install
+
+  # Generate initramfs
+  xbps-reconfigure -fa
 EOF
 
 # Configure refind
@@ -156,7 +163,7 @@ EOF
 # Umount all parts
 print 'Umount all parts'
 umount /mnt/boot/efi
-umount -n /mnt/{dev,sys,proc}
+umount -l /mnt/{dev,proc,sys}
 zfs umount -a
 
 # Export zpool
