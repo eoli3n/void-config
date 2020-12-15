@@ -1,6 +1,9 @@
 #!/bin/bash
 
 set -e
+# Debug
+set -x
+trap read debug
 
 print () {
     echo -e "\n\033[1m> $1\033[0m\n"
