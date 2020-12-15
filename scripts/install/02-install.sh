@@ -39,7 +39,7 @@ echo "$hostname" > /mnt/etc/hostname
 cat >> /mnt/etc/sv/connmand/conf <<"EOF"
 OPTS="--nodnsproxy"
 EOF
-chroot /mnt ln -s /etc/sv/connmand /var/service/
+chroot /mnt ln -s /etc/sv/connmand /var/service/connmand
 
 # Configure DNS
 cat >> /mnt/etc/resolv.conf <<"EOF"
