@@ -69,8 +69,8 @@ print "Configure dracut"
 cat > /mnt/etc/dracut.conf.d/zol.conf <<"EOF"
 hostonly="yes"
 nofsck="yes"
-add_dracutmodules+=" zfs "'
-omit_dracutmodules+=" btrfs resume "'
+add_dracutmodules+=" zfs "
+omit_dracutmodules+=" btrfs resume "
 EOF
 
 ### Chroot
