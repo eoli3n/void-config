@@ -90,6 +90,11 @@ chroot /mnt/ /bin/bash -xe <<"EOF"
   xbps-reconfigure -fa
 EOF
 
+# Configure /tmp
+cat >> /mnt/etc/fstab <<"EOF"
+tmpfs           /tmp        tmpfs   defaults,nosuid,nodev   0 0
+EOF
+
 # Set root passwd
 print "Set root password"
 chroot /mnt /bin/passwd
