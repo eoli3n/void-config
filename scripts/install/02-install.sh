@@ -13,23 +13,26 @@ print () {
 REPO=https://alpha.de.repo.voidlinux.org/current
 ARCH=x86_64
 
-### Install
+### Install base system
 print "Install Void Linux"
 XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   base-system \
   void-repo-nonfree \
+
+# Init chroot
+mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys
+mount --rbind /dev /mnt/dev && mount --make-rslave /mnt/dev
+mount --rbind /proc /mnt/proc && mount --make-rslave /mnt/proc
+
+# Install packages
+XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
+  intel-ucode \
   zfs \
   zfsbootmenu \
   efibootmgr \
   gummiboot \
   refind \
   connman
-XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" intel-ucode
-
-# Init chroot
-mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys
-mount --rbind /dev /mnt/dev && mount --make-rslave /mnt/dev
-mount --rbind /proc /mnt/proc && mount --make-rslave /mnt/proc
 
 # Set hostname
 echo "Please enter hostname :"
