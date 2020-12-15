@@ -75,7 +75,6 @@ EOF
 
 ### Chroot
 chroot /mnt/ /bin/bash -xe <<"EOF"
-
   # Generates locales
   xbps-reconfigure -f glibc-locales
 
@@ -142,6 +141,7 @@ EOF
 # Generate ZBM and install refind
 print 'Generate zbm and install refind'
 chroot /mnt/ /bin/bash -xe <<"EOF"
+export LANG="fr_FR.UTF-8"
 generate-zbm
 refind-install
 EOF
