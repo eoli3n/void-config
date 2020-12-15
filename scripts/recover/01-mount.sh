@@ -10,7 +10,9 @@ print "Load ZFS module"
 modprobe zfs
 
 print "Reimport zpool"
+set +e
 zpool export zroot
+set -e
 zpool import -d /dev/disk/by-id -R /mnt zroot -N
 
 print "Load ZFS keys"
