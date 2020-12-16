@@ -144,7 +144,7 @@ EOF
 
 # Generate ZBM and install refind
 print 'Generate zbm and install refind'
-chroot /mnt/ /bin/bash -xe <<"EOF"
+chroot /mnt/ /bin/bash -e <<"EOF"
 
   # Export locale
   export LANG="fr_FR.UTF-8"
