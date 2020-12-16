@@ -77,7 +77,7 @@ install_items+=" /etc/zfs/zroot.key "
 EOF
 
 ### Chroot
-chroot /mnt/ /bin/bash -xe <<"EOF"
+chroot /mnt/ /bin/bash -e <<"EOF"
   # Generates locales
   xbps-reconfigure -f glibc-locales
 
