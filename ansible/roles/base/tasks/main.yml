@@ -1,7 +1,8 @@
 ---
 - name: install packages
   community.general.xbps:
-    name:
+    name: '{{ item }}'
+    loop:
       #      - starship                  # shell prompt
       ##- ttf-impallari-cabin-font # cv font
       ##- ttf-jetbrains-mono       # main font
