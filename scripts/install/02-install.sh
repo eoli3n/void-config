@@ -38,8 +38,7 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   connman
 
 # Set hostname
-echo 'Please enter hostname :'
-read -r hostname
+read -r -p 'Please enter hostname : ' hostname
 echo "$hostname" > /mnt/etc/hostname
 
 # Configure network
@@ -134,9 +133,7 @@ Global:
   BootMountPoint: /efi
   DracutConfDir: /etc/zfsbootmenu/dracut.conf.d
 Components:
-  ImageDir: /efi/EFI/ZBM
-  Versions: 1
-  Enabled: true
+  Enabled: false
 EFI:
   ImageDir: /efi/EFI/ZBM
   Versions: false
