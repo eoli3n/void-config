@@ -8,7 +8,7 @@
 #- ttf-jetbrains-mono       # main font
     - noto-fonts-ttf            # unicode font
     # Shell
-    - fish                      # powerful shell
+    - fish-shell                # powerful shell
     - exa                       # powerful ls
     - bc                        # maths
     - jq                        # json processor
