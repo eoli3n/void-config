@@ -75,8 +75,9 @@ zpool create -f -o ashift=12           \
 
 # Slash dataset
 print "Create slash dataset"
-slash="void.$(date +%Y.%m.%d)"
 zfs create -o mountpoint=none                 zroot/ROOT
+zfs set org.zfsbootmenu:commandline="spl_hostid=$(hostid) ro quiet" zroot/ROOT
+slash="void.$(date +%Y.%m.%d)"
 zfs create -o mountpoint=/ -o canmount=noauto zroot/ROOT/"$slash"
 
 # Manually mount slash dataset
