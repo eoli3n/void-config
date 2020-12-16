@@ -2,6 +2,7 @@
 - name: install desktop packages
   community.general.xbps:
     name: '{{ item }}'
+  ignore_errors: true
   loop:
     # DE
     - sway
