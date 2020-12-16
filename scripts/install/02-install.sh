@@ -31,7 +31,6 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   zfsbootmenu \
   efibootmgr \
   refind \
-  gummiboot \
   connman
 
 # Set hostname
