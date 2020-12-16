@@ -14,12 +14,13 @@
 - name: Install flatpak packages
   become: no
   community.general.flatpak:
-    name:
-      - com.spotify.Client
-      - com.visualstudio.code-oss
-      - com.mojang.Minecraft
-      - com.github.Anuken.Mindustry
-      - us.zoom.Zoom
-      - com.microsoft.Teams
+    name: '{{ item }}'
     state: present
     method: user
+  loop:
+    - com.spotify.Client
+    - com.visualstudio.code-oss
+    - com.mojang.Minecraft
+    - com.github.Anuken.Mindustry
+    - us.zoom.Zoom
+    - com.microsoft.Teams
