@@ -1,0 +1,23 @@
+---
+- name: install flatpak
+  community.general.xbps:
+    name: flatpak
+
+- name: Add the flathub flatpak repo
+  become: no
+  community.general.flatpak_remote:
+    name: flathub
+    state: present
+    flatpakrepo_url: https://dl.flathub.org/repo/flathub.flatpakrepo
+    method: user
+
+- name: Install flatpak packages
+  become: no
+  community.general.flatpak:
+    name:
+      - com.spotify.Client
+      - com.visualstudio.code-oss
+      - com.mojang.Minecraft
+      - com.github.Anuken.Mindustry
+    state: present
+    method: user

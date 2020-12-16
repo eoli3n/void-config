@@ -58,23 +58,18 @@
     # EXAUR
     - adapta-gtk-theme #https://github.com/Alexays/Waybar/issues/515
     - equilux-theme
-    - wdisplays-git # arandr for wayland
-    - wf-recorder-git # screen recorder for wayland
-    - grimshot-git # grim+slurp wrapper
-    - wofi-hg # rofi for wayland
-    - swaylock-fancy-git # locker for wayland
+    - wdisplays # arandr for wayland
+    - wf-recorder # screen recorder for wayland
+    - grimshot # grim+slurp wrapper
+    - wofi # rofi for wayland
     - wob # bars for wayland
     - connman-gtk # connman gtk gui
-    - gnome-ssh-askpass2 # ssh askpass gui
-    - adb-sync-git # android dir sync
-    - downgrade # package downgrader
-    - molotov # french tv wrapper
+    - gnome-ssh-askpass # ssh askpass gui
+    - android-tools # android dir sync
     - font-awesome5
-    - spotify # music player
-    - starleaf-breeze
     - zoom
-# - minecraft-launcher # game
+# - downgrade # package downgrader
+# - molotov # french tv wrapper
+# - swaylock-fancy # locker for wayland
 # - google-chrome
-# - mindustry-bin # game
 # - tiny-irc-client-git
-# - code # code editor
