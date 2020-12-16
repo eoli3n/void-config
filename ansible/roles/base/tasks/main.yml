@@ -7,7 +7,7 @@
       ##- ttf-jetbrains-mono       # main font
       #      - noto-fonts-ttf            # unicode font
       #      # Shell
-      #      - fish                      # powerful shell
+      - fish                      # powerful shell
       #      - exa                       # powerful ls
       #      - bc                        # maths
       #      - jq                        # json processor
@@ -49,9 +49,9 @@
       #      - unzip                     # uncompress zip
       #      - cifs-utils                #
       #      - shellcheck                # sh linter
-      - oath-toolkit              # otp tool
-      - python2-pip               # python2 package manager
-      - python-pip                # python3 package manager
+      #- oath-toolkit              # otp tool
+      #- python2-pip               # python2 package manager
+      #- python-pip                # python3 package manager
       - dmidecode                 # dump dmi table content
 #- python-pre-commit         # pre-commit hook manager
     state: present
