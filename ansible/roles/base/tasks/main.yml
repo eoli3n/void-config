@@ -8,7 +8,6 @@
       - noto-fonts-ttf            # unicode font
       # Shell
       - fish                      # powerful shell
-      - git                       #
       - exa                       # powerful ls
       - bc                        # maths
       - jq                        # json processor
