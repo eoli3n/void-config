@@ -24,6 +24,9 @@ mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys
 mount --rbind /dev /mnt/dev && mount --make-rslave /mnt/dev
 mount --rbind /proc /mnt/proc && mount --make-rslave /mnt/proc
 
+# Disable gummiboot post install hooks, only installs for generate-zbm
+echo "GUMMIBOOT_DISABLE=1" > /mnt/etc/default/gummiboot
+
 # Install packages
 XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   intel-ucode \
