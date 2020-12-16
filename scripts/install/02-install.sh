@@ -120,6 +120,11 @@ cp /etc/zfs/zpool.cache /mnt/etc/zfs/zpool.cache
 # Create dirs
 mkdir -p /mnt/efi/EFI/ZBM /etc/zfsbootmenu/dracut.conf.d
 
+# Config keymap as https://github.com/zbm-dev/zfsbootmenu/issues/96#issuecomment-745627427
+mkdir -p /mnt/etc/cmdline.d
+echo 'rd.vconsole.keymap=fr' > /mnt/etc/cmdline.d/keymap.conf
+echo 'install_optional_items+=" /etc/cmdline.d/keymap.conf "' > /mnt/etc/zfsbootmenu/dracut.conf.d/keymap.conf
+
 # Generate zfsbootmenu efi
 print 'Configure zfsbootmenu'
 cat > /mnt/etc/zfsbootmenu/config.yaml <<EOF
@@ -164,7 +169,7 @@ cat > /mnt/efi/EFI/ZBM/refind_linux.conf <<EOF
 "Select BE" "ro quiet loglevel=0 timeout=-1 root=zfsbootmenu:POOL=zroot spl_hostid=$(hostid)"
 EOF
 
-# Workaround to https://sourceforge.net/p/refind/discussion/general/thread/4dfcdfdd16/
+# Workaround to https://sourceforge.net/p/refind/discussion/general/thread/4dfcdfdd16/ for Qemu/KVM
 echo "hideui banner" >> /mnt/efi/EFI/refind/refind.conf
 
 # Umount all parts
