@@ -31,6 +31,7 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   zfsbootmenu \
   efibootmgr \
   refind \
+  gummiboot \
   connman
 
 # Set hostname
@@ -112,9 +113,6 @@ cp /etc/hostid /mnt/etc/hostid
 cp /etc/zfs/zpool.cache /mnt/etc/zfs/zpool.cache
 
 ### Configure zfsbootmenu
-
-# Clean gummiboot install (in the wrong dir...) as it's just installed for genrate-zbm
-rm -Rf /mnt/boot/{EFI,loader}
 
 # Create dirs
 mkdir -p /mnt/efi/EFI/ZBM /etc/zfsbootmenu/dracut.conf.d
