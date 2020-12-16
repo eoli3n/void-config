@@ -1,0 +1,82 @@
+---
+- name: install desktop packages
+  community.general.xbps:
+    name: '{{ item }}'
+  loop:
+    # DE
+    - sway
+    - swaybg
+    - xorg-server-xwayland
+    - waybar
+    - mako # notification daemon
+    - kanshi # autorandr for wayland
+    - grim # screenshots
+    - slurp # region selector
+    - wl-clipboard # clipboard manager
+    - brightnessctl # brightness manager
+    - swayidle
+    - xdg-user-dirs
+    # Video
+    - mesa
+    - mesa-demos
+    - lib32-virtualgl
+    - vulkan-intel
+    - lib32-vulkan-intel
+    - intel-media-driver
+    - libva-utils
+    # Audio
+    - pulseaudio
+    - pulseaudio-alsa
+    - pavucontrol
+    - pamixer
+    - alsa-utils
+    # Graphical apps
+    - imv # img visualizer
+    - kitty # terminal emulator
+    - code # code editor
+    - evince # pdf viewer
+    - firefox
+    - firefox-i18n-fr
+    - gimp # img editor
+    - kolourpaint # img editor
+    - shotwell # photo manager
+    - libreoffice-still-fr # libreoffice suite fr
+    - lollypop # music player
+    - lxappearance # theme manager
+    - mpv # video player
+    - thunar # file manager
+    - openvpn
+    - playerctl # music player cli controller
+    - rdesktop # remote desktop client
+    - steam # games manager
+    - transmission-gtk # torrent downloader
+    - texlive-bin # latex
+    - texlive-core # latex
+    - texlive-latexextra # latex
+    - variety # random backgrounds
+    - papirus-icon-theme # icon theme
+    - x2goclient
+    - youtube-dl
+    # EXAUR
+    - adapta-gtk-theme #https://github.com/Alexays/Waybar/issues/515
+    - equilux-theme
+    - wdisplays-git # arandr for wayland
+    - wf-recorder-git # screen recorder for wayland
+    - grimshot-git # grim+slurp wrapper
+    - wofi-hg # rofi for wayland
+    - swaylock-fancy-git # locker for wayland
+    - wob # bars for wayland
+    - connman-gtk # connman gtk gui
+    - gnome-ssh-askpass2 # ssh askpass gui
+    - google-chrome
+    - adb-sync-git # android dir sync
+    - downgrade # package downgrader
+    - mindustry-bin # game
+    - minecraft-launcher # game
+    - molotov # french tv wrapper
+    - otf-font-awesome
+    - pastel # color viewer
+    - spotify # music player
+    - starleaf-breeze
+    - zoom
+# - tiny-irc-client-git
