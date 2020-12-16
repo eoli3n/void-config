@@ -74,6 +74,7 @@ hostonly="yes"
 nofsck="yes"
 add_dracutmodules+=" zfs "
 omit_dracutmodules+=" btrfs resume "
+install_optional_items+=" /etc/cmdline.d/keymap.conf "
 EOF
 
 ### Chroot
