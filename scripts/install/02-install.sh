@@ -151,6 +151,7 @@ chroot /mnt/ /bin/bash -xe <<"EOF"
 
   # Install bootloader
   refind-install
+  rm /boot/refind_linux.conf
 
   # Generate initramfs
   xbps-reconfigure -fa

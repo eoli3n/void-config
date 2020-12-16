@@ -20,3 +20,6 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 - [ ] port arch-config playbook + git hook ansible-playbook --syntax-check
 - [ ] zectl with syslinux: https://github.com/johnramsden/zectl/issues/35
 - [ ] travis/github actions on playbook run
+
+issues:
+- https://sourceforge.net/p/refind/discussion/general/thread/4dfcdfdd16/
