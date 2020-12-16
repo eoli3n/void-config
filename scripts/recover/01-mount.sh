@@ -17,6 +17,14 @@ zpool import -d /dev/disk/by-id -R /mnt zroot -N
 print "Load ZFS keys"
 zfs load-key zroot
 
+print "Mount ROOT dataset"
+select ENTRY in $(zfs list | awk '/ROOT\// {print $1}')
+do
+    echo "Mount $ENTRY as slash dataset."
+    zfs mount "$ENTRY"
+done
+
+
 print "Mount datasets"
 zfs mount -a
 
