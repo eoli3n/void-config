@@ -74,7 +74,7 @@ hostonly="yes"
 nofsck="yes"
 add_dracutmodules+=" zfs "
 omit_dracutmodules+=" btrfs resume "
-install_optional_items+=" /etc/cmdline.d/keymap.conf "
+install_items+=" /etc/zfs/zroot.key "
 EOF
 cat > /mnt/etc/dracut.conf <<"EOF"
 compress="zstd"
@@ -115,9 +115,9 @@ Defaults rootpw
 EOF
 
 # Configure zfs
-
 cp /etc/hostid /mnt/etc/hostid
 cp /etc/zfs/zpool.cache /mnt/etc/zfs/zpool.cache
+cp /etc/zfs/zroot.key /mnt/etc/zfs
 
 ### Configure zfsbootmenu
 

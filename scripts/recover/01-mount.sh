@@ -15,7 +15,7 @@ fi
 zpool import -d /dev/disk/by-id -R /mnt zroot -N
 
 print "Load ZFS keys"
-zfs load-key zroot
+zfs load-key -L prompt zroot
 
 print "Mount ROOT dataset"
 select ENTRY in $(zfs list | awk '/ROOT\// {print $1}')

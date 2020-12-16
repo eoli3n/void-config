@@ -54,23 +54,29 @@ mkfs.vfat "$EFI"
 zgenhostid
 #ip link show | awk '/ether/ {gsub(":","",$2); print $2; exit}' > /etc/hostid
 
+# Generate key
+print "Set ZFS passphrase"
+read -r pass
+echo "$pass" > /etc/zfs/zroot.key
+chmod 000 /etc/zfs/zroot.key
+
 # Create ZFS pool
 print "Create ZFS pool"
-zpool create -f -o ashift=12           \
-             -o autotrim=on            \
-             -O acltype=posixacl       \
-             -O compression=zstd       \
-             -O relatime=on            \
-             -O xattr=sa               \
-             -O dnodesize=legacy       \
-             -O encryption=aes-256-gcm \
-             -O keyformat=passphrase   \
-             -O keylocation=prompt     \
-             -O normalization=formD    \
-             -O mountpoint=none        \
-             -O canmount=off           \
-             -O devices=off            \
-             -R /mnt                   \
+zpool create -f -o ashift=12                          \
+             -o autotrim=on                           \
+             -O acltype=posixacl                      \
+             -O compression=zstd                      \
+             -O relatime=on                           \
+             -O xattr=sa                              \
+             -O dnodesize=legacy                      \
+             -O encryption=aes-256-gcm                \
+             -O keyformat=passphrase                  \
+             -O keylocation=file:///etc/zfs/zroot.key \
+             -O normalization=formD                   \
+             -O mountpoint=none                       \
+             -O canmount=off                          \
+             -O devices=off                           \
+             -R /mnt                                  \
              zroot "$ZFS"
 
 # Slash dataset
@@ -105,7 +111,7 @@ zpool set bootfs="zroot/ROOT/$slash" zroot
 print "Export and reimport zpool"
 zpool export zroot
 zpool import -d /dev/disk/by-id -R /mnt zroot -N
-zfs load-key zroot
+zfs load-key -L prompt zroot
 zfs mount zroot/ROOT/"$slash"
 zfs mount -a
 
