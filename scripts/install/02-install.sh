@@ -33,7 +33,6 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   zfs \
   zfsbootmenu \
   efibootmgr \
-  refind \
   gummiboot \
   connman
 
@@ -46,6 +45,7 @@ cat >> /mnt/etc/sv/connmand/conf <<"EOF"
 OPTS="--nodnsproxy"
 EOF
 chroot /mnt ln -s /etc/sv/connmand /etc/runit/runsvdir/default/
+chroot /mnt ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
 
 # Configure DNS
 cat >> /mnt/etc/resolv.conf <<"EOF"
@@ -142,8 +142,8 @@ Kernel:
   CommandLine: ro quiet loglevel=0 spl_hostid=$(hostid) net.ifnames=0
 EOF
 
-# Generate ZBM and install refind
-print 'Generate zbm and install refind'
+# Generate ZBM
+print 'Generate zbm'
 chroot /mnt/ /bin/bash -e <<"EOF"
 
   # Export locale
@@ -152,37 +152,23 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   # Generate ZBM
   generate-zbm
 
-  # Install bootloader
-  refind-install
-  rm /boot/refind_linux.conf
-
   # Generate initramfs
   xbps-reconfigure -fa
 EOF
 
-# Configure refind
-print 'Configure refind'
-cat > /mnt/efi/EFI/ZBM/refind_linux.conf <<EOF
-"Boot Default BE" "ro quiet loglevel=0 timeout=0 root=zfsbootmenu:POOL=zroot spl_hostid=$(hostid)"
-"Select BE" "ro quiet loglevel=0 timeout=-1 root=zfsbootmenu:POOL=zroot spl_hostid=$(hostid)"
-EOF
-
-# Workaround to https://sourceforge.net/p/refind/discussion/general/thread/4dfcdfdd16/ for Qemu/KVM
-echo "hideui banner" >> /mnt/efi/EFI/refind/refind.conf
-
-# Set ZBM as default boot
-efibootmgr --disk /dev/sda \
-  --part 1 \
-  --create \
-  --label "ZFSBootMenu" \
-  --loader "\EFI\ZBM\vmlinuz.efi" \
-  --unicode "root=zfsbootmenu:POOL=zroot ro quiet spl_hostid=$(hostid)" \
-  --verbose
+# Create UEFI entries
 efibootmgr --disk /dev/sda \
   --part 1 \
   --create \
   --label "ZFSBootMenu Backup" \
   --loader "\EFI\ZBM\vmlinuz-backup.efi" \
+  --unicode "root=zfsbootmenu:POOL=zroot ro quiet spl_hostid=$(hostid)" \
+  --verbose
+efibootmgr --disk /dev/sda \
+  --part 1 \
+  --create \
+  --label "ZFSBootMenu" \
+  --loader "\EFI\ZBM\vmlinuz.efi" \
   --unicode "root=zfsbootmenu:POOL=zroot ro quiet spl_hostid=$(hostid)" \
   --verbose
 
