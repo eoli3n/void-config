@@ -76,6 +76,9 @@ add_dracutmodules+=" zfs "
 omit_dracutmodules+=" btrfs resume "
 install_optional_items+=" /etc/cmdline.d/keymap.conf "
 EOF
+cat > /mnt/etc/dracut.conf <<"EOF"
+compress="zstd"
+EOF
 
 ### Chroot
 chroot /mnt/ /bin/bash -xe <<"EOF"
