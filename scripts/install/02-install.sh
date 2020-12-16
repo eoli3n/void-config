@@ -170,6 +170,22 @@ EOF
 # Workaround to https://sourceforge.net/p/refind/discussion/general/thread/4dfcdfdd16/ for Qemu/KVM
 echo "hideui banner" >> /mnt/efi/EFI/refind/refind.conf
 
+# Set ZBM as default boot
+efibootmgr --disk /dev/sda \
+  --part 1 \
+  --create \
+  --label "ZFSBootMenu" \
+  --loader "\EFI\ZBM\vmlinuz.efi" \
+  --unicode "root=zfsbootmenu:POOL=zroot ro quiet spl_hostid=$(hostid)" \
+  --verbose
+efibootmgr --disk /dev/sda \
+  --part 1 \
+  --create \
+  --label "ZFSBootMenu Backup" \
+  --loader "\EFI\ZBM\vmlinuz-backup.efi" \
+  --unicode "root=zfsbootmenu:POOL=zroot ro quiet spl_hostid=$(hostid)" \
+  --verbose
+
 # Umount all parts
 print 'Umount all parts'
 umount /mnt/efi
