@@ -130,7 +130,7 @@ Components:
 EFI:
   ImageDir: /boot/efi/EFI/ZBM
   Versions: 2
-  Enabled: false
+  Enabled: true
 Kernel:
   CommandLine: ro quiet loglevel=0 spl_hostid=$(cat /mnt/etc/hostid) net.ifnames=0
 EOF
