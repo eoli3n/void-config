@@ -116,7 +116,6 @@ mount "$EFI" /mnt/efi
 print "Generate and copy zfs cache"
 mkdir -p /mnt/etc/zfs
 zpool set cachefile=/etc/zfs/zpool.cache zroot
-cp /etc/zfs/zpool.cache /mnt/etc/zfs/zpool.cache
 
 # Finish
 echo -e "\e[32mAll OK\033[0m"

@@ -107,16 +107,18 @@ user ALL=(ALL) ALL
 Defaults rootpw
 EOF
 
+# Configure zfs
+
+cp /etc/hostid /mnt/etc/hostid
+cp /etc/zfs/zpool.cache /mnt/etc/zfs/zpool.cache
+
 ### Configure zfsbootmenu
 
 # Clean gummiboot install (in the wrong dir...) as it's just installed for genrate-zbm
 rm -Rf /mnt/boot/{EFI,loader}
 
 # Create dirs
-mkdir -p /mnt/efi/EFI/ZBM /mnt/boot/zfsbootmenu /etc/zfsbootmenu/dracut.conf.d
-
-# Copy zfs hostid
-cp /etc/hostid /mnt/etc/hostid
+mkdir -p /mnt/efi/EFI/ZBM /etc/zfsbootmenu/dracut.conf.d
 
 # Generate zfsbootmenu efi
 print 'Configure zfsbootmenu'
