@@ -164,6 +164,9 @@ cat > /mnt/efi/EFI/ZBM/refind_linux.conf <<EOF
 "Select BE" "ro quiet loglevel=0 timeout=-1 root=zfsbootmenu:POOL=zroot spl_hostid=$(hostid)"
 EOF
 
+# Workaround to https://sourceforge.net/p/refind/discussion/general/thread/4dfcdfdd16/
+echo "hideui banner" >> /mnt/efi/EFI/refind/refind.conf
+
 # Umount all parts
 print 'Umount all parts'
 umount /mnt/efi
