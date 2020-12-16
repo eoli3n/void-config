@@ -17,8 +17,9 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
   - [x] system install
   - [x] refind and zfsbootmenu
   - [x] network, dns
+  - [ ] ntp
 - [ ] port arch-config playbook + git hook ansible-playbook --syntax-check
-- [ ] zectl with syslinux: https://github.com/johnramsden/zectl/issues/35
+  - [ ] create package requests for missings
 - [ ] travis/github actions on playbook run
 
 issues:
