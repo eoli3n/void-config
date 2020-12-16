@@ -53,11 +53,8 @@
     - texlive-latexextra # latex
     - variety # random backgrounds
     - papirus-icon-theme # icon theme
-    - x2goclient
     - youtube-dl
     # EXAUR
-    - adapta-gtk-theme #https://github.com/Alexays/Waybar/issues/515
-    - equilux-theme
     - wdisplays # arandr for wayland
     - wf-recorder # screen recorder for wayland
     - grimshot # grim+slurp wrapper
@@ -67,7 +64,9 @@
     - gnome-ssh-askpass # ssh askpass gui
     - android-tools # android dir sync
     - font-awesome5
-    - zoom
+# - x2goclient
+# - adapta-gtk-theme #https://github.com/Alexays/Waybar/issues/515
+# - equilux-theme
 # - downgrade # package downgrader
 # - molotov # french tv wrapper
 # - swaylock-fancy # locker for wayland

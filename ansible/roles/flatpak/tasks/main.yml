@@ -19,5 +19,7 @@
       - com.visualstudio.code-oss
       - com.mojang.Minecraft
       - com.github.Anuken.Mindustry
+      - us.zoom.Zoom
+      - com.microsoft.Teams
     state: present
     method: user
