@@ -56,7 +56,7 @@ zgenhostid
 
 # Generate key
 print "Set ZFS passphrase"
-read -r pass
+read -r -p "ZFS passphrase: " pass
 echo "$pass" > /etc/zfs/zroot.key
 chmod 000 /etc/zfs/zroot.key
 
