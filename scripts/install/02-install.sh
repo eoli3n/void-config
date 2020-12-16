@@ -128,7 +128,7 @@ EFI:
   Versions: 1
   Enabled: true
 Kernel:
-  CommandLine: ro quiet loglevel=0 spl_hostid=$(cat /mnt/etc/hostid) net.ifnames=0
+  CommandLine: ro quiet loglevel=0 spl_hostid=$(hostid) net.ifnames=0
 EOF
 
 # Generate ZBM and install refind
@@ -151,8 +151,8 @@ EOF
 # Configure refind
 print 'Configure refind'
 cat > /mnt/boot/efi/EFI/ZBM/refind_linux.conf <<EOF
-"Boot Default BE" "ro quiet loglevel=0 timeout=0 root=zfsbootmenu:POOL=zroot spl_hostid=$(cat /mnt/etc/hostid)"
-"Select BE" "ro quiet loglevel=0 timeout=-1 root=zfsbootmenu:POOL=zroot spl_hostid=$(cat /mnt/etc/hostid)"
+"Boot Default BE" "ro quiet loglevel=0 timeout=0 root=zfsbootmenu:POOL=zroot spl_hostid=$(hostid)"
+"Select BE" "ro quiet loglevel=0 timeout=-1 root=zfsbootmenu:POOL=zroot spl_hostid=$(hostid)"
 EOF
 
 # Umount all parts
