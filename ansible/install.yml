@@ -5,7 +5,6 @@
   vars:
     user: user
     shell: /usr/bin/fish
-    cmdline: ""
 
 #  pre_tasks:
 #

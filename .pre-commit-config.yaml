@@ -8,3 +8,11 @@ repos:
   rev: v0.7.1.1
   hooks:
     - id: shellcheck
+- repo: local
+  hooks:
+    - id: ansible-syntax-check
+      name: Ansible syntax check
+      entry: ansible-playbook --syntax-check -i ansible/hosts
+      files: ansible/install.yml
+      types: [file]
+      language: system
