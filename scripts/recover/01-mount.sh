@@ -35,4 +35,4 @@ mount --rbind /proc /mnt/proc
 mount --make-rslave /mnt/proc
 
 # Finish
-echo -e "\e[32mAll OK"
+echo -e '\e[32mAll OK\033[0m'

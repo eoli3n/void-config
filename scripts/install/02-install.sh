@@ -122,14 +122,10 @@ Global:
   BootMountPoint: /boot/efi
   DracutConfDir: /etc/zfsbootmenu/dracut.conf.d
 Components:
-  Enabled: true
-  ImageDir: /boot/zfsbootmenu
-  Versions: 2
-  syslinux:
-    Enabled: false
+  Enabled: false
 EFI:
   ImageDir: /boot/efi/EFI/ZBM
-  Versions: 2
+  Versions: 1
   Enabled: true
 Kernel:
   CommandLine: ro quiet loglevel=0 spl_hostid=$(cat /mnt/etc/hostid) net.ifnames=0

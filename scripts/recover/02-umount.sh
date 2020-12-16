@@ -13,4 +13,4 @@ print "Export zpool"
 zpool export zroot
 
 # Finish
-echo -e "\e[32mAll OK"
+echo -e '\e[32mAll OK\033[0m'
