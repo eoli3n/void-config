@@ -108,8 +108,8 @@ zfs mount -a
 
 # Mount EFI part
 print "Mount EFI part"
-mkdir -p /mnt/boot/efi
-mount "$EFI" /mnt/boot/efi
+mkdir -p /mnt/efi
+mount "$EFI" /mnt/efi
 
 # Copy ZFS cache
 print "Generate and copy zfs cache"

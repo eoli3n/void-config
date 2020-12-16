@@ -110,7 +110,7 @@ EOF
 ### Configure zfsbootmenu
 
 # Create dirs
-mkdir -p /mnt/boot/efi/EFI/ZBM /mnt/boot/zfsbootmenu /etc/zfsbootmenu/dracut.conf.d
+mkdir -p /mnt/efi/EFI/ZBM /mnt/boot/zfsbootmenu /etc/zfsbootmenu/dracut.conf.d
 
 # Copy zfs hostid
 cp /etc/hostid /mnt/etc/hostid
@@ -120,12 +120,12 @@ print 'Configure zfsbootmenu'
 cat > /mnt/etc/zfsbootmenu/config.yaml <<EOF
 Global:
   ManageImages: true
-  BootMountPoint: /boot/efi
+  BootMountPoint: /efi
   DracutConfDir: /etc/zfsbootmenu/dracut.conf.d
 Components:
   Enabled: false
 EFI:
-  ImageDir: /boot/efi/EFI/ZBM
+  ImageDir: /efi/EFI/ZBM
   Versions: 1
   Enabled: true
 Kernel:
@@ -151,14 +151,14 @@ EOF
 
 # Configure refind
 print 'Configure refind'
-cat > /mnt/boot/efi/EFI/ZBM/refind_linux.conf <<EOF
+cat > /mnt/efi/EFI/ZBM/refind_linux.conf <<EOF
 "Boot Default BE" "ro quiet loglevel=0 timeout=0 root=zfsbootmenu:POOL=zroot spl_hostid=$(hostid)"
 "Select BE" "ro quiet loglevel=0 timeout=-1 root=zfsbootmenu:POOL=zroot spl_hostid=$(hostid)"
 EOF
 
 # Umount all parts
 print 'Umount all parts'
-umount /mnt/boot/efi
+umount /mnt/efi
 umount -l /mnt/{dev,proc,sys}
 zfs umount -a
 
