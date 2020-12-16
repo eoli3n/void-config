@@ -1,59 +1,58 @@
 ---
 - name: install packages
   community.general.xbps:
-    name: '{{ item }}'
-  loop:
-    - starship                  # shell prompt
+    name:
+      - starship                  # shell prompt
+      - noto-fonts-ttf            # unicode font
+      # Shell
+      - fish-shell                # powerful shell
+      - exa                       # powerful ls
+      - bc                        # maths
+      - jq                        # json processor
+      - most                      # colorized pager
+      - bat                       # colorized cat
+      - neovim                    # futur of vim
+      - tree                      #
+      - screen                    # terminal multiplexer
+      - asciinema                 # term recorder
+      - expect                    # automation tool
+      # System
+      - htop                      # system monitor
+      - net-tools                 # netstat
+      - fwupd                     # dell firmware updater
+      - nmap                      # port scanner
+      - tcpdump                   # packet analyzer
+      - whois                     # query registry
+      - stress                    # stress test tool
+      # Disk
+      - iotop                     # disk "top"
+      - ncdu                      # disk usage analyzer
+      # Network
+      - nethogs                   # net "top"
+      - openssh                   #
+      - sshpass                   # allow ansible -k
+      - wget                      # downloader
+      - bind-utils                # dns tools
+      - openbsd-netcat            # network utility
+      - speedtest-cli             #
+      # Utils
+      - borg                      # backup utility
+      - borgmatic                 # backup utility automation
+      - rsync                     #
+      - rclone                    #
+      - fzf                       # fuzzy finder
+      - neofetch                  #
+      - unzip                     # uncompress zip
+      - cifs-utils                #
+      - shellcheck                # sh linter
+      - python-pip               # python2 package manager
+      - python3-pip                # python3 package manager
+      - dmidecode                 # dump dmi table content
+      - oath-toolkit              # otp tool
+#- arch-audit                # list vulnerabilities
+#- reflector                 # mirror sorter
 #- ttf-impallari-cabin-font # cv font
 #- ttf-jetbrains-mono       # main font
-    - noto-fonts-ttf            # unicode font
-    # Shell
-    - fish-shell                # powerful shell
-    - exa                       # powerful ls
-    - bc                        # maths
-    - jq                        # json processor
-    - most                      # colorized pager
-    - bat                       # colorized cat
-    - neovim                    # futur of vim
-    - tree                      #
-    - screen                    # terminal multiplexer
-    - asciinema                 # term recorder
-    - expect                    # automation tool
-#- arch-audit                # list vulnerabilities
-    # System
-    - htop                      # system monitor
-    - net-tools                 # netstat
-#- reflector                 # mirror sorter
-    - fwupd                     # dell firmware updater
-    - nmap                      # port scanner
-    - tcpdump                   # packet analyzer
-    - whois                     # query registry
-    - stress                    # stress test tool
-    # Disk
-    - iotop                     # disk "top"
-    - ncdu                      # disk usage analyzer
-    # Network
-    - nethogs                   # net "top"
-    - openssh                   #
-    - sshpass                   # allow ansible -k
-    - wget                      # downloader
-    - bind-utils                # dns tools
-    - openbsd-netcat            # network utility
-    - speedtest-cli             #
-    # Utils
-    - borg                      # backup utility
-    - borgmatic                 # backup utility automation
-    - rsync                     #
-    - rclone                    #
-    - fzf                       # fuzzy finder
-    - neofetch                  #
-    - unzip                     # uncompress zip
-    - cifs-utils                #
-    - shellcheck                # sh linter
-#- oath-toolkit              # otp tool
-    - python-pip               # python2 package manager
-    - python3-pip                # python3 package manager
-    - dmidecode                 # dump dmi table content
 #- python-pre-commit         # pre-commit hook manager
 
 - name: Configure root
