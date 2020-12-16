@@ -5,7 +5,7 @@ print () {
 }
 
 print "Umount /boot/efi"
-umount /mnt/boot/efi
+umount /mnt/efi
 umount -l /mnt/{dev,proc,sys}
 zfs umount -a
 

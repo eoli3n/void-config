@@ -24,7 +24,7 @@ print "Mount other datasets"
 zfs mount -a
 
 print "Mount EFI part"
-mount /dev/sda1 /mnt/boot/efi
+mount /dev/sda1 /mnt/efi
 
 # Init chroot
 mount --rbind /sys /mnt/sys
