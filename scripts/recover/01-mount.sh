@@ -17,10 +17,7 @@ zpool import -d /dev/disk/by-id -R /mnt zroot -N
 print "Load ZFS keys"
 zfs load-key zroot
 
-print "Mount slash dataset"
-zfs mount zroot/ROOT/default
-
-print "Mount other datasets"
+print "Mount datasets"
 zfs mount -a
 
 print "Mount EFI part"
