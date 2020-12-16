@@ -8,7 +8,7 @@ print "Load ZFS module"
 modprobe zfs
 
 print "Reimport zpool"
-if zpool status zroot
+if zpool status zroot &>/dev/null
 then
   zpool export zroot
 fi
