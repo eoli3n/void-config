@@ -128,7 +128,9 @@ Global:
   BootMountPoint: /efi
   DracutConfDir: /etc/zfsbootmenu/dracut.conf.d
 Components:
-  Enabled: false
+  ImageDir: /efi/EFI/ZBM
+  Versions: 1
+  Enabled: true
 EFI:
   ImageDir: /efi/EFI/ZBM
   Versions: 1
