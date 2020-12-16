@@ -30,7 +30,6 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   zfs \
   zfsbootmenu \
   efibootmgr \
-  gummiboot \
   refind \
   connman
 
