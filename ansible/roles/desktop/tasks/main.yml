@@ -7,7 +7,7 @@
     - sway
     - swaybg
     - xorg-server-xwayland
-    - waybar
+    - Waybar
     - mako # notification daemon
     - kanshi # autorandr for wayland
     - grim # screenshots
@@ -20,31 +20,29 @@
     - mesa
     - mesa-demos
     - lib32-virtualgl
-    - vulkan-intel
-    - lib32-vulkan-intel
+    - mesa-vulkan-intel
+    - mesa-vulkan-intel-32bit
     - intel-media-driver
     - libva-utils
     # Audio
     - pulseaudio
-    - pulseaudio-alsa
+    - alsa-plugins-pulseaudio
     - pavucontrol
     - pamixer
     - alsa-utils
     # Graphical apps
     - imv # img visualizer
     - kitty # terminal emulator
-    - code # code editor
     - evince # pdf viewer
     - firefox
     - firefox-i18n-fr
     - gimp # img editor
     - kolourpaint # img editor
     - shotwell # photo manager
-    - libreoffice-still-fr # libreoffice suite fr
-    - lollypop # music player
+    - libreoffice-i18n-fr # libreoffice suite fr
     - lxappearance # theme manager
     - mpv # video player
-    - thunar # file manager
+    - Thunar # file manager
     - openvpn
     - playerctl # music player cli controller
     - rdesktop # remote desktop client
@@ -68,15 +66,15 @@
     - wob # bars for wayland
     - connman-gtk # connman gtk gui
     - gnome-ssh-askpass2 # ssh askpass gui
-    - google-chrome
     - adb-sync-git # android dir sync
     - downgrade # package downgrader
-    - mindustry-bin # game
-    - minecraft-launcher # game
     - molotov # french tv wrapper
-    - otf-font-awesome
-    - pastel # color viewer
+    - font-awesome5
     - spotify # music player
     - starleaf-breeze
     - zoom
+# - minecraft-launcher # game
+# - google-chrome
+# - mindustry-bin # game
 # - tiny-irc-client-git
+# - code # code editor
