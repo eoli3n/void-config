@@ -139,7 +139,7 @@ Components:
   Enabled: true
 EFI:
   ImageDir: /efi/EFI/ZBM
-  Versions: 1
+  Versions: false
   Enabled: true
 Kernel:
   CommandLine: ro quiet loglevel=0 spl_hostid=$(hostid) net.ifnames=0
