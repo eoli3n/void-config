@@ -109,6 +109,9 @@ EOF
 
 ### Configure zfsbootmenu
 
+# Clean gummiboot install (in the wrong dir...) as it's just installed for genrate-zbm
+rm -Rf /mnt/boot/{EFI,loader}
+
 # Create dirs
 mkdir -p /mnt/efi/EFI/ZBM /mnt/boot/zfsbootmenu /etc/zfsbootmenu/dracut.conf.d
 

@@ -74,11 +74,12 @@ zpool create -f -o ashift=12           \
 
 # Slash dataset
 print "Create slash dataset"
+slash="void.$(date +%Y.%m.%d)"
 zfs create -o mountpoint=none                 zroot/ROOT
-zfs create -o mountpoint=/ -o canmount=noauto zroot/ROOT/default
+zfs create -o mountpoint=/ -o canmount=noauto zroot/ROOT/"$slash"
 
 # Manually mount slash dataset
-zfs mount zroot/ROOT/default
+zfs mount zroot/ROOT/"$slash"
 
 # Home dataset
 print "Create home dataset"
@@ -96,14 +97,14 @@ zfs create                                        zroot/var/lib/docker
 
 # Set bootfs
 print "Set ZFS bootfs"
-zpool set bootfs="zroot/ROOT/default" zroot
+zpool set bootfs="zroot/ROOT/$slash" zroot
 
 # Export and reimport zpool
 print "Export and reimport zpool"
 zpool export zroot
 zpool import -d /dev/disk/by-id -R /mnt zroot -N
 zfs load-key zroot
-zfs mount zroot/ROOT/default
+zfs mount zroot/ROOT/"$slash"
 zfs mount -a
 
 # Mount EFI part
