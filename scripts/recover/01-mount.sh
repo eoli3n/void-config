@@ -22,6 +22,7 @@ select ENTRY in $(zfs list | awk '/ROOT\// {print $1}')
 do
     echo "Mount $ENTRY as slash dataset."
     zfs mount "$ENTRY"
+    break
 done
 
 
