@@ -1,9 +1,9 @@
 ---
 ### Equilux
 
-- name: stat jetbrains font
+- name: stat equilux theme
   stat:
-    path: /usr/share/fonts/TTF/JetBrainsMono-Regular.ttf
+    path: /usr/share/themes/Equilux
   register: equilux
 
 - name: download equilux theme
