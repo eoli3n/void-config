@@ -10,6 +10,7 @@
   unarchive:
     src: https://github.com/ddnexus/equilux-theme/archive/equilux-v20181029.tar.gz
     dest: /tmp/
+    remote_src: yes
   when: equilux.stat.islnk is not defined
 
 - name: install equilux theme
