@@ -13,6 +13,7 @@
       - slurp # region selector
       - wl-clipboard # clipboard manager
       - brightnessctl # brightness manager
+      - qt5-wayland # enable qt5 wayland backend
       - swayidle
       - xdg-user-dirs
       # Video

@@ -36,6 +36,7 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   gummiboot \
   chrony \
   cronie \
+  elogind \
   connman
 
 # Set hostname
@@ -84,6 +85,7 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   ln -s /etc/sv/crond /etc/runit/runsvdir/default/
   ln -s /etc/sv/connmand /etc/runit/runsvdir/default/
   ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
+  ln -s /etc/sv/elogind /etc/runit/runsvdir/default/
 
   # Generates locales
   xbps-reconfigure -f glibc-locales
