@@ -12,12 +12,13 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 
 - [x] virt-install scripts
 - [x] git pre-commit hooks shellcheck
-- [ ] install scripts
+- [x] install scripts
   - [x] zfs parts
   - [x] system install
   - [x] refind and zfsbootmenu
   - [x] network, dns
   - [ ] ntp
+  - [ ] periodic zfs scrub
 - [ ] port arch-config playbook + git hook ansible-playbook --syntax-check
   - [ ] README init install git + ansible
   - [ ] create package requests for missings
