@@ -22,14 +22,14 @@
     # https://github.com/kubernetes-sigs/krew
 
 - name: copy subuid files for podman rootless
-  template:
-    src: subuid.j2
+  copy:
     dest: /etc/subuid
+    content: "{{ user }}:100000:65536"
 
 - name: copy subgid files for podman rootless
-  template:
-    src: subgid.j2
+  copy:
     dest: /etc/subgid
+    content: "{{ user }}:100000:65536"
 
 - name: disable zfs overlay storage not supported by podman
   lineinfile:
