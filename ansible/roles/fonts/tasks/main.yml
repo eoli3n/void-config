@@ -37,7 +37,7 @@
 
 - name: stat cabin font
   stat:
-    path: /usr/local/share/fonts/
+    path: /usr/local/share/fonts/Cabin-Regular.otf
   register: cabin
 
 - name: create font dir
