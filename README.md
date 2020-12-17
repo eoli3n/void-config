@@ -35,8 +35,10 @@ TODO:
 - borgmatic config
 
 PACKAGES:
-- [ ] x2goclient: https://github.com/void-linux/void-packages/issues/27223
+- [ ] x2goclient:
+  - https://github.com/void-linux/void-packages/issues/2091
+  - https://github.com/void-linux/void-packages/issues/9779
 - [ ] tiny-irc-client: https://github.com/void-linux/void-packages/issues/27180
 - [ ] swaylock-fancy: https://github.com/void-linux/void-packages/issues/27224
 - [ ] python3-pre-commit: https://github.com/void-linux/void-packages/issues/27225
-- [ ] ovmf: https://github.com/void-linux/void-packages/issues/27229
+- [ ] ovmf: https://github.com/void-linux/void-packages/pull/17225
