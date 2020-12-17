@@ -17,7 +17,8 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
   - [x] system install
   - [x] refind and zfsbootmenu
   - [x] network, dns
-  - [ ] ntp
+  - [x] ntp with chrony
+  - [x] crond with cronie
   - [ ] periodic zfs scrub
 - [x] port arch-config playbook
   - [x] git hook ansible-playbook --syntax-check

@@ -34,6 +34,8 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   zfsbootmenu \
   efibootmgr \
   gummiboot \
+  chrony \
+  cronie \
   connman
 
 # Set hostname
@@ -44,8 +46,6 @@ echo "$hostname" > /mnt/etc/hostname
 cat >> /mnt/etc/sv/connmand/conf <<"EOF"
 OPTS="--nodnsproxy"
 EOF
-chroot /mnt ln -s /etc/sv/connmand /etc/runit/runsvdir/default/
-chroot /mnt ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
 
 # Configure DNS
 cat >> /mnt/etc/resolv.conf <<"EOF"
@@ -78,6 +78,13 @@ EOF
 
 ### Chroot
 chroot /mnt/ /bin/bash -e <<"EOF"
+
+  # Configure services
+  ln -s /etc/sv/chronyd /etc/runit/runsvdir/default/
+  ln -s /etc/sv/crond /etc/runit/runsvdir/default/
+  ln -s /etc/sv/connmand /etc/runit/runsvdir/default/
+  ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
+
   # Generates locales
   xbps-reconfigure -f glibc-locales
 
