@@ -20,6 +20,7 @@
       - asciinema # term recorder
       - expect # automation tool
       # System
+      - xtools # helpers for working with XBPS
       - htop # system monitor
       - net-tools # netstat
       - fwupd # dell firmware updater
