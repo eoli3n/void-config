@@ -66,5 +66,4 @@
       - android-tools # android dir sync
       # Theme
       - Adapta
-# - equilux-theme
 # - downgrade # package downgrader

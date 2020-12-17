@@ -1,4 +1,21 @@
 ---
+### Equilux
+
+- name: stat jetbrains font
+  stat:
+    path: /usr/share/fonts/TTF/JetBrainsMono-Regular.ttf
+  register: equilux
+
+- name: download equilux theme
+  unarchive:
+    src: https://github.com/ddnexus/equilux-theme/archive/equilux-v20181029.tar.gz
+    dest: /tmp/
+  when: equilux.stat.islnk is not defined
+
+- name: install equilux theme
+  shell: bash /tmp/install.sh -d /usr/share/themes
+  when: equilux.stat.islnk is not defined
+
 ### Jetbrains
 
 - name: stat jetbrains font
