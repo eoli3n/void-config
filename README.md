@@ -32,3 +32,7 @@ issues:
 
 TODO:
 - borgmatic config
+
+PACKAGES:
+- x2goclient : https://github.com/void-linux/void-packages/issues/27223
+- tiny-irc-client : https://github.com/void-linux/void-packages/issues/27180
