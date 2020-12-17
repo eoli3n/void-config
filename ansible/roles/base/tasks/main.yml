@@ -35,6 +35,7 @@
       - nethogs # net "top"
       - openssh
       - sshpass # allow ansible -k
+      - keychain # ssh-agent wrapper
       - wget # downloader
       - bind-utils # dns tools
       - openbsd-netcat # network utility
