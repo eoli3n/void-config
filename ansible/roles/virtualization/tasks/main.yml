@@ -1,0 +1,25 @@
+---
+- name: install virt packages
+  community.general.xbps:
+    name: '{{ item }}'
+  loop:
+    - qemu
+    - libvirt
+    - virt-manager
+    - ebtables
+    - dnsmasq
+    - ovmf
+    - vagrant
+  notify: restart libvirt
+
+- name: add user to libvirt group
+  user:
+    name: '{{user}}'
+    groups: libvirt
+    append: yes
+
+- name: enable nested virtualization
+  copy:
+    dest: /etc/modprobe.d/kvm.conf
+    content: |
+      options kvm_intel nested=1

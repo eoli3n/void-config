@@ -1,0 +1,6 @@
+---
+- name: restart libvirt
+  community.general.runit:
+    name: libvirtd
+    enabled: yes
+    state: restarted
