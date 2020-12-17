@@ -18,8 +18,9 @@
       - xdg-user-dirs
       # Video
       - mesa # DRI 3D acceleration
+      - mesa-dri # DRI 3D acceleration
       - mesa-demos # glxgears command
-      - intel-media-driver # intel driver
+      - intel-media-driver # intel driver iHD
       - libva-utils # hardware video acceleration
       # Steam
       - mesa-vulkan-intel

@@ -20,6 +20,7 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
   - [x] ntp with chrony
   - [x] crond with cronie
   - [ ] periodic zfs scrub
+  - [ ] tlp: https://docs.voidlinux.org/config/power-management.html
 - [x] port arch-config playbook
   - [x] git hook ansible-playbook --syntax-check
   - [x] create package requests for missings
