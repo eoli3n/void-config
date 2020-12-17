@@ -14,6 +14,7 @@
       - wl-clipboard # clipboard manager
       - brightnessctl # brightness manager
       - qt5-wayland # enable qt5 wayland backend
+      - libappindicator # tray sway
       - swayidle
       - xdg-user-dirs
       # Video
