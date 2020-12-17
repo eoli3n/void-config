@@ -1,13 +1,11 @@
 ---
 - hosts: all
   become: yes
-
   vars:
     user: user
     shell: /usr/bin/fish
 
   pre_tasks:
-
     - name: Enable multilib
       community.general.xbps:
         name:
