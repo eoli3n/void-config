@@ -14,7 +14,7 @@
   when: equilux.stat.islnk is not defined
 
 - name: install equilux theme
-  shell: bash /tmp/install.sh -d /usr/share/themes
+  shell: bash /tmp/equilux-theme-equilux-v20181029/install.sh -d /usr/share/themes
   when: equilux.stat.islnk is not defined
 
 ### Jetbrains
