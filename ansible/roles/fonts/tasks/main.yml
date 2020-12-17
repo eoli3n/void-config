@@ -1,0 +1,39 @@
+---
+- name: create font dir
+  become: no
+  file:
+    path: ~/.local/share/fonts
+    state: directory
+
+- name: download jetbrains font
+  become: no
+  unarchive:
+    src: https://download.jetbrains.com/fonts/JetBrainsMono-2.001.zip
+    dest: /tmp/jetbrains/
+    remote_src: yes
+
+- name: install jetbrains font
+  become: no
+  copy:
+    src: '{{ item }}'
+    dest: ~/.local/share/fonts/
+    remote_src: yes
+    creates: ~/.local/share/fonts/JetBrainsMono-Regular.ttf
+  with_fileglob: /tmp/jetbrains/ttf/*
+
+- name: download imparallari-cabin font
+  become: no
+  unarchive:
+    src: https://codeload.github.com/impallari/Cabin/zip/master
+    dest: /tmp/cabin/
+    remote_src: yes
+    creates: ~/.local/share/fonts/JetBrainsMono-Regular.ttf
+
+- name: install imparallari-cabin font
+  become: no
+  copy:
+    src: '{{ item }}'
+    dest: ~/.local/share/fonts/
+    remote_src: yes
+    creates: ~/.local/share/fonts/JetBrainsMono-Regular.ttf
+  with_fileglob: /tmp/cabin/Cabin-master/fonts/OTF/*

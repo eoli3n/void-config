@@ -2,9 +2,12 @@
 - name: install packages
   community.general.xbps:
     name:
-      - starship # shell prompt
+      # Fonts
       - noto-fonts-ttf # unicode font
+      - nerd-fonts # Iconic font aggregator
+        #- font-awesome5 # Icon font
       # Shell
+      - starship # shell prompt
       - fish-shell # powerful shell
       - exa # powerful ls
       - bc # maths
@@ -52,9 +55,6 @@
       - oath-toolkit # otp tool
 #- arch-audit # list vulnerabilities
 #- reflector # mirror sorter
-#- ttf-impallari-cabin-font # cv font
-#- ttf-jetbrains-mono # main font
-#- python-pre-commit # pre-commit hook manager
 
 - name: Configure root
   user:
