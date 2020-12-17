@@ -64,6 +64,7 @@
       - connman-gtk # connman gtk gui
       - gnome-ssh-askpass # ssh askpass gui
       - android-tools # android dir sync
-# - adapta-gtk-theme #https://github.com/Alexays/Waybar/issues/515
+      # Theme
+      - Adapta
 # - equilux-theme
 # - downgrade # package downgrader
