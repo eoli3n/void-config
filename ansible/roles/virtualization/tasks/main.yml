@@ -7,7 +7,6 @@
     - libvirt
     - virt-manager
     - dnsmasq
-    - ovmf
     - vagrant
   notify: restart libvirt
 
