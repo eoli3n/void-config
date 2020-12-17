@@ -15,16 +15,10 @@
           - void-repo-multilib-nonfree
 
   roles:
-    #    - { role: pacman, tags: pacman }
-    #- { role: aur, tags: aur }
     - { role: base, tags: base }
     - { role: desktop, tags: desktop }
     - { role: flatpak, tags: flatpak }
     - { role: appimage, tags: appimage }
     - { role: fonts, tags: fonts }
-    #- { role: virtualization, tags: virtualization }
-    #- { role: containers, tags: containers }
-    #- { role: recovery, tags: recovery }
-    #- { role: zfs/systemd-boot-zectl, tags: boot }
-    #- { role: zfs/initramfs, tags: boot }
-    #- { role: zfs/systemd-scrub-trim, tags: zfs }
+    - { role: virtualization, tags: virtualization }
+    - { role: containers, tags: containers }

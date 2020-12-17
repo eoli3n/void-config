@@ -5,7 +5,7 @@
       # Fonts
       - noto-fonts-ttf # unicode font
       - nerd-fonts # Iconic font aggregator
-        #- font-awesome5 # Icon font
+      #- font-awesome5 # Icon font
       # Shell
       - starship # shell prompt
       - fish-shell # powerful shell

@@ -1,6 +1,6 @@
 ---
 - name: install containers packages
-  general.community.xbps:
+  community.general.xbps:
     name: '{{ item }}'
   loop:
     - docker          # high level container runtime
