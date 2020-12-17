@@ -1,0 +1,20 @@
+---
+- name: install pip packages
+  pip:
+    name:
+      - pre-commit
+    executable: pip3
+
+- name: download kubectx
+  git:
+    repo: https://github.com/ahmetb/kubectx
+    dest: /opt/kubectx
+
+- name: install kubectx and kubens
+  file:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    state: link
+  loop:
+    - {src: /opt/kubectx/kubectx, dest: /usr/local/bin/kubectx}
+    - {src: /opt/kubectx/kubens, dest: /usr/local/bin/kubens}
