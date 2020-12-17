@@ -26,7 +26,7 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
     - [x] workaround kubectx kubens pre-commit
   - [ ] README init install git + ansible
   - [ ] create issue wrong missing package reported by xbps module: https://github.com/ansible-collections/community.general/issues
-  - [ ] move xbps tasks from loop to name: list
+  - [x] move xbps tasks from loop to name: list
 - [ ] travis/github actions on playbook run
 
 issues:

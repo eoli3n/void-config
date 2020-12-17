@@ -1,68 +1,66 @@
 ---
 - name: install desktop packages
   community.general.xbps:
-    name: '{{ item }}'
-  ignore_errors: true
-  loop:
-    # DE
-    - sway # wayland wm and compositor
-    - swaybg # background manager for sway
-    - xorg-server-xwayland # xorg backend for wayland
-    - Waybar # bar for sway
-    - mako # notification daemon
-    - kanshi # autorandr for wayland
-    - grim # screenshots
-    - slurp # region selector
-    - wl-clipboard # clipboard manager
-    - brightnessctl # brightness manager
-    - swayidle
-    - xdg-user-dirs
-    # Video
-    - mesa # DRI 3D acceleration
-    - mesa-demos # glxgears command
-    - intel-media-driver # intel driver
-    - libva-utils # hardware video acceleration
-    # Steam
-    - mesa-vulkan-intel
-    - mesa-vulkan-intel-32bit
-    # Audio
-    - pulseaudio # audio server
-    - alsa-plugins-pulseaudio # alsa to pulseaudio
-    - pavucontrol # pulseaudio ui
-    - pamixer # alsa ui
-    - alsa-utils # alsa toolbox
-    # Graphical apps
-    - imv # img visualizer
-    - kitty # terminal emulator
-    - evince # pdf viewer
-    - firefox-i18n-fr # web browser
-    - gimp # img editor
-    - kolourpaint # img editor
-    - shotwell # photo manager
-    - libreoffice-i18n-fr # libreoffice suite fr
-    - lxappearance # theme manager
-    - mpv # video player
-    - Thunar # file manager
-    - openvpn
-    - playerctl # music player cli controller
-    - rdesktop # remote desktop client
-    - steam # games manager
-    - transmission-gtk # torrent downloader
-    - texlive-bin # latex
-    - texlive-core # latex
-    - texlive-latexextra # latex
-    - variety # random backgrounds
-    - papirus-icon-theme # icon theme
-    - youtube-dl
-    # EXAUR
-    - wdisplays # arandr for wayland
-    - wf-recorder # screen recorder for wayland
-    - grimshot # grim+slurp wrapper
-    - wofi # rofi for wayland
-    - wob # bars for wayland
-    - connman-gtk # connman gtk gui
-    - gnome-ssh-askpass # ssh askpass gui
-    - android-tools # android dir sync
+    name:
+      # DE
+      - sway # wayland wm and compositor
+      - swaybg # background manager for sway
+      - xorg-server-xwayland # xorg backend for wayland
+      - Waybar # bar for sway
+      - mako # notification daemon
+      - kanshi # autorandr for wayland
+      - grim # screenshots
+      - slurp # region selector
+      - wl-clipboard # clipboard manager
+      - brightnessctl # brightness manager
+      - swayidle
+      - xdg-user-dirs
+      # Video
+      - mesa # DRI 3D acceleration
+      - mesa-demos # glxgears command
+      - intel-media-driver # intel driver
+      - libva-utils # hardware video acceleration
+      # Steam
+      - mesa-vulkan-intel
+      - mesa-vulkan-intel-32bit
+      # Audio
+      - pulseaudio # audio server
+      - alsa-plugins-pulseaudio # alsa to pulseaudio
+      - pavucontrol # pulseaudio ui
+      - pamixer # alsa ui
+      - alsa-utils # alsa toolbox
+      # Graphical apps
+      - imv # img visualizer
+      - kitty # terminal emulator
+      - evince # pdf viewer
+      - firefox-i18n-fr # web browser
+      - gimp # img editor
+      - kolourpaint # img editor
+      - shotwell # photo manager
+      - libreoffice-i18n-fr # libreoffice suite fr
+      - lxappearance # theme manager
+      - mpv # video player
+      - Thunar # file manager
+      - openvpn
+      - playerctl # music player cli controller
+      - rdesktop # remote desktop client
+      - steam # games manager
+      - transmission-gtk # torrent downloader
+      - texlive-bin # latex
+      - texlive-core # latex
+      - texlive-latexextra # latex
+      - variety # random backgrounds
+      - papirus-icon-theme # icon theme
+      - youtube-dl
+      # EXAUR
+      - wdisplays # arandr for wayland
+      - wf-recorder # screen recorder for wayland
+      - grimshot # grim+slurp wrapper
+      - wofi # rofi for wayland
+      - wob # bars for wayland
+      - connman-gtk # connman gtk gui
+      - gnome-ssh-askpass # ssh askpass gui
+      - android-tools # android dir sync
 # - adapta-gtk-theme #https://github.com/Alexays/Waybar/issues/515
 # - equilux-theme
 # - downgrade # package downgrader
