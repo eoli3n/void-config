@@ -23,6 +23,7 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
   - [ ] README init install git + ansible
   - [ ] create package requests for missings
   - [ ] create issue wrong missing package reported by xbps module: https://github.com/ansible-collections/community.general/issues
+  - [ ] move xbps tasks from loop to name: list
 - [ ] travis/github actions on playbook run
 
 issues:
