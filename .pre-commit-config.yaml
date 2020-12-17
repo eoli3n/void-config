@@ -12,7 +12,6 @@ repos:
   hooks:
     - id: ansible-syntax-check
       name: Ansible syntax check
-      entry: ansible-playbook --syntax-check -i ansible/hosts
-      files: ansible/install.yml
-      types: [file]
+      entry: ansible-playbook --syntax-check -i ansible/hosts ansible/install.yml
+      types: [directory]
       language: system
