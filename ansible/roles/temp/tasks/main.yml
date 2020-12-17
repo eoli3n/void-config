@@ -3,6 +3,7 @@
   pip:
     name:
       - pre-commit
+    executable: /usr/bin/pip
 
 - name: download kubectx
   git:
