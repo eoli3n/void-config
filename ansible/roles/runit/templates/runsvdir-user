@@ -1,7 +1,7 @@
 #!/bin/sh
 
-export USER="<username>"
-export HOME="/home/<username>"
+export USER="{{ user }}"
+export HOME="/home/{{ user }}"
 
 groups="$(id -Gn "$USER" | tr ' ' ':')"
 svdir="$HOME/.config/service"

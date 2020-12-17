@@ -1,6 +1,6 @@
 ---
 - name: per user services
-  copy:
-    src: runsvdir-user
-    dest: /etc/sv/
+  template:
+    src: runsvdir-user.j2
+    dest: /etc/sv/runsvdir-user
   notify: enable runit-user
