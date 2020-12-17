@@ -19,7 +19,8 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
   - [x] network, dns
   - [ ] ntp
   - [ ] periodic zfs scrub
-- [ ] port arch-config playbook + git hook ansible-playbook --syntax-check
+- [x] port arch-config playbook
+  - [x] git hook ansible-playbook --syntax-check
   - [ ] README init install git + ansible
   - [ ] create package requests for missings
   - [ ] create issue wrong missing package reported by xbps module: https://github.com/ansible-collections/community.general/issues
