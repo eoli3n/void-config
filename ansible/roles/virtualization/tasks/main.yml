@@ -6,7 +6,6 @@
     - qemu
     - libvirt
     - virt-manager
-    - ebtables
     - dnsmasq
     - ovmf
     - vagrant
