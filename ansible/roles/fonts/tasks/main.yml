@@ -3,7 +3,7 @@
 
 - name: stat jetbrains font
   stat:
-    path: /usr/local/share/fonts/JetBrainsMono-Regular.ttf
+    path: /usr/local/share/fonts/TTF/JetBrainsMono-Regular.ttf
   register: jetbrains
 
 - name: create font dir
@@ -32,7 +32,7 @@
 
 - name: stat cabin font
   stat:
-    path: /usr/local/share/fonts/Cabin-Regular.otf
+    path: /usr/local/share/fonts/OTF/Cabin-Regular.otf
   register: cabin
 
 - name: create font dir
