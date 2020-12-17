@@ -5,10 +5,10 @@
   ignore_errors: true
   loop:
     # DE
-    - sway
-    - swaybg
-    - xorg-server-xwayland
-    - Waybar
+    - sway # wayland wm and compositor
+    - swaybg # background manager for sway
+    - xorg-server-xwayland # xorg backend for wayland
+    - Waybar # bar for sway
     - mako # notification daemon
     - kanshi # autorandr for wayland
     - grim # screenshots
@@ -18,25 +18,24 @@
     - swayidle
     - xdg-user-dirs
     # Video
-    - mesa
-    - mesa-demos
-    - lib32-virtualgl
+    - mesa # DRI 3D acceleration
+    - mesa-demos # glxgears command
+    - intel-media-driver # intel driver
+    - libva-utils # hardware video acceleration
+    # Steam
     - mesa-vulkan-intel
     - mesa-vulkan-intel-32bit
-    - intel-media-driver
-    - libva-utils
     # Audio
-    - pulseaudio
-    - alsa-plugins-pulseaudio
-    - pavucontrol
-    - pamixer
-    - alsa-utils
+    - pulseaudio # audio server
+    - alsa-plugins-pulseaudio # alsa to pulseaudio
+    - pavucontrol # pulseaudio ui
+    - pamixer # alsa ui
+    - alsa-utils # alsa toolbox
     # Graphical apps
     - imv # img visualizer
     - kitty # terminal emulator
     - evince # pdf viewer
-    - firefox
-    - firefox-i18n-fr
+    - firefox-i18n-fr # web browser
     - gimp # img editor
     - kolourpaint # img editor
     - shotwell # photo manager
