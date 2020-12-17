@@ -1,9 +1,4 @@
 ---
-- name: create font dir
-  file:
-    path: /usr/local/share/fonts
-    state: directory
-
 ### Jetbrains
 
 - name: stat jetbrains font
@@ -28,7 +23,7 @@
 - name: install jetbrains font
   copy:
     src: '{{ item }}'
-    dest: /usr/local/share/fonts/
+    dest: /usr/local/share/fonts/TTF/
     remote_src: yes
   with_fileglob: /tmp/jetbrains/ttf/*
   when: jetbrains.stat.islnk is not defined
@@ -57,7 +52,7 @@
 - name: install imparallari-cabin font
   copy:
     src: '{{ item }}'
-    dest: /usr/local/share/fonts/
+    dest: /usr/local/share/fonts/OTF/
     remote_src: yes
   with_fileglob: /tmp/cabin/Cabin-master/fonts/OTF/*
   when: cabin.stat.islnk is not defined
