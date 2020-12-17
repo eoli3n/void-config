@@ -2,7 +2,7 @@
 - name: create font dir
   become: no
   file:
-    path: ~/.local/share/fonts
+    path: '{{ item }}'
     state: directory
   loop:
     - ~/.local/share/fonts
