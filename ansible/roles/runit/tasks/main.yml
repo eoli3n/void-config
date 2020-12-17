@@ -1,0 +1,6 @@
+---
+- name: per user services
+  copy:
+    src: runsvdir-user
+    dest: /etc/sv/
+  notify: enable runit-user

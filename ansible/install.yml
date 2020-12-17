@@ -18,6 +18,7 @@
     - { role: flatpak, tags: flatpak }
     - { role: appimage, tags: appimage }
     - { role: temp, tags: temp }
+    - { role: runit, tags: runit }
     - { role: fonts, tags: fonts }
     - { role: virtualization, tags: virtualization }
     - { role: containers, tags: containers }

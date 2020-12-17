@@ -1,0 +1,6 @@
+---
+- name: enable runit-user
+  community.general.runit:
+    name: runsvdir-user
+    enabled: yes
+    state: restarted
