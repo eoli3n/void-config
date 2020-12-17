@@ -20,6 +20,7 @@
     - { role: base, tags: base }
     - { role: desktop, tags: desktop }
     - { role: flatpak, tags: flatpak }
+    - { role: appimage, tags: appimage }
     #- { role: virtualization, tags: virtualization }
     #- { role: containers, tags: containers }
     #- { role: recovery, tags: recovery }

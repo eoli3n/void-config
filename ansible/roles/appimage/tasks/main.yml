@@ -1,0 +1,6 @@
+---
+- name: install molotov appimage
+  get_url:
+    url: http://desktop-auto-upgrade.molotov.tv/linux/4.4.0/molotov.AppImage
+    dest: /usr/local/bin/
+    mode: 0755
