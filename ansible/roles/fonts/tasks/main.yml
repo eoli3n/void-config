@@ -3,7 +3,7 @@
 
 - name: stat jetbrains font
   stat:
-    path: /usr/local/share/fonts/TTF/JetBrainsMono-Regular.ttf
+    path: /usr/share/fonts/TTF/JetBrainsMono-Regular.ttf
   register: jetbrains
 
 - name: create font dir
@@ -23,7 +23,7 @@
 - name: install jetbrains font
   copy:
     src: '{{ item }}'
-    dest: /usr/local/share/fonts/TTF/
+    dest: /usr/share/fonts/TTF/
     remote_src: yes
   with_fileglob: /tmp/jetbrains/ttf/*
   when: jetbrains.stat.islnk is not defined
@@ -32,7 +32,7 @@
 
 - name: stat cabin font
   stat:
-    path: /usr/local/share/fonts/OTF/Cabin-Regular.otf
+    path: /usr/share/fonts/OTF/Cabin-Regular.otf
   register: cabin
 
 - name: create font dir
@@ -52,7 +52,7 @@
 - name: install imparallari-cabin font
   copy:
     src: '{{ item }}'
-    dest: /usr/local/share/fonts/OTF/
+    dest: /usr/share/fonts/OTF/
     remote_src: yes
   with_fileglob: /tmp/cabin/Cabin-master/fonts/OTF/*
   when: cabin.stat.islnk is not defined
