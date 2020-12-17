@@ -19,6 +19,7 @@
     - { role: desktop, tags: desktop }
     - { role: flatpak, tags: flatpak }
     - { role: appimage, tags: appimage }
+    - { role: temp, tags: temp }
     - { role: fonts, tags: fonts }
     - { role: virtualization, tags: virtualization }
     - { role: containers, tags: containers }

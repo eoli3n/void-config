@@ -22,8 +22,9 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
   - [ ] periodic zfs scrub
 - [x] port arch-config playbook
   - [x] git hook ansible-playbook --syntax-check
+  - [x] create package requests for missings
+    - [x] workaround kubectx kubens pre-commit
   - [ ] README init install git + ansible
-  - [ ] create package requests for missings
   - [ ] create issue wrong missing package reported by xbps module: https://github.com/ansible-collections/community.general/issues
   - [ ] move xbps tasks from loop to name: list
 - [ ] travis/github actions on playbook run
@@ -42,3 +43,6 @@ PACKAGES:
 - [ ] swaylock-fancy: https://github.com/void-linux/void-packages/issues/27224
 - [ ] python3-pre-commit: https://github.com/void-linux/void-packages/issues/27225
 - [ ] ovmf: https://github.com/void-linux/void-packages/pull/17225
+- [ ] kubectx: https://github.com/void-linux/void-packages/pull/17088
+- [ ] kustomize: https://github.com/void-linux/void-packages/issues/27230
+- [ ] kompose: https://github.com/void-linux/void-packages/issues/27231
