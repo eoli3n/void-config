@@ -4,6 +4,10 @@
   file:
     path: ~/.local/share/fonts
     state: directory
+  loop:
+    - ~/.local/share/fonts
+    - /tmp/jetbrains
+    - /tmp/cabin
 
 - name: download jetbrains font
   become: no
