@@ -16,9 +16,9 @@
     - terraform       # infrastructure as code
     # https://github.com/kubernetes-sigs/krew
     #- kompose-bin     # docker-compose to manifest convertor
-    - k3s-bin         # Lightweight Kubernetes in a signle binary
+    - k3s         # Lightweight Kubernetes in a signle binary
     - stern           # tail multiple pods on Kubernetes
-    - kubespy         # observe Kubernetes resources in real time
+    #- kubespy         # observe Kubernetes resources in real time
     - podman-compose  # mutli-container podman apps
 
 - name: copy subuid files for podman rootless
