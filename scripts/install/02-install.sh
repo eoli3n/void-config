@@ -54,6 +54,17 @@ nameserver 1.1.1.1
 nameserver 9.9.9.9
 EOF
 
+# Configure connman
+mkdir -p /mnt/etc/connman
+cat > /mnt/etc/connman/main.conf <<"EOF"
+[General]
+PreferredTechnologies=ethernet,wifi
+NetworkInterfaceBlacklist = vmnet,vboxnet,virbr,ifb,ve-,vb-,docker,veth,eth,wlan,vnet
+AllowHostnameUpdates = false
+AllowDomainnameUpdates = false
+SingleConnectedTechnology = true
+EOF
+
 # Prepare locales and keymap
 print 'Prepare locales and keymap'
 echo 'KEYMAP=fr' > /mnt/etc/vconsole.conf
