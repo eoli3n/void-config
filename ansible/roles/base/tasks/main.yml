@@ -16,6 +16,7 @@
       - asciinema # term recorder
       - expect # automation tool
       # System
+      - openresolv # resolv conf manager
       - xtools # helpers for working with XBPS
       - htop # system monitor
       - net-tools # netstat

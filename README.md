@@ -39,6 +39,10 @@ issues:
 
 TODO:
 - borgmatic config
+- install openresolv
+
+TOFIX:
+- --nodnsproxy for connmanctl does not work
 
 PACKAGES:
 - [ ] x2goclient:
