@@ -37,6 +37,7 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   chrony \
   cronie \
   elogind \
+  socklog-void \
   iwd \
   dhcpcd \
   git \
@@ -91,12 +92,14 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   ln -s /etc/sv/crond /etc/runit/runsvdir/default/
   ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
   ln -s /etc/sv/elogind /etc/runit/runsvdir/default/
+  ln -s /etc/sv/socklog-unix /etc/runit/runsvdir/default/
+  ln -s /etc/sv/nanoklogd /etc/runit/runsvdir/default/
 
   # Generates locales
   xbps-reconfigure -f glibc-locales
 
   # Add user
-  useradd -m user -G network
+  useradd -m user -G network,wheel
 
   # Generate fstab excluding zfs parts
   egrep -v "proc|sys|devtmpfs|pts|zfs" /proc/mounts > /etc/fstab
