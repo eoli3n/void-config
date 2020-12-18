@@ -19,6 +19,7 @@
     - { role: appimage, tags: appimage }
     - { role: temp, tags: temp }
     - { role: runit, tags: runit }
+    - { role: power, tags: power }
     - { role: themes-fonts, tags: themes-fonts }
     - { role: virtualization, tags: virtualization }
     - { role: containers, tags: containers }

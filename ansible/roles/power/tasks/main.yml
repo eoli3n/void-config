@@ -1,0 +1,11 @@
+---
+- name: detect laptop
+  stat:
+    path: /sys/module/battery
+  register: laptop
+
+- name: install tlp
+  community.general.xbps:
+    name: tlp
+  notify: restart tlp
+  when: laptop.stat.islnk is defined

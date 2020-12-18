@@ -1,0 +1,6 @@
+---
+- name: restart tlp
+  community.general.xbps:
+    name: tlp
+    enabled: yes
+    state: restarted
