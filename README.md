@@ -40,6 +40,7 @@ issues:
 TODO:
 - borgmatic config
 - install openresolv
+- backups to cronie for arch/void
 
 TOFIX:
 - openresolv for vpn

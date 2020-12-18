@@ -37,32 +37,23 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   chrony \
   cronie \
   elogind \
-  connman
+  iwd \
+  dhcpcd
 
 # Set hostname
 read -r -p 'Please enter hostname : ' hostname
 echo "$hostname" > /mnt/etc/hostname
 
-# Configure network
-cat >> /mnt/etc/sv/connmand/conf <<"EOF"
-OPTS="--nodnsproxy"
+# Configure iwd
+cat > /mnt/etc/iwd/main.conf <<"EOF"
+[General]
+UseDefaultInterface=true
 EOF
 
 # Configure DNS
 cat >> /mnt/etc/resolv.conf <<"EOF"
 nameserver 1.1.1.1
 nameserver 9.9.9.9
-EOF
-
-# Configure connman
-mkdir -p /mnt/etc/connman
-cat > /mnt/etc/connman/main.conf <<"EOF"
-[General]
-PreferredTechnologies=ethernet,wifi
-NetworkInterfaceBlacklist = vmnet,vboxnet,virbr,ifb,ve-,vb-,docker,veth,eth,wlan,vnet
-AllowHostnameUpdates = false
-AllowDomainnameUpdates = false
-SingleConnectedTechnology = true
 EOF
 
 # Prepare locales and keymap
@@ -92,9 +83,10 @@ EOF
 chroot /mnt/ /bin/bash -e <<"EOF"
 
   # Configure services
+  ln -s /etc/sv/dhcpcd-eth0 /etc/runit/runsvdir/default/
+  ln -s /etc/sv/iwd /etc/runit/runsvdir/default/
   ln -s /etc/sv/chronyd /etc/runit/runsvdir/default/
   ln -s /etc/sv/crond /etc/runit/runsvdir/default/
-  ln -s /etc/sv/connmand /etc/runit/runsvdir/default/
   ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
   ln -s /etc/sv/elogind /etc/runit/runsvdir/default/
 
