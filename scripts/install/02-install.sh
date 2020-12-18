@@ -54,9 +54,9 @@ UseDefaultInterface=true
 EOF
 
 # Configure DNS
-cat >> /mnt/etc/resolv.conf <<"EOF"
-nameserver 1.1.1.1
-nameserver 9.9.9.9
+cat >> /mnt/etc/resolvconf.conf <<"EOF"
+resolv_conf=/etc/resolv.conf
+name_servers="1.1.1.1 9.9.9.9"
 EOF
 
 # Prepare locales and keymap
@@ -84,6 +84,8 @@ EOF
 
 ### Chroot
 chroot /mnt/ /bin/bash -e <<"EOF"
+  # Configure DNS
+  resolvconf -u
 
   # Configure services
   ln -s /etc/sv/dhcpcd-eth0 /etc/runit/runsvdir/default/
@@ -99,11 +101,10 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   xbps-reconfigure -f glibc-locales
 
   # Add user
-  useradd -m user -G network,wheel
+  useradd -m user -G network,wheel,socklog
 
   # Generate fstab excluding zfs parts
   egrep -v "proc|sys|devtmpfs|pts|zfs" /proc/mounts > /etc/fstab
-
 EOF
 
 # Configure /tmp
