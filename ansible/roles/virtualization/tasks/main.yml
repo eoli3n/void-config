@@ -5,6 +5,7 @@
       - qemu
       - libvirt
       - virt-manager
+      - virt-manager-tools
       - dnsmasq
       - vagrant
   notify: restart libvirt
