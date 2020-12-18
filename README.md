@@ -29,6 +29,9 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
   - [ ] create issue wrong missing package reported by xbps module: https://github.com/ansible-collections/community.general/issues
   - [x] move xbps tasks from loop to name: list
   - [ ] fix GDK_BACKEND=x11 lxappearance
+  - [ ] xbps role with hooks: https://github.com/void-linux/xbps/issues/304
+    - [ ] pre upgrade snapshot hook
+    - [ ] post upgrade flatpak upgrade hook
 - [ ] travis/github actions on playbook run
 
 issues:
