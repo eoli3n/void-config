@@ -45,6 +45,7 @@
       - gimp # img editor
       - kolourpaint # img editor
       - shotwell # photo manager
+      - libreoffice # libreoffice
       - libreoffice-i18n-fr # libreoffice suite fr
       - lxappearance # theme manager
       - mpv # video player
