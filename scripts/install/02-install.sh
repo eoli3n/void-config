@@ -38,7 +38,9 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   cronie \
   elogind \
   iwd \
-  dhcpcd
+  dhcpcd \
+  git \
+  ansible
 
 # Set hostname
 read -r -p 'Please enter hostname : ' hostname
