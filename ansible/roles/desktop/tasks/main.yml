@@ -12,6 +12,11 @@
       - grim # screenshots
       - slurp # region selector
       - wl-clipboard # clipboard manager
+      - wdisplays # arandr for wayland
+      - wf-recorder # screen recorder for wayland
+      - grimshot # grim+slurp wrapper
+      - wofi # rofi for wayland
+      - wob # bars for wayland
       - brightnessctl # brightness manager
       - qt5-wayland # enable qt5 wayland backend
       - libappindicator # tray sway
@@ -55,15 +60,7 @@
       - variety # random backgrounds
       - papirus-icon-theme # icon theme
       - youtube-dl
-      # EXAUR
-      - wdisplays # arandr for wayland
-      - wf-recorder # screen recorder for wayland
-      - grimshot # grim+slurp wrapper
-      - wofi # rofi for wayland
-      - wob # bars for wayland
       - connman-gtk # connman gtk gui
       - gnome-ssh-askpass # ssh askpass gui
       - android-tools # android dir sync
-      # Theme
-      - Adapta
 # - downgrade # package downgrader

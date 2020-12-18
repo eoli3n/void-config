@@ -1,4 +1,13 @@
 ---
+- name: install packages
+  community.general.xbps:
+    name:
+      # Fonts
+      - noto-fonts-ttf # unicode font
+      - nerd-fonts # Iconic font aggregator
+      - font-awesome5 # Icon font
+      - Adapta # theme for tiny waybar
+
 ### Equilux
 
 - name: stat equilux theme
