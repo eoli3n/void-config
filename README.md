@@ -42,7 +42,8 @@ TODO:
 - install openresolv
 
 TOFIX:
-- --nodnsproxy for connmanctl does not work
+- openresolv for vpn
+- openresolv for connman ?
 
 PACKAGES:
 - [ ] x2goclient:
