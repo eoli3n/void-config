@@ -40,6 +40,7 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   socklog-void \
   iwd \
   dhcpcd \
+  openresolv \
   git \
   ansible
 
@@ -57,6 +58,11 @@ EOF
 cat >> /mnt/etc/resolvconf.conf <<"EOF"
 resolv_conf=/etc/resolv.conf
 name_servers="1.1.1.1 9.9.9.9"
+EOF
+
+# Enable ip forward
+cat > /mnt/etc/sysctl.conf <<"EOF"
+net.ipv4.ip_forward = 1
 EOF
 
 # Prepare locales and keymap
@@ -83,6 +89,7 @@ install_items+=" /etc/zfs/zroot.key "
 EOF
 
 ### Chroot
+print 'Chroot to configure services'
 chroot /mnt/ /bin/bash -e <<"EOF"
   # Configure DNS
   resolvconf -u
@@ -101,7 +108,7 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   xbps-reconfigure -f glibc-locales
 
   # Add user
-  useradd -m user -G network,wheel,socklog
+  useradd -m user -G network,wheel,socklog,video
 
   # Generate fstab excluding zfs parts
   egrep -v "proc|sys|devtmpfs|pts|zfs" /proc/mounts > /etc/fstab

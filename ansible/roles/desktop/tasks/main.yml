@@ -22,6 +22,7 @@
       - libappindicator # tray sway
       - swayidle
       - xdg-user-dirs
+      - glfw-wayland
       # Video
       - mesa # DRI 3D acceleration
       - mesa-dri # DRI 3D acceleration

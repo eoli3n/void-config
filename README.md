@@ -19,8 +19,8 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
   - [x] network, dns
   - [x] ntp with chrony
   - [x] crond with cronie
+  - [x] tlp: https://docs.voidlinux.org/config/power-management.html
   - [ ] periodic zfs scrub
-  - [ ] tlp: https://docs.voidlinux.org/config/power-management.html
 - [x] port arch-config playbook
   - [x] git hook ansible-playbook --syntax-check
   - [x] create package requests for missings
@@ -38,13 +38,10 @@ issues:
 - https://sourceforge.net/p/refind/discussion/general/thread/4dfcdfdd16/
 
 TODO:
-- borgmatic config
-- install openresolv
 - backups to cronie for arch/void
 
 TOFIX:
 - openresolv for vpn
-- openresolv for connman ?
 
 PACKAGES:
 - [ ] x2goclient:
