@@ -13,35 +13,26 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 - [x] virt-install scripts
 - [x] git pre-commit hooks shellcheck
 - [x] install scripts
-  - [x] zfs parts
-  - [x] system install
-  - [x] refind and zfsbootmenu
-  - [x] network, dns
-  - [x] ntp with chrony
-  - [x] crond with cronie
-  - [x] tlp: https://docs.voidlinux.org/config/power-management.html
   - [ ] periodic zfs scrub
 - [x] port arch-config playbook
-  - [x] git hook ansible-playbook --syntax-check
-  - [x] create package requests for missings
-    - [x] workaround kubectx kubens pre-commit
   - [ ] README init install git + ansible
   - [ ] create issue wrong missing package reported by xbps module: https://github.com/ansible-collections/community.general/issues
-  - [x] move xbps tasks from loop to name: list
   - [ ] fix GDK_BACKEND=x11 lxappearance
-  - [ ] xbps role with hooks: https://github.com/void-linux/xbps/issues/304
-    - [ ] pre upgrade snapshot hook
-    - [ ] post upgrade flatpak upgrade hook
 - [ ] travis/github actions on playbook run
 
-issues:
-- https://sourceforge.net/p/refind/discussion/general/thread/4dfcdfdd16/
+ISSUES:
+- [ ] xbps role with hooks: https://github.com/void-linux/xbps/issues/304
+  - [ ] pre upgrade snapshot hook
+  - [ ] post upgrade flatpak upgrade hook
 
 TODO:
-- backups to cronie for arch/void
+- [ ] backups to cronie for arch/void
 
-TOFIX:
+TOTEST:
 - openresolv for vpn
+- qemu/kvm
+- podman
+- iwd
 
 PACKAGES:
 - [ ] x2goclient:
