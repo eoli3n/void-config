@@ -24,6 +24,7 @@ ISSUES:
 - [ ] xbps role with hooks: https://github.com/void-linux/xbps/issues/304
   - [ ] pre upgrade snapshot hook
   - [ ] post upgrade flatpak upgrade hook
+- [ ] keyboard not released with swaymsg exit: https://github.com/void-linux/void-packages/issues/27132
 
 TODO:
 - [ ] backups to cronie for arch/void
