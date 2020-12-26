@@ -5,6 +5,7 @@
       # Shell
       - starship # shell prompt
       - fish-shell # powerful shell
+      - go # programming language
       - exa # powerful ls
       - bc # maths
       - jq # json processor
