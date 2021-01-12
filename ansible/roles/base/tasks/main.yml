@@ -16,6 +16,7 @@
       - screen # terminal multiplexer
       - asciinema # term recorder
       - expect # automation tool
+      - glow # render markdown cli
       # System
       - openresolv # resolv conf manager
       - xtools # helpers for working with XBPS
