@@ -27,7 +27,7 @@ ISSUES:
 - [ ] keyboard not released with swaymsg exit: https://github.com/void-linux/void-packages/issues/27132
 
 TODO:
-- [ ] backups to cronie for arch/void
+- [x] backups to cronie for arch/void
 
 TOTEST:
 - openresolv for vpn
@@ -36,13 +36,16 @@ TOTEST:
 - iwd
 
 PACKAGES:
-- [ ] x2goclient:
-  - https://github.com/void-linux/void-packages/issues/2091
-  - https://github.com/void-linux/void-packages/issues/9779
-- [ ] tiny-irc-client: https://github.com/void-linux/void-packages/issues/27180
 - [ ] swaylock-fancy: https://github.com/void-linux/void-packages/issues/27224
-- [ ] python3-pre-commit: https://github.com/void-linux/void-packages/issues/27225
+- [x] python3-pre-commit: https://github.com/void-linux/void-packages/issues/27225
 - [ ] ovmf: https://github.com/void-linux/void-packages/pull/17225
 - [ ] kubectx: https://github.com/void-linux/void-packages/pull/17088
 - [ ] kustomize: https://github.com/void-linux/void-packages/issues/27230
 - [ ] kompose: https://github.com/void-linux/void-packages/issues/27231
+- [ ] tutanota: appimage
+
+MERGE:
+- [ ] x2goclient:
+  - https://github.com/void-linux/void-packages/issues/2091
+  - https://github.com/void-linux/void-packages/issues/9779
+- [ ] tiny-irc-client: https://github.com/void-linux/void-packages/issues/27180
