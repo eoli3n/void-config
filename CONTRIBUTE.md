@@ -4,11 +4,16 @@
 
 ```
 user in void-linux in void-packages on x2goclient
+➜ ./xbps-src bootstrap-update
+[...]
+
+user in void-linux in void-packages on x2goclient
 ➜ ./xbps-src pkg x2goclient
 [...]
 
 user in void-linux in void-packages on x2goclient
 ➜ sudo xbps-install --repository hostdir/binpkgs/x2goclient/ x2goclient
+[...]
 ```
 
 ##### Fixup a commit and rebase
