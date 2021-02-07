@@ -55,6 +55,7 @@
       - dmidecode # dump dmi table content
       - oath-toolkit # otp tool
       - pastebinit # pastebin wrapper
+      - zim # wiki app
 #- arch-audit # list vulnerabilities
 #- reflector # mirror sorter
 
