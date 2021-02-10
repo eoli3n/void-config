@@ -46,6 +46,7 @@
       - gimp # img editor
       - kolourpaint # img editor
       - shotwell # photo manager
+      - swappy # screenshot editor
       - libreoffice # libreoffice
       - libreoffice-i18n-fr # libreoffice suite fr
       - lxappearance # theme manager
