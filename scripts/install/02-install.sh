@@ -52,6 +52,7 @@ echo "$hostname" > /mnt/etc/hostname
 cat > /mnt/etc/iwd/main.conf <<"EOF"
 [General]
 UseDefaultInterface=true
+EnableNetworkConfiguration=true
 EOF
 
 # Configure DNS
