@@ -40,6 +40,7 @@
       - openbsd-netcat # network utility
       - speedtest-cli
       # Utils
+      - at # scheduler
       - borg # backup utility
       - borgmatic # backup utility automation
       - rsync
