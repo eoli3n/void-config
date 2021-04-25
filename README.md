@@ -28,6 +28,7 @@ ISSUES:
 
 TODO:
 - [x] backups to cronie for arch/void
+- [ ] move from pulseaudio to pipewire : https://gist.github.com/st3r4g/6c681a28b0403b3b02636f510ff68039
 
 TOTEST:
 - openresolv for vpn
