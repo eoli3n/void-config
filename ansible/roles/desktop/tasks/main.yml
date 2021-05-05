@@ -52,6 +52,7 @@
       - lxappearance # theme manager
       - mpv # video player
       - Thunar # file manager
+      - tumbler # thumbnailer
       - openvpn
       - playerctl # music player cli controller
       - rdesktop # remote desktop client
