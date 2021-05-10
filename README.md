@@ -36,7 +36,6 @@ TOTEST:
 - openresolv for vpn
 - qemu/kvm
 - podman
-- iwd
 
 PACKAGES:
 - [ ] swaylock-fancy: https://github.com/void-linux/void-packages/issues/27224

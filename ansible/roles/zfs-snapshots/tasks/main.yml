@@ -8,6 +8,11 @@
     src: sanoid.conf
     dest: /etc/sanoid
 
+- name: create sanoid lock directory
+  file:
+    path: /var/run/sanoid
+    state: directory
+
 - name: setup sanoid cron snapshot
   ansible.builtin.cron:
     name: "sanoid snapshot"
