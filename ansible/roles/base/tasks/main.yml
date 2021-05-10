@@ -18,6 +18,7 @@
       - asciinema # term recorder
       - expect # automation tool
       - glow # render markdown cli
+      - tiny # irc client
       # System
       - openresolv # resolv conf manager
       - xtools # helpers for working with XBPS
@@ -58,6 +59,7 @@
       - oath-toolkit # otp tool
       - pastebinit # pastebin wrapper
       - zim # wiki app
+      - x2goclient # linux remote desktop client
 #- arch-audit # list vulnerabilities
 #- reflector # mirror sorter
 

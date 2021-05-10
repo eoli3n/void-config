@@ -44,10 +44,10 @@ PACKAGES:
 - [ ] kubectx: https://github.com/void-linux/void-packages/pull/17088
 - [ ] kustomize: https://github.com/void-linux/void-packages/issues/27230
 - [ ] kompose: https://github.com/void-linux/void-packages/issues/27231
-- [ ] tutanota: appimage
+- [ ] veyon
 
 MERGE:
-- [ ] x2goclient:
+- [x] x2goclient:
   - https://github.com/void-linux/void-packages/issues/2091
   - https://github.com/void-linux/void-packages/issues/9779
-- [ ] tiny-irc-client: https://github.com/void-linux/void-packages/issues/27180
+- [x] tiny: https://github.com/void-linux/void-packages/issues/27180
