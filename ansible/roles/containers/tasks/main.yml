@@ -1,7 +1,8 @@
 ---
 - name: install containers packages
   community.general.xbps:
-    name:
+    name: '{{item}}'
+  loop:
       - docker # high level container runtime
       - docker-compose # multi-container docker apps
       - podman # docker alternative without dockerd

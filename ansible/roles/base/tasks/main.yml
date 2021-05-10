@@ -1,7 +1,8 @@
 ---
 - name: install packages
   community.general.xbps:
-    name:
+    name: '{{item}}'
+  loop:
       # Shell
       - starship # shell prompt
       - fish-shell # powerful shell

@@ -1,7 +1,8 @@
 ---
 - name: install virt packages
   community.general.xbps:
-    name:
+    name: '{{item}}'
+  loop:
       - qemu
       - libvirt
       - virt-manager

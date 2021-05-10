@@ -23,8 +23,10 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 ISSUES:
 - [ ] xbps role with hooks: https://github.com/void-linux/xbps/issues/304
   - [ ] pre upgrade snapshot hook
+    - [x] periodic zfs snapshots with sanoid
   - [ ] post upgrade flatpak upgrade hook
 - [ ] keyboard not released with swaymsg exit: https://github.com/void-linux/void-packages/issues/27132
+- [ ] xbps ansible module report wrong package error : https://github.com/ansible-collections/community.general/issues/2478
 
 TODO:
 - [x] backups to cronie for arch/void

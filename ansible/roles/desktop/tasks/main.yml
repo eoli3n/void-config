@@ -1,7 +1,8 @@
 ---
 - name: install desktop packages
   community.general.xbps:
-    name:
+    name: '{{item}}'
+  loop:
       # DE
       - sway # wayland wm and compositor
       - swaybg # background manager for sway
