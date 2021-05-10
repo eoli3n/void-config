@@ -28,21 +28,24 @@ mount --rbind /proc /mnt/proc && mount --make-rslave /mnt/proc
 echo "GUMMIBOOT_DISABLE=1" > /mnt/etc/default/gummiboot
 
 # Install packages
-XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
-  intel-ucode \
-  zfs \
-  zfsbootmenu \
-  efibootmgr \
-  gummiboot \
-  chrony \
-  cronie \
-  elogind \
-  socklog-void \
-  iwd \
-  dhcpcd \
-  openresolv \
-  git \
+packages=(
+  intel-ucode
+  zfs
+  zfsbootmenu
+  efibootmgr
+  gummiboot # required by zfsbootmenu
+  chrony # ntp
+  cronie # cron
+  elogind # user logins and system power, required by sway
+  socklog-void # syslog daemon
+  iwd # wifi daemon
+  dhcpcd
+  openresolv # dns
+  git
   ansible
+  )
+
+XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" "${packages[@]}"
 
 # Set hostname
 read -r -p 'Please enter hostname : ' hostname

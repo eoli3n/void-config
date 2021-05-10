@@ -26,3 +26,9 @@
     minute: "30"
     job: 'flock -n /var/run/sanoid/cron-prune.lock -c "sanoid --prune-snapshots"'
     user: root
+
+- name: setup daily zfs scrub
+  copy:
+    src: zscrub
+    dest: /etc/cron.daily/
+    mode: 0755
