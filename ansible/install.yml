@@ -23,4 +23,4 @@
     - { role: themes-fonts, tags: themes-fonts }
     - { role: virtualization, tags: virtualization }
     - { role: containers, tags: containers }
-    - { role: zfs-snapshots, tags: zfs-snapshots }
+    - { role: zfs, tags: zfs }
