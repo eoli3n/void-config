@@ -34,9 +34,11 @@
       - mesa-vulkan-intel
       - mesa-vulkan-intel-32bit
       # Audio
-      - pulseaudio # audio server
+      #- pulseaudio # audio server
+      - pipewire # audio server
       - alsa-plugins-pulseaudio # alsa to pulseaudio
       - pavucontrol # pulseaudio ui
+      - pulseaudio-utils
       - pamixer # alsa ui
       - alsa-utils # alsa toolbox
       # Graphical apps

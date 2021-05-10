@@ -20,7 +20,6 @@
       - glow # render markdown cli
       - tiny # irc client
       # System
-      - openresolv # resolv conf manager
       - xtools # helpers for working with XBPS
       - htop # system monitor
       - net-tools # netstat

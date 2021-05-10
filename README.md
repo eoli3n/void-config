@@ -30,7 +30,7 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 
 ### TODO
 - [x] backups to cronie for arch/void
-- [ ] move from pulseaudio to pipewire : https://gist.github.com/st3r4g/6c681a28b0403b3b02636f510ff68039
+- [x] move from pulseaudio to pipewire: https://github.com/void-linux/void-docs/pull/540/commits/33343cbfba36ccd3597d36ee4e983650969b0c7a
 
 ### PACKAGES
 - [ ] swaylock-fancy: https://github.com/void-linux/void-packages/issues/27224
@@ -52,6 +52,7 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 - [ ] auto zfs sanoid snapshots with cronie
 - [ ] ntp
 - [ ] check daemons log with socklog
+- [ ] pipewire
 - [ ] openresolv for vpn
 - [ ] qemu/kvm
 - [ ] podman
