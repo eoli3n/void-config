@@ -87,3 +87,11 @@ remote: Resolving deltas: 100% (4957/4957), completed with 976 local objects.
 To github.com:eoli3n/void-packages.git
  + dfb75ec1b4...070372a4c2 x2goclient -> x2goclient (forced update)
 ```
+
+##### Build tests
+```
+./xbps-src clean
+./xbps-src extract x2goserver
+./xbps-src patch x2goserver
+ls masterdir/builddir/x2goserver-4.1.0.3/
+```
