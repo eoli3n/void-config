@@ -3,22 +3,14 @@
 ##### Build and install locally
 
 ```
-user in void-linux in void-packages on x2goclient
-➜ ./xbps-src bootstrap-update
-[...]
-
-user in void-linux in void-packages on x2goclient
-➜ ./xbps-src pkg x2goclient
-[...]
-
-user in void-linux in void-packages on x2goclient
-➜ sudo xbps-install --repository hostdir/binpkgs/x2goclient/ x2goclient
-[...]
+./xbps-src bootstrap-update
+rm hostdir/binpkgs/x2goserver/*
+./xbps-src pkg x2goserver
+sudo xbps-install --repository hostdir/binpkgs/x2goserver/ x2goserver
 ```
 
 ##### Fixup a commit and rebase
 ```
-void-packages/srcpkgs/x2goclient on x2goclient !
 ➜ git --no-pager diff
 diff --git a/srcpkgs/x2goclient/template b/srcpkgs/x2goclient/template
 index e794a0d001..aa08b3aebf 100644
@@ -34,35 +26,28 @@ index e794a0d001..aa08b3aebf 100644
  short_desc="Graphical Qt5 client for X2Go"
  maintainer="eoli3n <jkirsz@gmail.com>"
 
-void-packages/srcpkgs/x2goclient on x2goclient !
-➜ git log --oneline | head -n4
+➜ git log --oneline | head -n10
 8c941871ef New package: x2goserver-4.1.0.3
 24f738663d New package: x2goclient-4.1.2.2
 ebe0d964f5 New package: nx-libs-3.5.99.24
 2bfbb3ffff linux5.10: update to 5.10.3.
 
-void-packages/srcpkgs/x2goclient on x2goclient !
 ➜ git add .
 
-void-packages/srcpkgs/x2goclient on x2goclient +
 ➜ git commit --fixup 24f738663d
 [x2goclient 01eb1efe97] fixup! New package: x2goclient-4.1.2.2
  1 file changed, 1 insertion(+), 1 deletion(-)
 
-void-packages/srcpkgs/x2goclient on x2goclient ⇡1
 ➜ git rebase -i --autosquash 2bfbb3ffff
 Rebasage et mise à jour de refs/heads/x2goclient avec succès.
 
-void-packages/srcpkgs/x2goclient on x2goclient ⇕⇡2⇣2  3s
 ➜ git push -f origin x2goclient
 ```
 
 ##### Rebase upstream
 ```
-void-packages/srcpkgs/x2goclient on x2goclient
 ➜ git remote add upstream git://github.com/void-linux/void-packages.git
 
-void-packages/srcpkgs/x2goclient on x2goclient
 ➜ git pull upstream master --rebase --autostash
 remote: Enumerating objects: 10979, done.
 remote: Counting objects: 100% (10979/10979), done.
@@ -75,7 +60,6 @@ Depuis git://github.com/void-linux/void-packages
  * [nouvelle branche]      master     -> upstream/master
 Rebasage et mise à jour de refs/heads/x2goclient avec succès.
 
-void-packages/srcpkgs on x2goclient ⇕⇡1655⇣3  via 🌙 v5.4.2
 ➜ git push --force
 Énumération des objets: 10999, fait.
 Décompte des objets: 100% (10999/10999), fait.
@@ -93,5 +77,6 @@ To github.com:eoli3n/void-packages.git
 ./xbps-src clean
 ./xbps-src extract x2goserver
 ./xbps-src patch x2goserver
+./xbps-src build x2goserver
 ls masterdir/builddir/x2goserver-4.1.0.3/
 ```

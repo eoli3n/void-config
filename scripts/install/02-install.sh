@@ -36,7 +36,7 @@ packages=(
   gummiboot # required by zfsbootmenu
   chrony # ntp
   cronie # cron
-  elogind # user logins and system power, required by sway
+  seatd # minimal seat management daemon, required by sway
   socklog-void # syslog daemon
   iwd # wifi daemon
   dhcpcd
@@ -104,7 +104,6 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   ln -s /etc/sv/chronyd /etc/runit/runsvdir/default/
   ln -s /etc/sv/crond /etc/runit/runsvdir/default/
   ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
-  ln -s /etc/sv/elogind /etc/runit/runsvdir/default/
   ln -s /etc/sv/socklog-unix /etc/runit/runsvdir/default/
   ln -s /etc/sv/nanoklogd /etc/runit/runsvdir/default/
 
@@ -130,6 +129,9 @@ chroot /mnt /bin/passwd
 # Set user passwd
 print 'Set user password'
 chroot /mnt /bin/passwd user
+
+# Add user to _seatd group
+chroot /mnt /usr/bin/usermod -a -G _seatd user
 
 # Configure sudo
 print 'Configure sudo'
