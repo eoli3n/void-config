@@ -50,7 +50,7 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 
 ### TESTS
 
-- [ ] auto zfs sanoid snapshots with cronie
+- [x] auto zfs sanoid snapshots with cronie
 - [ ] ntp
 - [ ] check daemons log with socklog
 - [ ] pipewire

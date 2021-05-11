@@ -104,6 +104,7 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   ln -s /etc/sv/chronyd /etc/runit/runsvdir/default/
   ln -s /etc/sv/crond /etc/runit/runsvdir/default/
   ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
+  ln -s /etc/sv/seatd /etc/runit/runsvdir/default/
   ln -s /etc/sv/socklog-unix /etc/runit/runsvdir/default/
   ln -s /etc/sv/nanoklogd /etc/runit/runsvdir/default/
 
