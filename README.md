@@ -51,8 +51,11 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 ### TESTS
 
 - [x] auto zfs sanoid snapshots with cronie
-- [ ] ntp
-- [ ] check daemons log with socklog
+- [x] ntp
+- [x] check daemons log with socklog
+```
+less /var/log/socklog/everything/current
+```
 - [ ] pipewire
 - [ ] openresolv for vpn
 - [ ] qemu/kvm
