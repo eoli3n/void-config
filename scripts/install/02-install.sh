@@ -37,6 +37,7 @@ packages=(
   chrony # ntp
   cronie # cron
   seatd # minimal seat management daemon, required by sway
+  acpid # power management
   socklog-void # syslog daemon
   iwd # wifi daemon
   dhcpcd
@@ -105,6 +106,7 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   ln -s /etc/sv/crond /etc/runit/runsvdir/default/
   ln -s /etc/sv/dbus /etc/runit/runsvdir/default/
   ln -s /etc/sv/seatd /etc/runit/runsvdir/default/
+  ln -s /etc/sv/acpid /etc/runit/runsvdir/default/
   ln -s /etc/sv/socklog-unix /etc/runit/runsvdir/default/
   ln -s /etc/sv/nanoklogd /etc/runit/runsvdir/default/
 
