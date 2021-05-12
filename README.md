@@ -60,5 +60,6 @@ less /var/log/socklog/everything/current
 - [ ] lid switch, hibernation with zzz
 - [ ] pipewire
 - [ ] openresolv for vpn
+- [ ] backups
 - [ ] qemu/kvm
 - [ ] podman
