@@ -33,6 +33,7 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 - [x] move from pulseaudio to pipewire: https://github.com/void-linux/void-docs/pull/540/commits/33343cbfba36ccd3597d36ee4e983650969b0c7a
 - [ ] pam_rundir or rundird can be used to have it created on login automatically. Otherwise you can create and set it yourself - it's just a user-specific folder lasting for the login.
 - [x] acpid in install script
+- [ ] free vpn
 
 ### PACKAGES
 - [ ] swaylock-fancy: https://github.com/void-linux/void-packages/issues/27224
