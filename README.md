@@ -58,9 +58,9 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 ```
 less /var/log/socklog/everything/current
 ```
+- [x] vpn and openresolv update dns script
+- [x] backups
 - [ ] lid switch, hibernation with zzz
 - [ ] pipewire
-- [ ] openresolv for vpn
-- [ ] backups
 - [ ] qemu/kvm
 - [ ] podman
