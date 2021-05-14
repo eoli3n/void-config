@@ -40,7 +40,7 @@ packages=(
   acpid # power management
   socklog-void # syslog daemon
   iwd # wifi daemon
-  dhcpcd
+  dhclient
   openresolv # dns
   git
   ansible
