@@ -89,9 +89,9 @@
 
 - name: symlink pipewire alsa
   file:
-    src: '{{ item }}'
-    dest: /etc/alsa/conf.d
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
     state: link
   loop:
-    - /usr/share/alsa/alsa.conf.d/50-pipewire.conf
-    - /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf
+    - { src: /usr/share/alsa/alsa.conf.d/50-pipewire.conf, dest: /etc/alsa/conf.d/50-pipewire.conf }
+    - { src: /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf, dest: /etc/alsa/conf.d/99-pipewire-default.conf }
