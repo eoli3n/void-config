@@ -114,7 +114,7 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   xbps-reconfigure -f glibc-locales
 
   # Add user
-  useradd -m user -G network,wheel,socklog,video
+  useradd -m user -G network,wheel,socklog,video,audio,_seatd
 
   # Generate fstab excluding zfs parts
   egrep -v "proc|sys|devtmpfs|pts|zfs" /proc/mounts > /etc/fstab
@@ -132,9 +132,6 @@ chroot /mnt /bin/passwd
 # Set user passwd
 print 'Set user password'
 chroot /mnt /bin/passwd user
-
-# Add user to _seatd group
-chroot /mnt /usr/bin/usermod -a -G _seatd user
 
 # Configure sudo
 print 'Configure sudo'
