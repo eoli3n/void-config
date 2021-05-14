@@ -45,6 +45,7 @@
       - borg # backup utility
       - borgmatic # backup utility automation
       - rsync
+      - syncthing # sync tool
       - rclone
       - fzf # fuzzy finder
       - neofetch
