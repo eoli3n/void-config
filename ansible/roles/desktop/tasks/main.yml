@@ -37,7 +37,7 @@
       # Audio
       #- pulseaudio # audio server
       - pipewire # audio server
-      - alsa-plugins-pulseaudio # alsa to pulseaudio
+      - alsa-pipewire
       - pavucontrol # pulseaudio ui
       - pulseaudio-utils
       - pamixer # alsa ui
@@ -80,3 +80,21 @@
     regexp: 'pam_rundir.so'
     line: 'session		optional	pam_rundir.so'
     state: present
+
+- name: configure pipewire alsa
+  file:
+    path: /etc/alsa/conf.d
+    state: directory
+    recurse: yes
+
+- name: symlink pipewire alsa 1
+  file:
+    src: /usr/share/alsa/alsa.conf.d/50-pipewire.conf
+    dest: /etc/alsa/conf.d
+    state: link
+
+- name: symlink pipewire alsa 1
+  file:
+    src: /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf
+    dest: /etc/alsa/conf.d
+    state: link
