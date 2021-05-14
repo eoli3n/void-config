@@ -24,6 +24,7 @@
       - swayidle
       - xdg-user-dirs
       - glfw-wayland
+      - pam_rundir # XDG_RUNTIME_DIR when seatd
       # Video
       - mesa # DRI 3D acceleration
       - mesa-dri # DRI 3D acceleration
@@ -72,3 +73,10 @@
       - android-tools # android dir sync
       - Signal-Desktop # messaging app
 # - downgrade # package downgrader
+
+- name: configure pam_rundir
+  lineinfile:
+    path: /etc/pam.d/login
+    regexp: 'pam_rundir.so'
+    line: 'session		optional	pam_rundir.so'
+    state: present
