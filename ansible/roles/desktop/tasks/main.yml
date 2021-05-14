@@ -70,4 +70,5 @@
       - connman-gtk # connman gtk gui
       - gnome-ssh-askpass # ssh askpass gui
       - android-tools # android dir sync
+      - Signal-Desktop # messaging app
 # - downgrade # package downgrader
