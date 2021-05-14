@@ -1,6 +1,6 @@
 ---
 - name: restart tlp
-  community.general.xbps:
+  community.general.runit:
     name: tlp
     enabled: yes
     state: restarted
