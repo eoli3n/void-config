@@ -1,6 +1,12 @@
 ---
+- name: create runit user directory
+  file:
+    path: /etc/sv/runsvdir-user/
+    state: directory
+
 - name: per user services
   template:
     src: run.j2
     dest: /etc/sv/runsvdir-user/run
+    mode: 0755
   notify: enable runit-user
