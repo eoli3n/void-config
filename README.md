@@ -68,6 +68,8 @@ less /var/log/socklog/everything/current
 - [ ] lid switch
 
 ### TOFIX
-- [ ] long time to display from vpn
+- [ ] qemu/kvm: long time to display screen from vpn
 - [ ] pipewire warnings : "RTKit error: org.freedesktop.DBus.Error.AccessDenied"
   - [ ] rtkit service error : "pthread_create failed: Resource temporarily unavailable"
+- [x] flatpak not showing in wofi
+- [ ] libgl1 32bit missing for steam
