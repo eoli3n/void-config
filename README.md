@@ -61,7 +61,9 @@ less /var/log/socklog/everything/current
 ```
 - [x] vpn and openresolv update dns script
 - [x] backups
-- [ ] lid switch, hibernation with zzz
-- [ ] pipewire
-- [ ] qemu/kvm
-- [ ] podman
+- [x] hibernation with zzz
+- [x] pipewire
+- [x] qemu/kvm
+  - [ ] long time to display from vpn
+- [x] podman
+- [ ] lid switch
