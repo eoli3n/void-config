@@ -4,6 +4,6 @@ export USER="{{ user }}"
 export HOME="/home/{{ user }}"
 
 groups="$(id -Gn "$USER" | tr ' ' ':')"
-svdir="$HOME/.config/service"
+svdir="$HOME/.config/services"
 
 exec chpst -u "$USER:$groups" runsvdir "$svdir"
