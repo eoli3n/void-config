@@ -23,6 +23,7 @@
       - libappindicator # tray sway
       - swayidle
       - xdg-user-dirs
+      - xdg-utils
       - glfw-wayland
       - pam_rundir # XDG_RUNTIME_DIR when seatd
       # Video
