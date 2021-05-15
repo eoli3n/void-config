@@ -64,6 +64,10 @@ less /var/log/socklog/everything/current
 - [x] hibernation with zzz
 - [x] pipewire
 - [x] qemu/kvm
-  - [ ] long time to display from vpn
 - [x] podman
 - [ ] lid switch
+
+### TOFIX
+- [ ] long time to display from vpn
+- [ ] pipewire warnings : "RTKit error: org.freedesktop.DBus.Error.AccessDenied"
+  - [ ] rtkit service error : "pthread_create failed: Resource temporarily unavailable"
