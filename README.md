@@ -75,6 +75,7 @@ less /var/log/socklog/everything/current
 - [x] flatpak not showing in wofi
 - [ ] libgl1 32bit missing for steam
 - [ ] freebox vpn: connection ok, but no network
+- [ ] dht/pex ?
 - [ ] $ fwupdmgr get-devices
       WARNING: Required efivarfs filesystem was not found
       See https://github.com/fwupd/fwupd/wiki/PluginFlag:efivar-not-mounted for more information.
