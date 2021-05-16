@@ -170,7 +170,7 @@ EFI:
   Versions: false
   Enabled: true
 Kernel:
-  CommandLine: ro quiet loglevel=0 spl_hostid=$(hostid) net.ifnames=0
+  CommandLine: ro quiet loglevel=0
 EOF
 
 # Generate ZBM
