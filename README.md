@@ -16,7 +16,6 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
   - [x] periodic zfs scrub
 - [x] port arch-config playbook
   - [ ] README init install git + ansible
-  - [ ] fix GDK_BACKEND=x11 lxappearance
 - [ ] travis/github actions on playbook run
 
 ### ISSUES
@@ -31,9 +30,8 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 ### TODO
 - [x] backups to cronie for arch/void
 - [x] move from pulseaudio to pipewire: https://github.com/void-linux/void-docs/pull/540/commits/33343cbfba36ccd3597d36ee4e983650969b0c7a
-- [ ] pam_rundir or rundird can be used to have it created on login automatically. Otherwise you can create and set it yourself - it's just a user-specific folder lasting for the login.
+- [x] pam_rundir for sway with seatd
 - [x] acpid in install script
-- [ ] freebox vpn: tried and failed
 
 ### PACKAGES
 - [ ] swaylock-fancy: https://github.com/void-linux/void-packages/issues/27224
@@ -65,6 +63,8 @@ less /var/log/socklog/everything/current
 - [x] pipewire
 - [x] qemu/kvm
 - [x] podman
+- [x] flatpaks
+- [ ] firmware updater
 - [ ] lid switch
 
 ### TOFIX
@@ -73,3 +73,9 @@ less /var/log/socklog/everything/current
   - [ ] rtkit service error : "pthread_create failed: Resource temporarily unavailable"
 - [x] flatpak not showing in wofi
 - [ ] libgl1 32bit missing for steam
+- [ ] freebox vpn: connection ok, but no network
+- [ ] $ fwupdmgr get-devices
+      WARNING: Required efivarfs filesystem was not found
+      See https://github.com/fwupd/fwupd/wiki/PluginFlag:efivar-not-mounted for more information.
+      workaround : modprobe efivars && mount -t efivarfs efivarfs /sys/firmware/efi/efivars
+Latitude 7490
