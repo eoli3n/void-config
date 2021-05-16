@@ -73,6 +73,8 @@
       - gnome-ssh-askpass # ssh askpass gui
       - android-tools # android dir sync
       - Signal-Desktop # messaging app
+      - x2goclient # linux remote desktop client
+      - torbrowser-launcher
 # - downgrade # package downgrader
 
 - name: configure pam_rundir

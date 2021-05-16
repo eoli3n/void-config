@@ -61,7 +61,6 @@
       - oath-toolkit # otp tool
       - pastebinit # pastebin wrapper
       - zim # wiki app
-      - x2goclient # linux remote desktop client
 #- arch-audit # list vulnerabilities
 #- reflector # mirror sorter
 
