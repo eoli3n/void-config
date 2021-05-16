@@ -79,4 +79,5 @@ less /var/log/socklog/everything/current
       See https://github.com/fwupd/fwupd/wiki/PluginFlag:efivar-not-mounted for more information.
       workaround : modprobe efivars && mount -t efivarfs efivarfs /sys/firmware/efi/efivars
       fwupdmgr still complaining but ls /sys/firmware/efi/efivars show vars
+      issue : https://github.com/fwupd/fwupd/issues/3255
 Latitude 7490
