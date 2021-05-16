@@ -123,6 +123,7 @@ EOF
 # Configure /tmp
 cat >> /mnt/etc/fstab <<"EOF"
 tmpfs           /tmp        tmpfs   defaults,nosuid,nodev   0 0
+efivarfs /sys/firmware/efi/efivars efivarfs defaults 0 0
 EOF
 
 # Set root passwd
