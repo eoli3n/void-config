@@ -32,6 +32,7 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 - [x] move from pulseaudio to pipewire: https://github.com/void-linux/void-docs/pull/540/commits/33343cbfba36ccd3597d36ee4e983650969b0c7a
 - [x] pam_rundir for sway with seatd
 - [x] acpid in install script
+- [ ] netboot.xyz
 
 ### PACKAGES
 - [ ] swaylock-fancy: https://github.com/void-linux/void-packages/issues/27224
