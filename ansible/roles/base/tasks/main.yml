@@ -28,6 +28,7 @@
       - tcpdump # packet analyzer
       - whois # query registry
       - stress # stress test tool
+      - efivar # tool to manipulate efi vars
       # Disk
       - iotop # disk "top"
       - ncdu # disk usage analyzer
