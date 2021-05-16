@@ -78,4 +78,5 @@ less /var/log/socklog/everything/current
       WARNING: Required efivarfs filesystem was not found
       See https://github.com/fwupd/fwupd/wiki/PluginFlag:efivar-not-mounted for more information.
       workaround : modprobe efivars && mount -t efivarfs efivarfs /sys/firmware/efi/efivars
+      fwupdmgr still complaining but ls /sys/firmware/efi/efivars show vars
 Latitude 7490
