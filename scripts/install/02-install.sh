@@ -187,6 +187,9 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   xbps-reconfigure -fa
 EOF
 
+# Set cmdline
+zfs set org.zfsbootmenu:commandline="ro quiet" zroot/ROOT
+
 # Create UEFI entries
 efibootmgr --disk /dev/sda \
   --part 1 \
