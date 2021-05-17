@@ -22,4 +22,4 @@
     - com.microsoft.Teams
 
 - name: Override Teams perms
-  shell: flatpak override com.microsoft.Teams --filesystem=host
+  shell: flatpak override com.microsoft.Teams --filesystem=home
