@@ -48,6 +48,7 @@
       - kitty # terminal emulator
       - evince # pdf viewer
       - firefox-i18n-fr # web browser
+      - chromium # web browser
       - gimp # img editor
       - kolourpaint # img editor
       - shotwell # photo manager
