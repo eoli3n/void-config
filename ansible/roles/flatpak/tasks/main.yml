@@ -22,4 +22,9 @@
     - com.microsoft.Teams
 
 - name: Override Teams perms
-  shell: flatpak override com.microsoft.Teams --filesystem=home
+  shell: |
+    flatpak override com.microsoft.Teams \
+      --filesystem=~/desktop:ro \
+      --filesystem=~/img:ro \
+      --filesystem=~/downloads:ro \
+      --filesystem=~/share:ro
