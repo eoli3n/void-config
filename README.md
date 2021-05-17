@@ -65,21 +65,17 @@ less /var/log/socklog/everything/current
 - [x] qemu/kvm
 - [x] podman
 - [x] flatpaks
-- [ ] firmware updater
+- [x] firmware updater
 - [ ] lid switch
 
 ### TOFIX
-- [ ] qemu/kvm: long time to display screen from vpn
+- [x] flatpak not showing in wofi
+- [x] flatpak app no access to home
+- [x] $ fwupdmgr get-devices: https://github.com/fwupd/fwupd/issues/3255
+- [ ] vpn: ssh delay
 - [ ] pipewire warnings : "RTKit error: org.freedesktop.DBus.Error.AccessDenied"
   - [ ] rtkit service error : "pthread_create failed: Resource temporarily unavailable"
-- [x] flatpak not showing in wofi
+- [ ] pipewire killed after hibernation
 - [ ] libgl1 32bit missing for steam
 - [ ] freebox vpn: connection ok, but no network
 - [ ] dht/pex ?
-- [ ] $ fwupdmgr get-devices
-      WARNING: Required efivarfs filesystem was not found
-      See https://github.com/fwupd/fwupd/wiki/PluginFlag:efivar-not-mounted for more information.
-      workaround : modprobe efivars && mount -t efivarfs efivarfs /sys/firmware/efi/efivars
-      fwupdmgr still complaining but ls /sys/firmware/efi/efivars show vars
-      issue : https://github.com/fwupd/fwupd/issues/3255
-Latitude 7490
