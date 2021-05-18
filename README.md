@@ -37,7 +37,8 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 ### PACKAGES
 - [ ] swaylock-fancy: https://github.com/void-linux/void-packages/issues/27224
 - [x] python3-pre-commit: https://github.com/void-linux/void-packages/issues/27225
-- [ ] ovmf: https://github.com/void-linux/void-packages/pull/17225
+- [ ] ovmf: https://github.com/void-linux/void-packages/pull/29074
+  - [x] local build
 - [ ] kubectx: https://github.com/void-linux/void-packages/pull/17088
 - [ ] kustomize: https://github.com/void-linux/void-packages/issues/27230
 - [ ] kompose: https://github.com/void-linux/void-packages/issues/27231
@@ -51,7 +52,6 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 - [x] tiny: https://github.com/void-linux/void-packages/issues/27180
 
 ### TESTS
-
 - [x] auto zfs sanoid snapshots with cronie
 - [x] ntp
 - [x] check daemons log with socklog
@@ -75,7 +75,7 @@ less /var/log/socklog/everything/current
 - [ ] vpn: ssh delay
 - [ ] pipewire warnings : "RTKit error: org.freedesktop.DBus.Error.AccessDenied"
   - [ ] rtkit service error : "pthread_create failed: Resource temporarily unavailable"
-- [ ] pipewire killed after hibernation
+- [ ] pipewire killed after hibernation ?
 - [ ] libgl1 32bit missing for steam
 - [ ] freebox vpn: connection ok, but no network
 - [ ] dht/pex ?
