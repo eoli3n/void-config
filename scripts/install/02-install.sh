@@ -191,15 +191,23 @@ EOF
 # Set cmdline
 zfs set org.zfsbootmenu:commandline="ro quiet" zroot/ROOT
 
+# Set DISK
+select ENTRY in $(ls /dev/disk/by-id/);
+do
+    DISK="/dev/disk/by-id/$ENTRY"
+    echo "Creating boot entries on $ENTRY."
+    break
+done
+
 # Create UEFI entries
-efibootmgr --disk /dev/sda \
+efibootmgr --disk "$DISK" \
   --part 1 \
   --create \
   --label "ZFSBootMenu Backup" \
   --loader "\EFI\ZBM\vmlinuz-backup.efi" \
   --unicode "root=zfsbootmenu:POOL=zroot ro quiet spl_hostid=$(hostid)" \
   --verbose
-efibootmgr --disk /dev/sda \
+efibootmgr --disk "$DISK" \
   --part 1 \
   --create \
   --label "ZFSBootMenu" \
