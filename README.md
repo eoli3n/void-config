@@ -33,6 +33,7 @@ podman run --rm -it voidlinux/voidlinux-musl /bin/sh
 - [x] pam_rundir for sway with seatd
 - [x] acpid in install script
 - [ ] netboot.xyz
+- [ ] neomutt, mutt-wizard, vdirsyncer
 
 ### PACKAGES
 - [ ] swaylock-fancy: https://github.com/void-linux/void-packages/issues/27224
