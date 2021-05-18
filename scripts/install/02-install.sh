@@ -181,10 +181,7 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   # Export locale
   export LANG="fr_FR.UTF-8"
 
-  # Generate ZBM
-  generate-zbm
-
-  # Generate initramfs
+  # Generate initramfs, zfsbootmenu
   xbps-reconfigure -fa
 EOF
 
