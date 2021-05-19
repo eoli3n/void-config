@@ -40,6 +40,7 @@
       #- pulseaudio # audio server
       - pipewire # audio server
       - alsa-pipewire
+      #- libao-pulse # fix bt for pipewire
       - pavucontrol # pulseaudio ui
       - pulseaudio-utils
       - pamixer # alsa ui
