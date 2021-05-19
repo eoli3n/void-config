@@ -6,6 +6,7 @@
       # DE
       - sway # wayland wm and compositor
       - swaybg # background manager for sway
+      - swaylock # session locker
       - xorg-server-xwayland # xorg backend for wayland
       - Waybar # bar for sway
       - mako # notification daemon
