@@ -64,7 +64,6 @@
       - openvpn
       - playerctl # music player cli controller
       - rdesktop # remote desktop client
-      - steam # games manager
       - transmission-gtk # torrent downloader
       - texlive-bin # latex
       - texlive-core # latex
@@ -79,6 +78,18 @@
       - x2goclient # linux remote desktop client
       - torbrowser-launcher
 # - downgrade # package downgrader
+
+- name: install steam packages
+  community.general.xbps:
+    name: '{{item}}'
+  loop:
+      - steam # games manager
+      - mono
+      - libgcc-32bit
+      - libstdc++-32bit
+      - libdrm-32bit
+      - libglvnd-32bit
+      - mesa-dri-32bit
 
 - name: configure pam_rundir
   lineinfile:
