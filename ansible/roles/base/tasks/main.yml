@@ -54,7 +54,6 @@
       - cifs-utils
       - shellcheck # sh linter
       - pastel # color viewer
-      - numlockx # numlock at startup
       - python-pip # python2 package manager
       - python3-pip # python3 package manager
       - dmidecode # dump dmi table content
