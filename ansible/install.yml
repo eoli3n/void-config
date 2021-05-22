@@ -24,3 +24,4 @@
     - { role: virtualization, tags: virtualization }
     - { role: containers, tags: containers }
     - { role: zfs, tags: zfs }
+    - { role: acpi, tags: acpi }
