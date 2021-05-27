@@ -22,3 +22,11 @@
     dest: /etc/modprobe.d/kvm.conf
     content: |
       options kvm_intel nested=1
+
+- name: create isos directory
+  file:
+    path: /var/lib/libvirt/isos
+    state: directory
+
+- name: configure isos in libvirt
+  shell: virsh pool-create-as --name isos --type dir --target /var/lib/libvirt/isos || true

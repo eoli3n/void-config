@@ -3,7 +3,7 @@
 set -e
 
 # List os-variant: osinfo-query os
-iso_path="/home/isos"
+iso_path="/var/lib/libvirt/isos"
 
 # With musl base iso
 if [[ "$1" == "musl" ]]
