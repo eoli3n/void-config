@@ -21,11 +21,7 @@
 
 ### TOPACKAGE
 - [ ] swaylock-fancy: https://github.com/void-linux/void-packages/issues/27224
-- [x] python3-pre-commit: https://github.com/void-linux/void-packages/issues/27225
-- [ ] ovmf: https://github.com/void-linux/void-packages/pull/29074
-  - [x] local build
 - [ ] kubectx: https://github.com/void-linux/void-packages/pull/17088
-- [ ] kustomize: https://github.com/void-linux/void-packages/issues/27230
 - [ ] kompose: https://github.com/void-linux/void-packages/issues/27231
 - [ ] veyon
 
@@ -35,6 +31,9 @@
   - https://github.com/void-linux/void-packages/issues/9779
 - [ ] x2goserver
 - [x] tiny: https://github.com/void-linux/void-packages/issues/27180
+- [ ] python3-pre-commit: https://github.com/void-linux/void-packages/issues/27225
+- [ ] ovmf: https://github.com/void-linux/void-packages/pull/29074
+  - [x] local build
 
 ### TOTEST
 - [x] auto zfs sanoid snapshots with cronie
