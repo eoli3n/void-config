@@ -24,6 +24,7 @@
 - [ ] kubectx: https://github.com/void-linux/void-packages/pull/17088
 - [ ] kompose: https://github.com/void-linux/void-packages/issues/27231
 - [ ] veyon
+- [ ] gopass-jsonapi: https://github.com/void-linux/void-packages/issues/31155
 
 ### TOMERGE
 - [x] x2goclient:
