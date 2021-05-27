@@ -45,7 +45,8 @@ then
   iso="${hrmpf_iso_path}"
 
 # With glibc base iso
-else
+elif [[ "$1" == "glibc" ]]
+then
 
   # Get latest glibc iso name
   base_iso=$(curl -s https://alpha.de.repo.voidlinux.org/live/current/ | grep -m 1 -Eo 'void-live-x86_64-[0-9]{8}.iso' | head -n1)
@@ -61,6 +62,11 @@ else
   name="void-linux-glibc"
   description="Test Void Linux with glibc"
   iso="${base_iso_path}"
+
+else
+
+  echo "usage: 00-create.sh {hrmpf|glibc|musl}"
+  exit 0
 
 fi
 
