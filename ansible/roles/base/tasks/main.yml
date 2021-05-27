@@ -37,7 +37,6 @@
       - openssh
       - sshpass # allow ansible -k
       - sshuttle # vpn through ssh
-      - keychain # ssh-agent wrapper
       - wget # downloader
       - bind-utils # dns tools
       - openbsd-netcat # network utility
@@ -46,6 +45,8 @@
       - at # scheduler
       - borg # backup utility
       - borgmatic # backup utility automation
+      - keychain # ssh-agent wrapper
+      - gnupg # GNU Privacy Guard
       - rsync
       - syncthing # sync tool
       - rclone
