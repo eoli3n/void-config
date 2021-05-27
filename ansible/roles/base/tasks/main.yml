@@ -46,6 +46,7 @@
       - at # scheduler
       - borg # backup utility
       - borgmatic # backup utility automation
+      - gopass # unix password manager
       - rsync
       - syncthing # sync tool
       - rclone
