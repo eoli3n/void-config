@@ -18,3 +18,35 @@
   loop:
     - {src: /opt/kubectx/kubectx, dest: /usr/local/bin/kubectx}
     - {src: /opt/kubectx/kubens, dest: /usr/local/bin/kubens}
+
+- name: test gopass-jsonapi
+  stat:
+    path: /usr/local/bin/gopass-jsonapi
+  register: jsonapi
+
+- name: query latest url
+  shell: |
+    curl -s "https://api.github.com/repos/gopasspw/gopass-jsonapi/releases/latest" |
+    jq -r '.assets[] | select(.name | match ("linux-amd64.*.tar.gz"; "g")).browser_download_url'
+  register: jsonapi_latest_url
+  when: not jsonapi.stat.exists
+
+- name: dowload gopass-jsonapi
+  get_url:
+    url: '{{ jsonapi_latest_url.stdout }}'
+    dest: /tmp/gopass-jsonapi.tar.gz
+  when: not jsonapi.stat.exists
+
+- name: extract gopass jsonapi
+  unarchive:
+    src: /tmp/gopass-jsonapi.tar.gz
+    dest: /tmp
+  when: not jsonapi.stat.exists
+
+- name: copy gopass-jsonapi
+  become: yes
+  copy:
+    src: /tmp/gopass-jsonapi
+    dest: /usr/local/bin/
+    remote_src: yes
+    mode: 0755
