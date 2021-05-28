@@ -47,6 +47,7 @@
       - borg # backup utility
       - borgmatic # backup utility automation
       - gopass # unix password manager
+      - pinentry-gtk # gtk gpg pinentry
       - rsync
       - syncthing # sync tool
       - rclone
