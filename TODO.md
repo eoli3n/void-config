@@ -25,6 +25,7 @@
 - [ ] kompose: https://github.com/void-linux/void-packages/issues/27231
 - [ ] veyon
 - [ ] gopass-jsonapi: https://github.com/void-linux/void-packages/issues/31155
+- [ ] ydotool: https://github.com/void-linux/void-packages/issues/31163
 
 ### TOMERGE
 - [x] x2goclient:
