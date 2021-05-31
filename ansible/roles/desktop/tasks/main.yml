@@ -68,6 +68,8 @@
       - texlive-bin # latex
       - texlive-core # latex
       - texlive-latexextra # latex
+      - texlive-XeTeX # xelatex
+      - texlive-Xdvi # xelatex
       - variety # random backgrounds
       - papirus-icon-theme # icon theme
       - youtube-dl
