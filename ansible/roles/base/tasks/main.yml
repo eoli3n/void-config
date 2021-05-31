@@ -75,3 +75,10 @@
   user:
     name: '{{user}}'
     shell: '{{shell}}'
+
+- name: add hostname to /etc/hosts
+  lineinfile:
+    path: /etc/hosts
+    regexp: '{{ ansible_hostname }}'
+    line: '127.0.0.1               {{ ansible_hostname }}'
+    state: present
