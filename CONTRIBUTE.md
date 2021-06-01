@@ -9,6 +9,12 @@ rm hostdir/binpkgs/x2goserver/*
 sudo xbps-install --repository hostdir/binpkgs/x2goserver/ x2goserver
 ```
 
+##### Update checksums automatically
+
+```
+xgensum -i srcpkgs/firefox-i18n/template
+```
+
 ##### Fixup a commit and rebase
 ```
 ➜ git --no-pager diff
