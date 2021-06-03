@@ -15,7 +15,7 @@
     state: present
   loop:
     - com.spotify.Client
-    - com.visualstudio.code-oss
+    - com.vscodium.codium
     - com.mojang.Minecraft
     - com.github.Anuken.Mindustry
     - us.zoom.Zoom
