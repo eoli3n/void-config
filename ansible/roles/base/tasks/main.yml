@@ -32,6 +32,7 @@
       # Disk
       - iotop # disk "top"
       - ncdu # disk usage analyzer
+      - smartmontools # S.M.A.R.T Monitoring Tools
       # Network
       - nethogs # net "top"
       - openssh
