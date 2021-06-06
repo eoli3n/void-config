@@ -64,7 +64,6 @@ chmod 000 /etc/zfs/zroot.key
 fdisk -l "$DISK"
 print "check Sector size Sector size (logical/physical)"
 echo "If 512 bytes / 512 bytes, set ashift to 9 else if 512 bytes / 4096 bytes, set ashift to 12"
-echo "If NVMe, then you should use 12 even if physical sector size reported is 512."
 select ENTRY in 9 12;
 do
     ashift="$ENTRY"
