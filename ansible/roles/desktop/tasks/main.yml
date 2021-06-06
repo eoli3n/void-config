@@ -17,6 +17,7 @@
       - wdisplays # arandr for wayland
       - wf-recorder # screen recorder for wayland
       - grimshot # grim+slurp wrapper
+      - waypipe # ssh -X for wayland
       - wofi # rofi for wayland
       - wob # bars for wayland
       - xdg-desktop-portal-wlr # screen sharing for wayland
