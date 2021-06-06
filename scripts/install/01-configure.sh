@@ -60,20 +60,9 @@ read -r -p "ZFS passphrase: " pass
 echo "$pass" > /etc/zfs/zroot.key
 chmod 000 /etc/zfs/zroot.key
 
-# Check sector size
-fdisk -l "$DISK"
-print "check Sector size Sector size (logical/physical)"
-echo "If 512 bytes / 512 bytes, set ashift to 9 else if 512 bytes / 4096 bytes, set ashift to 12"
-select ENTRY in 9 12;
-do
-    ashift="$ENTRY"
-    echo "Set ashift to $ENTRY."
-    break
-done
-
 # Create ZFS pool
 print "Create ZFS pool"
-zpool create -f -o ashift="$ashift"                   \
+zpool create -f -o ashift=12                          \
              -o autotrim=on                           \
              -O acltype=posixacl                      \
              -O compression=zstd                      \
