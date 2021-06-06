@@ -17,7 +17,9 @@
 - [ ] vdirsyncer, khal, khard
   - [ ] packages
   - [ ] config
-- [ ] pass, gopass
+- [x] pass, gopass
+- [ ] DoT with stubby and applied-privacy.net
+
 
 ### TOPACKAGE
 - [ ] swaylock-fancy: https://github.com/void-linux/void-packages/issues/27224
