@@ -74,7 +74,6 @@
       - variety # random backgrounds
       - papirus-icon-theme # icon theme
       - youtube-dl
-      - connman-gtk # connman gtk gui
       - gnome-ssh-askpass # ssh askpass gui
       - android-tools # android dir sync
       - Signal-Desktop # messaging app
