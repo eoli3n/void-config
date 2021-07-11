@@ -1,0 +1,17 @@
+---
+- name: copy pre-install zfs snapshot kernel hook
+  copy:
+    dest: /etc/kernel.d/pre-install/10-zfs
+    mode: 0755
+    content: |
+      #!/bin/sh
+      zfs snapshot -r zroot/ROOT@kernel_upgrade_"$(date +%Y-%m-%d_%H:%M:%S)"
+
+- name: copy pre-install vkpurge kernel hook
+  copy:
+    dest: /etc/kernel.d/pre-install/20-vkpurge
+    mode: 0755
+    content: |
+      #!/bin/sh
+      vkpurge rm all
+
