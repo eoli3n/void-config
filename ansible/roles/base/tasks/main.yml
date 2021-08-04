@@ -19,6 +19,7 @@
       - expect # automation tool
       - glow # render markdown cli
       - tiny # irc client
+      - termdown # cli countdown timer
       # System
       - xtools # helpers for working with XBPS
       - htop # system monitor
