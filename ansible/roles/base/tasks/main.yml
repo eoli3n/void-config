@@ -30,6 +30,7 @@
       - whois # query registry
       - stress # stress test tool
       - efivar # tool to manipulate efi vars
+      - vsv # list runit services
       # Disk
       - iotop # disk "top"
       - ncdu # disk usage analyzer
