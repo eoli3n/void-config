@@ -5,7 +5,13 @@
     mode: 0755
     content: |
       #!/bin/sh
+      # Create snapshot
       zfs snapshot -r zroot/ROOT@kernel_upgrade_"$(date +%Y-%m-%d_%H:%M:%S)"
+      # Prune all except last
+      for i in $(zfs list -t snapshot | awk '/ROOT@kernel_upgrade/ {print $1}' | head -n -1)
+      do
+          zfs destroy -r "$i"
+      done
 
 - name: copy pre-install vkpurge kernel hook
   copy:
