@@ -7,8 +7,8 @@
       #!/bin/sh
       # Create snapshot
       zfs snapshot -r zroot/ROOT@kernel_upgrade_"$(date +%Y-%m-%d_%H:%M:%S)"
-      # Prune all except last
-      for i in $(zfs list -t snapshot | awk '/ROOT@kernel_upgrade/ {print $1}' | head -n -1)
+      # Prune all except 2 lasts
+      for i in $(zfs list -t snapshot | awk '/ROOT@kernel_upgrade/ {print $1}' | head -n -2)
       do
           zfs destroy -r "$i"
       done
