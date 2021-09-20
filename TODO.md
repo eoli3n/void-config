@@ -19,6 +19,7 @@
   - [ ] config
 - [x] pass, gopass
 - [ ] DoT with stubby and applied-privacy.net
+- [ ] upgrade kernel without reboot with kexec
 
 
 ### TOPACKAGE
