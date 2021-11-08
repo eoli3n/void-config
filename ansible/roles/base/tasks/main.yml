@@ -20,6 +20,7 @@
       - glow # render markdown cli
       - tiny # irc client
       - termdown # cli countdown timer
+      - nnn # terminal file manager
       # System
       - xtools # helpers for working with XBPS
       - htop # system monitor
