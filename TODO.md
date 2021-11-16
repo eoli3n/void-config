@@ -14,9 +14,9 @@
 - [ ] neomutt, mutt-wizard
   - [ ] packages
   - [ ] config
-- [ ] vdirsyncer, khal, khard
-  - [ ] packages
-  - [ ] config
+- [x] vdirsyncer, khal, khard
+  - [x] packages
+  - [x] config
 - [x] pass, gopass
 - [ ] DoT with stubby and applied-privacy.net
 - [ ] upgrade kernel without reboot with kexec
