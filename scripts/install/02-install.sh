@@ -114,7 +114,7 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   xbps-reconfigure -f glibc-locales
 
   # Add user
-  useradd -m user -G network,wheel,socklog,video,audio,_seatd
+  useradd -m user -G network,wheel,socklog,video,audio,_seatd,input
 
   # Generate fstab excluding zfs parts
   egrep -v "proc|sys|devtmpfs|pts|zfs" /proc/mounts > /etc/fstab
