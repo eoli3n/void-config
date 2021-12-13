@@ -25,5 +25,5 @@
 - name: setup daily zfs scrub
   copy:
     src: zscrub
-    dest: /etc/cron.daily/
+    dest: /etc/cron.weekly/
     mode: 0755
