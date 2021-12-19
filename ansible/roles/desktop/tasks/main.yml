@@ -76,6 +76,7 @@
       - youtube-dl
       - gnome-ssh-askpass # ssh askpass gui
       - android-tools # android dir sync
+      - android-udev-rules # flash android
       - Signal-Desktop # messaging app
       - x2goclient # linux remote desktop client
       - torbrowser-launcher
