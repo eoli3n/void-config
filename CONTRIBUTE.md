@@ -90,7 +90,7 @@ $ ./xbps-src binary-bootstrap
 $ ls common/build-style/
 $ xnew name
 # edit all first field
-$ xgensum -c name
+$ xgensum -i name
 # licenses
 $ https://spdx.org/licenses/
 
