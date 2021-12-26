@@ -78,6 +78,19 @@ To github.com:eoli3n/void-packages.git
  + dfb75ec1b4...070372a4c2 x2goclient -> x2goclient (forced update)
 ```
 
+#### Reset build env
+
+```bash
+$ ./xbps-src zap
+$ ./xbps-src binary-bootstrap
+```
+
+#### New package
+```bash
+$ xnew name
+# edit all first field
+$ xgensum name
+
 ##### Build tests
 ```
 ./xbps-src clean
