@@ -87,9 +87,12 @@ $ ./xbps-src binary-bootstrap
 
 #### New package
 ```bash
+$ ls common/build-style/
 $ xnew name
 # edit all first field
-$ xgensum name
+$ xgensum -c name
+# licenses
+$ https://spdx.org/licenses/
 
 ##### Build tests
 ```
