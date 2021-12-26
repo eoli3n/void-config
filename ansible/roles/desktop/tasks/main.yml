@@ -29,6 +29,7 @@
       - xdg-utils
       - glfw-wayland
       - pam_rundir # XDG_RUNTIME_DIR when seatd
+      - wlsunset # day/night gamma adjustments
       # Video
       - mesa # DRI 3D acceleration
       - mesa-dri # DRI 3D acceleration
