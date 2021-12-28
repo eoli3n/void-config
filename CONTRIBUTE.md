@@ -91,8 +91,7 @@ $ ls common/build-style/
 $ xnew name
 # edit all first field
 $ xgensum -i name
-# licenses
-$ https://spdx.org/licenses/
+# licenses -> https://spdx.org/licenses/
 
 ##### Build tests
 ```
