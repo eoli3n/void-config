@@ -62,6 +62,7 @@
       - libreoffice # libreoffice
       - libreoffice-i18n-fr # libreoffice suite fr
       - lxappearance # theme manager
+      - gnome-themes-extra # adwaita-dark theme
       - mpv # video player
       - Thunar # file manager
       - tumbler # thumbnailer
