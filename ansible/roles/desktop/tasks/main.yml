@@ -43,6 +43,7 @@
       #- pulseaudio # audio server
       - pipewire # audio server
       - alsa-pipewire
+      - wireplumber
       #- libao-pulse # fix bt for pipewire
       - pavucontrol # pulseaudio ui
       - pulseaudio-utils
