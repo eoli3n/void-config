@@ -1,7 +1,7 @@
 ---
 - name: install sanoid
   community.general.xbps:
-    name: sanoid # zfs snapshot manager
+    name: zrepl # zfs snapshot manager
 
 - name: configure sanoid
   copy:
