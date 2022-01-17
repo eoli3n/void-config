@@ -71,6 +71,7 @@
       - oath-toolkit # otp tool
       - pastebinit # pastebin wrapper
       - zim # wiki app
+      - ipcalc # ipv4 network calculator
 #- arch-audit # list vulnerabilities
 #- reflector # mirror sorter
 
