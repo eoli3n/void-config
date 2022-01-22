@@ -186,7 +186,7 @@ chroot /mnt/ /bin/bash -e <<"EOF"
 EOF
 
 # Set cmdline
-zfs set org.zfsbootmenu:commandline="ro quiet" zroot/ROOT
+zfs set org.zfsbootmenu:commandline="ro quiet nowatchdog" zroot/ROOT
 
 # Set DISK
 select ENTRY in $(ls /dev/disk/by-id/);
