@@ -215,6 +215,8 @@ done
 
 # Create UEFI entries
 print 'Create efi boot entries'
+modprobe efivarfs
+mount -t efivarfs efivarfs /sys/firmware/efi/efivars
 efibootmgr --disk "$DISK" \
   --part 1 \
   --create \
