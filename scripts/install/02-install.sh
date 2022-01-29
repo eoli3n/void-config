@@ -1,5 +1,7 @@
 #!/bin/bash
 
+exec &> >(tee "install.log")
+
 set -e
 # Debug
 #set -x
@@ -12,6 +14,10 @@ print () {
 # Set mirror and architecture
 REPO=https://alpha.de.repo.voidlinux.org/current
 ARCH=x86_64
+
+# Copy keys
+mkdir -p /mnt/var/db/xbps/keys
+cp /var/db/xbps/keys/* /mnt/var/db/xbps/keys/
 
 ### Install base system
 print 'Install Void Linux'
@@ -115,7 +121,6 @@ chroot /mnt/ /bin/bash -e <<"EOF"
 
   # Add user
   useradd -m user -G network,wheel,socklog,video,audio,_seatd,input
-
 EOF
 
 # Configure fstab
