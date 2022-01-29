@@ -137,14 +137,15 @@ chroot /mnt/ /bin/bash -e <<EOF
   useradd -m $user -G network,wheel,socklog,video,audio,_seatd,input
 
   # Configure fstab
-  grep -Ev "proc|sys|devtmpfs|pts|zfs" /proc/mounts > /etc/stab
+  grep efi /proc/mounts > /etc/fstab
 EOF
 
 # Configure fstab
 print 'Configure fstab'
 cat >> /mnt/etc/fstab <<"EOF"
-tmpfs           /tmp        tmpfs   defaults,nosuid,nodev   0 0
-efivarfs /sys/firmware/efi/efivars efivarfs defaults 0 0
+tmpfs     /dev/shm                  tmpfs     rw,nosuid,nodev,noexec,inode64  0 0
+tmpfs     /tmp                      tmpfs     defaults,nosuid,nodev           0 0
+efivarfs  /sys/firmware/efi/efivars efivarfs  defaults                        0 0
 EOF
 
 # Set root passwd
