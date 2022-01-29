@@ -14,6 +14,7 @@
       - libguestfs
       - libxslt-devel
       - libxml2-devel
+      - pkg-config
   notify: restart libvirt
 
 - name: add user to libvirt group
