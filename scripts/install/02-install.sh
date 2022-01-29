@@ -116,11 +116,10 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   # Add user
   useradd -m user -G network,wheel,socklog,video,audio,_seatd,input
 
-  # Generate fstab excluding zfs parts
-  egrep -v "proc|sys|devtmpfs|pts|zfs" /proc/mounts > /etc/fstab
 EOF
 
-# Configure /tmp
+# Configure fstab
+grep -Ev "proc|sys|devtmpfs|pts|zfs" /proc/mounts > /mnt/etc/fstab
 cat >> /mnt/etc/fstab <<"EOF"
 tmpfs           /tmp        tmpfs   defaults,nosuid,nodev   0 0
 efivarfs /sys/firmware/efi/efivars efivarfs defaults 0 0
