@@ -16,6 +16,7 @@ REPO=https://alpha.de.repo.voidlinux.org/current
 ARCH=x86_64
 
 # Copy keys
+print 'Copy xbps keys'
 mkdir -p /mnt/var/db/xbps/keys
 cp /var/db/xbps/keys/* /mnt/var/db/xbps/keys/
 
@@ -26,6 +27,7 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
   void-repo-nonfree \
 
 # Init chroot
+print 'Init chroot'
 mount --rbind /sys /mnt/sys && mount --make-rslave /mnt/sys
 mount --rbind /dev /mnt/dev && mount --make-rslave /mnt/dev
 mount --rbind /proc /mnt/proc && mount --make-rslave /mnt/proc
@@ -34,6 +36,7 @@ mount --rbind /proc /mnt/proc && mount --make-rslave /mnt/proc
 echo "GUMMIBOOT_DISABLE=1" > /mnt/etc/default/gummiboot
 
 # Install packages
+print 'Install packages'
 packages=(
   intel-ucode
   zfs
@@ -124,6 +127,7 @@ chroot /mnt/ /bin/bash -e <<"EOF"
 EOF
 
 # Configure fstab
+print 'Configure fstab'
 grep -Ev "proc|sys|devtmpfs|pts|zfs" /proc/mounts > /mnt/etc/fstab
 cat >> /mnt/etc/fstab <<"EOF"
 tmpfs           /tmp        tmpfs   defaults,nosuid,nodev   0 0
@@ -147,6 +151,7 @@ Defaults rootpw
 EOF
 
 # Configure zfs
+print 'Configure zfs'
 cp /etc/hostid /mnt/etc/hostid
 cp /etc/zfs/zpool.cache /mnt/etc/zfs/zpool.cache
 cp /etc/zfs/zroot.key /mnt/etc/zfs
@@ -193,6 +198,7 @@ EOF
 zfs set org.zfsbootmenu:commandline="ro quiet nowatchdog" zroot/ROOT
 
 # Set DISK
+print 'Select the disk you installed on:'
 select ENTRY in $(ls /dev/disk/by-id/);
 do
     DISK="/dev/disk/by-id/$ENTRY"
@@ -201,6 +207,7 @@ do
 done
 
 # Create UEFI entries
+print 'Create efi boot entries'
 efibootmgr --disk "$DISK" \
   --part 1 \
   --create \
