@@ -9,6 +9,11 @@
       - virt-manager-tools
       - dnsmasq
       - vagrant
+      # For vagrant-libvirt
+      - libvirt-devel
+      - libguestfs
+      - libxslt-devel
+      - libxml2-devel
   notify: restart libvirt
 
 - name: add user to libvirt group

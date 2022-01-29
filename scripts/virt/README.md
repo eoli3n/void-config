@@ -1,3 +1,18 @@
+# Using vagrant
+
+WIP
+
+```bash
+# Run
+$ vagrant plugin install vagrant-host-shell
+$ vagrant up voidlinux
+# Clean
+$ vagrant destroy voidlinux
+$ rm /tmp/hrmpf.iso
+```
+
+# Using scripts
+
 ### Create VM
 
 It will download iso, create UEFI VM and run it for Qemu/KVM.

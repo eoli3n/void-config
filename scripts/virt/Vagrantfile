@@ -1,0 +1,30 @@
+Vagrant.configure("2") do |config|
+
+  config.vm.provision :host_shell, inline: <<-SHELL
+    hrmpf_iso=$(curl -s "https://api.github.com/repos/leahneukirchen/hrmpf/releases/latest" | jq -r '.assets[0].browser_download_url')
+    if ! test -f "/tmp/hrmpf.iso"
+    then
+      echo "-> Download latest hrmpf iso"
+      wget "${hrmpf_iso}" -O "/tmp/hrmpf.iso"
+    fi
+    SHELL
+
+  config.vm.define :voidlinux do |voidlinux|
+    libvirt.cpu_mode = 'host-passthrough'
+    libvirt.memory = '2048'
+    libvirt.cpus = '1'
+    # Create a disk
+    libvirt.storage :file,
+      size: '50G',
+      type: 'qcow2',
+      bus: 'sata',
+      device: 'sda'
+    # Set fr keyboard for vnc connection
+    libvirt.keymap = 'fr'
+    libvirt.boot cdrom
+    libvirt.boot 'hd'
+    libvirt.storage :file, :device => :cdrom, :path => '/tmp/hrmpf.iso'
+    # Set UEFI boot, comment for legacy
+    libvirt.loader = '/usr/share/qemu/OVMF.fd'
+  end
+end
