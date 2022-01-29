@@ -1,14 +1,21 @@
 #!/bin/bash
 
+set -e
 exec &> >(tee "install.log")
 
-set -e
 # Debug
-#set -x
-#trap read debug
+if [[ "$1" == "debug" ]]
+then
+    set -x
+    debug=1
+fi
 
 print () {
     echo -e "\n\033[1m> $1\033[0m\n"
+    if [[ -n "$debug" ]]
+    then
+      read -rp "press enter to continue"
+    fi
 }
 
 # Set mirror and architecture

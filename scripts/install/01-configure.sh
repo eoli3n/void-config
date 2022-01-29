@@ -1,12 +1,21 @@
 #!/bin/bash
 
+set -e
 exec &> >(tee "configure.log")
 
-set -e
+# Debug
+if [[ "$1" == "debug" ]]
+then
+    set -x
+    debug=1
+fi
 
 print () {
     echo -e "\n\033[1m> $1\033[0m\n"
-    # read -p "press enter to continue"
+    if [[ -n "$debug" ]]
+    then
+      read -rp "press enter to continue"
+    fi
 }
 
 # Tests
