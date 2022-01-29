@@ -205,13 +205,18 @@ EOF
 zfs set org.zfsbootmenu:commandline="ro quiet nowatchdog" zroot/ROOT
 
 # Set DISK
-print 'Select the disk you installed on:'
-select ENTRY in $(ls /dev/disk/by-id/);
-do
-    DISK="/dev/disk/by-id/$ENTRY"
-    echo "Creating boot entries on $ENTRY."
-    break
-done
+if [[ -f /tmp/disk ]]
+then
+  DISK=$(cat /tmp/disk)
+else
+  print 'Select the disk you installed on:'
+  select ENTRY in $(ls /dev/disk/by-id/);
+  do
+      DISK="/dev/disk/by-id/$ENTRY"
+      echo "Creating boot entries on $ENTRY."
+      break
+  done
+fi
 
 # Create UEFI entries
 print 'Create efi boot entries'
