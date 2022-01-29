@@ -197,6 +197,9 @@ Kernel:
   CommandLine: ro quiet loglevel=0
 EOF
 
+# Set cmdline
+zfs set org.zfsbootmenu:commandline="ro quiet nowatchdog" zroot/ROOT
+
 # Generate ZBM
 print 'Generate zbm'
 chroot /mnt/ /bin/bash -e <<"EOF"
@@ -207,9 +210,6 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   # Generate initramfs, zfsbootmenu
   xbps-reconfigure -fa
 EOF
-
-# Set cmdline
-zfs set org.zfsbootmenu:commandline="ro quiet nowatchdog" zroot/ROOT
 
 # Set DISK
 if [[ -f /tmp/disk ]]
