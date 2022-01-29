@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+set -e
+
 print () {
     echo -e "\n\033[1m> $1\033[0m\n"
 }
