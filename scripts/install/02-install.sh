@@ -109,9 +109,13 @@ omit_dracutmodules+=" btrfs resume "
 install_items+=" /etc/zfs/zroot.key "
 EOF
 
+### Configure username
+print 'Set your username'
+read -r -p "Username: " user
+
 ### Chroot
 print 'Chroot to configure services'
-chroot /mnt/ /bin/bash -e <<"EOF"
+chroot /mnt/ /bin/bash -e <<EOF
   # Configure DNS
   resolvconf -u
 
@@ -130,7 +134,7 @@ chroot /mnt/ /bin/bash -e <<"EOF"
   xbps-reconfigure -f glibc-locales
 
   # Add user
-  useradd -m user -G network,wheel,socklog,video,audio,_seatd,input
+  useradd -m $user -G network,wheel,socklog,video,audio,_seatd,input
 EOF
 
 # Configure fstab
@@ -147,13 +151,13 @@ chroot /mnt /bin/passwd
 
 # Set user passwd
 print 'Set user password'
-chroot /mnt /bin/passwd user
+chroot /mnt /bin/passwd "$user"
 
 # Configure sudo
 print 'Configure sudo'
-cat > /mnt/etc/sudoers <<"EOF"
+cat > /mnt/etc/sudoers <<EOF
 root ALL=(ALL) ALL
-user ALL=(ALL) ALL
+$user ALL=(ALL) ALL
 Defaults rootpw
 EOF
 
