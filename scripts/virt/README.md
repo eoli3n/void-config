@@ -4,7 +4,7 @@ WIP
 
 ```bash
 # Run
-$ vagrant plugin install vagrant-host-shell
+$ vagrant plugin install vagrant-libvirt
 $ vagrant up voidlinux
 # Clean
 $ vagrant destroy voidlinux
