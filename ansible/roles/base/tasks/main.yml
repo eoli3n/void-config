@@ -41,6 +41,7 @@
       - openssh
       - sshpass # allow ansible -k
       - sshuttle # vpn through ssh
+      - fuse-sshfs # mount a remote filesystem using SFTP
       - keychain # ssh-agent wrapper
       - wget # downloader
       - bind-utils # dns tools
