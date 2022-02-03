@@ -70,6 +70,7 @@
       - openvpn
       - playerctl # music player cli controller
       - rdesktop # remote desktop client
+      - remmina # remote desktop client
       - transmission-gtk # torrent downloader
       - texlive-bin # latex
       - texlive-core # latex
