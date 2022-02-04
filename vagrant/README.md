@@ -14,7 +14,7 @@ $ vagrant up voidlinux
 
 ``destroy`` subcommand will automatically remove the iso file in /tmp
 
-nvram file is not properly removed, you need to remove it manually before destroying.
+nvram file is not properly removed, you need to remove it manually before destroying.  
 https://github.com/vagrant-libvirt/vagrant-libvirt/issues/1371
 ```bash
 $ sudo rm /var/lib/libvirt/qemu/nvram/voidlinux-vagrant.fd
