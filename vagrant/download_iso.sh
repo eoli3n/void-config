@@ -4,11 +4,11 @@ dest_file="/tmp/hrmpf.iso"
 
 if [[ "$1" == start ]]
 then
-  hrmpf_iso=$(curl -s "https://api.github.com/repos/leahneukirchen/hrmpf/releases/latest" | jq -r '.assets[0].browser_download_url')
+  iso=$(curl -s "https://api.github.com/repos/leahneukirchen/hrmpf/releases/latest" | jq -r '.assets[0].browser_download_url')
   if [[ ! -f "$dest_file" ]]
   then
     echo "-> Download latest hrmpf iso"
-    wget "$hrmpf_iso" --quiet -O "/tmp/hrmpf.iso"
+    wget "$iso" --quiet -O "$dest_file"
   fi
 elif [[ "$1" == "stop" ]]
 then
