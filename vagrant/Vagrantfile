@@ -19,7 +19,7 @@ Vagrant.configure("2") do |config|
       libvirt.storage :file,
         size: '50G',
         type: 'qcow2',
-        bus: 'scsi',
+        bus: 'virtio',
         device: 'sda'
       # Set fr keyboard for vnc connection
       libvirt.keymap = 'fr'
