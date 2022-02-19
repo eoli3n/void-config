@@ -18,6 +18,9 @@ print () {
     fi
 }
 
+# Root dataset
+root_dataset=$(cat /tmp/root_dataset)
+
 # Set mirror and architecture
 REPO=https://alpha.de.repo.voidlinux.org/current
 ARCH=x86_64
@@ -67,6 +70,12 @@ XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" "${packages[@]}"
 # Set hostname
 read -r -p 'Please enter hostname : ' hostname
 echo "$hostname" > /mnt/etc/hostname
+
+# Configure zfs
+print 'Copy ZFS files'
+cp /etc/hostid /mnt/etc/hostid
+cp /etc/zfs/zpool.cache /mnt/etc/zfs/zpool.cache
+cp /etc/zfs/zroot.key /mnt/etc/zfs
 
 # Configure iwd
 cat > /mnt/etc/iwd/main.conf <<"EOF"
@@ -164,12 +173,6 @@ $user ALL=(ALL) ALL
 Defaults rootpw
 EOF
 
-# Configure zfs
-print 'Configure zfs'
-cp /etc/hostid /mnt/etc/hostid
-cp /etc/zfs/zpool.cache /mnt/etc/zfs/zpool.cache
-cp /etc/zfs/zroot.key /mnt/etc/zfs
-
 ### Configure zfsbootmenu
 
 # Create dirs
@@ -194,11 +197,11 @@ EFI:
   Versions: false
   Enabled: true
 Kernel:
-  CommandLine: ro quiet loglevel=0
+  CommandLine: ro quiet loglevel=0 zbm.import_policy=hostid
 EOF
 
 # Set cmdline
-zfs set org.zfsbootmenu:commandline="ro quiet nowatchdog" zroot/ROOT
+zfs set org.zfsbootmenu:commandline="ro quiet nowatchdog rd.vconsole.keymap=fr" zroot/ROOT/"$root_dataset"
 
 # Generate ZBM
 print 'Generate zbm'
@@ -229,20 +232,24 @@ fi
 print 'Create efi boot entries'
 modprobe efivarfs
 mount -t efivarfs efivarfs /sys/firmware/efi/efivars
-efibootmgr --disk "$DISK" \
-  --part 1 \
-  --create \
-  --label "ZFSBootMenu Backup" \
-  --loader "\EFI\ZBM\vmlinuz-backup.efi" \
-  --unicode "root=zfsbootmenu:POOL=zroot ro quiet spl_hostid=$(hostid)" \
-  --verbose
-efibootmgr --disk "$DISK" \
-  --part 1 \
-  --create \
-  --label "ZFSBootMenu" \
-  --loader "\EFI\ZBM\vmlinuz.efi" \
-  --unicode "root=zfsbootmenu:POOL=zroot ro quiet spl_hostid=$(hostid)" \
-  --verbose
+
+if ! efibootmgr | grep ZFSBootMenu
+then
+    efibootmgr --disk "$DISK" \
+      --part 1 \
+      --create \
+      --label "ZFSBootMenu Backup" \
+      --loader "\EFI\ZBM\vmlinuz-backup.efi" \
+      --verbose
+    efibootmgr --disk "$DISK" \
+      --part 1 \
+      --create \
+      --label "ZFSBootMenu" \
+      --loader "\EFI\ZBM\vmlinuz.efi" \
+      --verbose
+else
+    print 'Boot entries already created'
+fi
 
 # Umount all parts
 print 'Umount all parts'
