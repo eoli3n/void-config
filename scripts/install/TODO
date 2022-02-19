@@ -1,0 +1,1 @@
+- FIX: blackscreen at first boot, need to reboot live/mount/chroot and xbps-reconfigure -fa to be able to boot
