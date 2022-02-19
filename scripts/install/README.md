@@ -10,6 +10,11 @@ $ ./01-configure.sh
 $ ./02-install.sh
 ```
 
+
+### DualBoot Support
+
+After installing Arch Linux with [arch-config](https://github.com/eoli3n/arch-config/tree/master/scripts/zfs/install), run ``01-configure.sh`` and select ``dualboot`` in the menu.
+
 ### EFI install
 
 - sda1  
