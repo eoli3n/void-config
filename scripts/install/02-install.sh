@@ -227,7 +227,8 @@ fi
 # Create UEFI entries
 print 'Create efi boot entries'
 modprobe efivarfs
-mount -t efivarfs efivarfs /sys/firmware/efi/efivars
+mountpoint -q /sys/firmware/efi/efivars \
+    || mount -t efivarfs efivarfs /sys/firmware/efi/efivars
 
 if ! efibootmgr | grep ZFSBootMenu
 then
