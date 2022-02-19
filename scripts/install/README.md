@@ -1,9 +1,21 @@
+### How to Use
+
+Boot latest [hrmpf void linux iso](https://github.com/leahneukirchen/hrmpf/releases/latest)
+
+```bash
+$ loadkeys fr
+$ git clone https://github.com/eoli3n/void-config
+$ cd void-config/scripts/install
+$ ./01-configure.sh
+$ ./02-install.sh
+```
+
 ### EFI install
 
-- sda1
-  /efi
+- sda1  
+  /efi  
   FAT used as esp
-- sda2
+- sda2  
   ZFS pool
 
 
@@ -22,17 +34,7 @@
 - Install and configure [zfsbootmenu](https://github.com/zbm-dev/zfsbootmenu)
 - Generate users and passwords
 
-Boot latest [hrmpf void linux iso](https://github.com/leahneukirchen/hrmpf/releases/latest)
-
-```bash
-$ loadkeys fr
-$ git clone https://github.com/eoli3n/void-config
-$ cd void-config/scripts/install
-$ ./01-configure.sh
-$ ./02-install.sh
-```
-
-##### Debug
+### Debug
 
 ```bash
 $ ./01-configure.sh debug
