@@ -143,7 +143,7 @@ export_pool () {
 import_pool () {
     print "Import zpool"
     zpool import -d /dev/disk/by-id -R /mnt zroot -N -f
-    zfs load-key zroot
+    zfs load-key -L prompt zroot
 }
 
 mount_system () {
