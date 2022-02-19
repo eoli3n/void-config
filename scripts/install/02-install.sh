@@ -32,7 +32,7 @@ cp /var/db/xbps/keys/* /mnt/var/db/xbps/keys/
 
 ### Install base system
 print 'Install Void Linux'
-XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" \
+XBPS_ARCH=$ARCH xbps-install -y -S -r /mnt -R "$REPO" \
   base-system \
   void-repo-nonfree \
 
@@ -65,7 +65,7 @@ packages=(
   ansible
   )
 
-XBPS_ARCH=$ARCH xbps-install -S -r /mnt -R "$REPO" "${packages[@]}"
+XBPS_ARCH=$ARCH xbps-install -y -S -r /mnt -R "$REPO" "${packages[@]}"
 
 # Set hostname
 read -r -p 'Please enter hostname : ' hostname
