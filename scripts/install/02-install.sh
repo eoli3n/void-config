@@ -198,6 +198,7 @@ EFI:
   Enabled: true
 Kernel:
   CommandLine: ro quiet loglevel=0 zbm.import_policy=hostid
+  Prefix: vmlinuz
 EOF
 
 # Set cmdline
