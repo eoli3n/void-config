@@ -178,11 +178,6 @@ EOF
 # Create dirs
 mkdir -p /mnt/efi/EFI/ZBM /etc/zfsbootmenu/dracut.conf.d
 
-# Config keymap as https://github.com/zbm-dev/zfsbootmenu/issues/96#issuecomment-745627427
-mkdir -p /mnt/etc/cmdline.d
-echo 'rd.vconsole.keymap=fr' > /mnt/etc/cmdline.d/keymap.conf
-echo 'install_optional_items+=" /etc/cmdline.d/keymap.conf "' > /mnt/etc/zfsbootmenu/dracut.conf.d/keymap.conf
-
 # Generate zfsbootmenu efi
 print 'Configure zfsbootmenu'
 cat > /mnt/etc/zfsbootmenu/config.yaml <<EOF
