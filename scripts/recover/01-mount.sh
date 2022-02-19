@@ -6,6 +6,14 @@ print () {
     echo -e "\n\033[1m> $1\033[0m\n"
 }
 
+# Set DISK
+select ENTRY in $(ls /dev/disk/by-id/);
+do
+    DISK="/dev/disk/by-id/$ENTRY"
+    echo "Mounting $ENTRY."
+    break
+done
+
 print "Load ZFS module"
 modprobe zfs
 
@@ -14,7 +22,7 @@ if zpool status zroot &>/dev/null
 then
   zpool export zroot
 fi
-zpool import -d /dev/disk/by-id -R /mnt zroot -N
+zpool import -d /dev/disk/by-id -R /mnt zroot -N -f
 
 print "Load ZFS keys"
 zfs load-key -L prompt zroot
@@ -27,12 +35,12 @@ do
     break
 done
 
-
 print "Mount datasets"
 zfs mount -a
 
 print "Mount EFI part"
-mount /dev/sda1 /mnt/efi
+EFI="$DISK-part1"
+mount "$EFI" /mnt/efi
 
 # Init chroot
 mount --rbind /sys /mnt/sys
