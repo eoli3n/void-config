@@ -1,26 +1,14 @@
 ---
-- name: install sanoid
+- name: install zrepl
   community.general.xbps:
     name: zrepl # zfs snapshot manager
 
-- name: configure sanoid
+- name: configure zrepl
   copy:
-    src: sanoid.conf
-    dest: /etc/sanoid
-
-- name: setup sanoid cron snapshot
-  ansible.builtin.cron:
-    name: "sanoid snapshot"
-    minute: "0"
-    job: 'flock -n /var/run/sanoid-cron-take.lock -c "TZ=UTC sanoid --take-snapshots"'
-    user: root
-
-- name: setup sanoid cron prune
-  ansible.builtin.cron:
-    name: "sanoid prune"
-    minute: "30"
-    job: 'flock -n /var/run/sanoid-cron-prune.lock -c "sanoid --prune-snapshots"'
-    user: root
+    src: zrepl.yml
+    dest: /etc/zrepl
+  notify:
+    - restart zrepl
 
 - name: setup daily zfs scrub
   copy:

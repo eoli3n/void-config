@@ -1,0 +1,6 @@
+---
+- name: restart zrepl
+  community.general.runit:
+    name: zrepl
+    enabled: yes
+    state: restarted
