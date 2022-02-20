@@ -6,7 +6,6 @@
 - Zstd compression on all datasets
 - Boot Environments managed with [zfsbootmenu](https://github.com/zdykstra/zfsbootmenu)
 - No swap
-- Separated VFAT /boot
 
 ### Install
 
