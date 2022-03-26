@@ -93,6 +93,7 @@
     name: '{{item}}'
   loop:
       - steam # games manager
+      - xrandr # some games requires it
       - mono
       - libgcc-32bit
       - libstdc++-32bit
