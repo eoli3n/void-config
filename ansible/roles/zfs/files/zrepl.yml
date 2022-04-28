@@ -13,6 +13,8 @@ jobs:
     - type: grid
       grid: 1x1h(keep=all) | 24x1h | 30x1d | 6x30d
       regex: "^zrepl_system_"
+    - type: regex
+      regex: "^kernel_upgrade_.*"
 
 - name: home
   type: snap
