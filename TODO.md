@@ -36,7 +36,7 @@
   - https://github.com/void-linux/void-packages/issues/9779
 - [ ] x2goserver
 - [x] tiny: https://github.com/void-linux/void-packages/issues/27180
-- [ ] python3-pre-commit: https://github.com/void-linux/void-packages/issues/27225
+- [x] pre-commit: https://github.com/void-linux/void-packages/issues/27225
 - [ ] ovmf: https://github.com/void-linux/void-packages/pull/29074
   - [x] local build
 

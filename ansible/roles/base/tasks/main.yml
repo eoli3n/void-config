@@ -73,6 +73,7 @@
       - pastebinit # pastebin wrapper
       - zim # wiki app
       - ipcalc # ipv4 network calculator
+      - pre-commit # git pre-commit hooks manager
 #- arch-audit # list vulnerabilities
 #- reflector # mirror sorter
 

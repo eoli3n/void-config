@@ -1,10 +1,4 @@
 ---
-- name: install pip packages
-  pip:
-    name:
-      - pre-commit
-    executable: /usr/bin/pip
-
 - name: download kubectx
   git:
     repo: https://github.com/ahmetb/kubectx
