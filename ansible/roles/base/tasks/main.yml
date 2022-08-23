@@ -19,6 +19,7 @@
       - expect # automation tool
       - glow # render markdown cli
       - tiny # irc client
+      - senpai # irc client with ircv3/chathistory for soju bouncer
       - termdown # cli countdown timer
       - nnn # terminal file manager
       # System
