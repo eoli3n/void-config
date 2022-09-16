@@ -28,7 +28,7 @@
       - xdg-user-dirs
       - xdg-utils
       - glfw-wayland
-      - pam_rundir # XDG_RUNTIME_DIR when seatd
+      - dumb_runtime_dir # XDG_RUNTIME_DIR when seatd
       - wlsunset # day/night gamma adjustments
       # Video
       - mesa # DRI 3D acceleration
@@ -104,9 +104,9 @@
 
 - name: configure pam_rundir
   lineinfile:
-    path: /etc/pam.d/login
-    regexp: 'pam_rundir.so'
-    line: 'session		optional	pam_rundir.so'
+    path: /etc/pam.d/system-login
+    regexp: 'pam_dumb_runtime_dir.so'
+    line: 'session   optional   pam_dumb_runtime_dir.so'
     state: present
 
 - name: configure pipewire alsa
