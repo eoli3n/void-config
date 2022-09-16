@@ -102,7 +102,7 @@
       - libglvnd-32bit
       - mesa-dri-32bit
 
-- name: configure pam_rundir
+- name: configure runtime dir
   lineinfile:
     path: /etc/pam.d/system-login
     regexp: 'pam_dumb_runtime_dir.so'
