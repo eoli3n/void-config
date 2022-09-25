@@ -11,7 +11,7 @@ jobs:
   pruning:
     keep:
     - type: grid
-      grid: 1x1h(keep=all) | 24x1h | 30x1d | 6x30d
+      grid: 1x1h(keep=all) | 24x1h | 7x1d
       regex: "^zrepl_system_"
     - type: regex
       regex: "^kernel_upgrade_.*"
