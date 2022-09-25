@@ -25,3 +25,11 @@
     content: |
       #!/bin/sh
       vkpurge rm all
+
+- name: copy pre-install clean_xbps_cache kernel hook
+  copy:
+    dest: /etc/kernel.d/pre-install/30-clean_xbps_cache
+    mode: 0755
+    content: |
+      #!/bin/sh
+      xbps-remove -O
