@@ -65,7 +65,7 @@
       - lxappearance # theme manager
       - gnome-themes-extra # adwaita-dark theme
       - mpv # video player
-      - Thunar # file manager
+      - nemo # file manager
       - tumbler # thumbnailer
       - openvpn
       - playerctl # music player cli controller
