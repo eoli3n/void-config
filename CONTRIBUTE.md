@@ -52,7 +52,7 @@ Rebasage et mise à jour de refs/heads/x2goclient avec succès.
 
 ##### Rebase upstream
 ```
-➜ git remote add upstream git://github.com/void-linux/void-packages.git
+➜ git remote add upstream https://github.com/void-linux/void-packages.git
 
 ➜ git pull upstream master --rebase --autostash
 remote: Enumerating objects: 10979, done.
@@ -95,9 +95,14 @@ $ xgensum -i name
 
 ##### Build tests
 ```
-./xbps-src clean
-./xbps-src extract x2goserver
-./xbps-src patch x2goserver
-./xbps-src build x2goserver
-ls masterdir/builddir/x2goserver-4.1.0.3/
+$ ./xbps-src clean
+$ ./xbps-src extract x2goserver
+$ ./xbps-src patch x2goserver
+$ ./xbps-src build x2goserver
+$ ls masterdir/builddir/x2goserver-4.1.0.3/
+```
+
+#### Lint template
+```
+$ xlint phockup
 ```
