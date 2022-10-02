@@ -143,7 +143,9 @@ chroot /mnt/ /bin/bash -e <<EOF
   xbps-reconfigure -f glibc-locales
 
   # Add user
-  useradd -m $user -G network,wheel,socklog,video,audio,_seatd,input
+  zfs create zroot/data/home/${user}
+  useradd -m ${user} -G network,wheel,socklog,video,audio,_seatd,input
+  chown -R ${user}:${user} /home/${user}
 
   # Configure fstab
   grep efi /proc/mounts > /etc/fstab

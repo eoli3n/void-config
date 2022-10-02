@@ -97,6 +97,7 @@ $ xgensum -i name
 ```
 $ ./xbps-src clean
 $ ./xbps-src extract x2goserver
+$ ls masterdir/builddir/
 $ ./xbps-src patch x2goserver
 $ ./xbps-src build x2goserver
 $ ls masterdir/builddir/x2goserver-4.1.0.3/
