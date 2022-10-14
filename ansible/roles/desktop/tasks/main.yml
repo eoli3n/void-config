@@ -87,6 +87,7 @@
       - Signal-Desktop # messaging app
       - x2goclient # linux remote desktop client
       - torbrowser-launcher
+      - gnuplot
 # - downgrade # package downgrader
 
 - name: install steam packages
