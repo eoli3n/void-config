@@ -88,8 +88,10 @@
       - x2goclient # linux remote desktop client
       - torbrowser-launcher
       - gnuplot
+      # Jekyll
       - libmagick-devel # jekyll dep
       - rbenv # ruby version manager
+      - openssl-devel
 # - downgrade # package downgrader
 
 - name: install steam packages
