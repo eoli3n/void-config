@@ -89,6 +89,7 @@
       - torbrowser-launcher
       - gnuplot
       - libmagick-devel # jekyll dep
+      - rbenv # ruby version manager
 # - downgrade # package downgrader
 
 - name: install steam packages
