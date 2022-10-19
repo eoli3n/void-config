@@ -52,6 +52,7 @@
       - at # scheduler
       - borg # backup utility
       - borgmatic # backup utility automation
+      - pwgen # random password generator
       - gopass # unix password manager
       - gopass-jsonapi
       - pinentry-gtk # gtk gpg pinentry
