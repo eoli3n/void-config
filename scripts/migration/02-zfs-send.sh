@@ -13,6 +13,9 @@ sudo sv stop zrepl
 # Ask for dest IP
 read -rp "Host ip : " ip
 
+# Authorize ssh key
+ssh-copy-id "root@$ip"
+
 # Send all datasets/snapshots on the destpool
 syncoid -r zroot "root@$ip":zroot
 
