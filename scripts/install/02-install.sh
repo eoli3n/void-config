@@ -232,23 +232,26 @@ modprobe efivarfs
 mountpoint -q /sys/firmware/efi/efivars \
     || mount -t efivarfs efivarfs /sys/firmware/efi/efivars
 
-if ! efibootmgr | grep ZFSBootMenu
+if efibootmgr | grep ZFSBootMenu
 then
-    efibootmgr --disk "$DISK" \
-      --part 1 \
-      --create \
-      --label "ZFSBootMenu Backup" \
-      --loader "\EFI\ZBM\vmlinuz-backup.efi" \
-      --verbose
-    efibootmgr --disk "$DISK" \
-      --part 1 \
-      --create \
-      --label "ZFSBootMenu" \
-      --loader "\EFI\ZBM\vmlinuz.efi" \
-      --verbose
-else
-    print 'Boot entries already created'
+  for entry in $(efibootmgr | grep ZFSBootMenu | sed -E 's/Boot([0-9]+).*/\1/')
+  do
+    efibootmgr -B -b "$entry"
+  done
 fi
+
+efibootmgr --disk "$DISK" \
+  --part 1 \
+  --create \
+  --label "ZFSBootMenu Backup" \
+  --loader "\EFI\ZBM\vmlinuz-backup.efi" \
+  --verbose
+efibootmgr --disk "$DISK" \
+  --part 1 \
+  --create \
+  --label "ZFSBootMenu" \
+  --loader "\EFI\ZBM\vmlinuz.efi" \
+  --verbose
 
 # Umount all parts
 print 'Umount all parts'
