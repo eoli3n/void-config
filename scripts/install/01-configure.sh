@@ -133,6 +133,7 @@ create_home_dataset () {
     print "Create home dataset"
     zfs create -o mountpoint=/ -o canmount=off zroot/data
     zfs create                                 zroot/data/home
+    zfs create -o mountpoint=/root             zroot/data/home/root
 }
 
 export_pool () {
