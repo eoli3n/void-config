@@ -17,7 +17,7 @@ read -rp "Host ip : " ip
 sudo ssh-copy-id "root@$ip"
 
 # Send all datasets/snapshots on the destpool
-sudo syncoid -r zroot "root@$ip":zroot
+sudo syncoid --force-delete -r zroot "root@$ip":zroot
 
 # Restore mountpoints
 sudo ssh "root@$ip" zfs set mountpoint=/ zroot/ROOT/voidlinux
