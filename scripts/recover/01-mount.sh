@@ -40,6 +40,7 @@ zfs mount -a
 
 print "Mount EFI part"
 EFI="$DISK-part1"
+mkdir -p /mnt/efi
 mount "$EFI" /mnt/efi
 
 # Init chroot
