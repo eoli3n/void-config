@@ -203,7 +203,7 @@ cat > /mnt/etc/zfsbootmenu/dracut.conf.d/keymap.conf <<EOF
 install_optional_items+=" /etc/cmdline.d/keymap.conf "
 EOF
 
-cat > /etc/cmdline.d/keymap.conf <<EOF
+cat > /mnt/etc/cmdline.d/keymap.conf <<EOF
 rd.vconsole.keymap=fr
 EOF
 
