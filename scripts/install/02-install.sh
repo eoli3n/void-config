@@ -194,12 +194,21 @@ EFI:
   Versions: false
   Enabled: true
 Kernel:
-  CommandLine: ro quiet loglevel=0 zbm.import_policy=hostid
+  CommandLine: ro quiet loglevel=0
   Prefix: vmlinuz
 EOF
 
+# Add keymap to dracut
+cat > /mnt/etc/zfsbootmenu/dracut.conf.d/keymap.conf <<EOF
+install_optional_items+=" /etc/cmdline.d/keymap.conf "
+EOF
+
+cat > /etc/cmdline.d/keymap.conf <<EOF
+rd.vconsole.keymap=fr
+EOF
+
 # Set cmdline
-zfs set org.zfsbootmenu:commandline="ro quiet nowatchdog rd.vconsole.keymap=fr" zroot/ROOT/"$root_dataset"
+zfs set org.zfsbootmenu:commandline="ro quiet nowatchdog" zroot/ROOT/"$root_dataset"
 
 # Generate ZBM
 print 'Generate zbm'
