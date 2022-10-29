@@ -15,5 +15,5 @@ repos:
       name: Ansible syntax check
       entry: "ansible-playbook --syntax-check ansible/install.yml"
       pass_filenames: no
-      types: [yaml]
+      types_or: [yaml, jinja]
       language: system
