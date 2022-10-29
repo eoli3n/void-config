@@ -8,6 +8,7 @@
       - fish-shell # powerful shell
       - go # programming language
       - exa # powerful ls
+      - lsd # another powerful ls
       - bc # maths
       - jq # json processor
       - most # colorized pager
