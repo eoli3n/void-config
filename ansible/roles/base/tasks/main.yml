@@ -15,6 +15,7 @@
       - bat # colorized cat
       - neovim # futur of vim
       - tree
+      - tmux # terminal multiplexer
       - screen # terminal multiplexer
       - asciinema # term recorder
       - expect # automation tool
