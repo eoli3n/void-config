@@ -28,6 +28,7 @@
       - xtools # helpers for working with XBPS
       - htop # system monitor
       - net-tools # netstat
+      - mtr # ping/traceroute diag tool
       - fwupd # dell firmware updater
       - nmap # port scanner
       - tcpdump # packet analyzer
