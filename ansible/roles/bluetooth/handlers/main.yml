@@ -1,0 +1,6 @@
+---
+- name: restart bluetoothd
+  community.general.runit:
+    name: bluetoothd
+    enabled: yes
+    state: restarted

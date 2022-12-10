@@ -1,0 +1,7 @@
+---
+- name: install bluez
+  community.general.xbps:
+    name:
+      - bluez
+      - libspa-bluetooth
+  notify: restart bluetoothd
