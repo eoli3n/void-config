@@ -128,3 +128,20 @@
   loop:
     - { src: /usr/share/alsa/alsa.conf.d/50-pipewire.conf, dest: /etc/alsa/conf.d/50-pipewire.conf }
     - { src: /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf, dest: /etc/alsa/conf.d/99-pipewire-default.conf }
+
+- name: test swaylock-fancy
+  stat:
+    path: /bin/swaylock-fancy
+  register: swaylock
+
+- name: clone swaylock-fancy
+  git:
+    repo: https://github.com/eoli3n/swaylock-fancy
+    dest: /tmp/swaylock-fancy
+  when: not swaylock.stat.exists
+
+- name: install swaylock-fancy
+  shell: make install
+  args:
+    chdir: /tmp/swaylock-fancy
+  when: not swaylock.stat.exists
