@@ -67,7 +67,8 @@
       - mpv # video player
       - nemo # file manager
       - tumbler # thumbnailer
-      - openvpn
+      - openvpn # vpn client
+      - openconnect # globalprotect vpn client
       - playerctl # music player cli controller
       - rdesktop # remote desktop client
       - remmina # remote desktop client
