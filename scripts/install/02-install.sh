@@ -87,7 +87,8 @@ EOF
 # Configure DNS
 cat >> /mnt/etc/resolvconf.conf <<"EOF"
 resolv_conf=/etc/resolv.conf
-name_servers="1.1.1.1 9.9.9.9"
+name_servers_append="1.1.1.1 9.9.9.9"
+name_server_blacklist="192.168.*"
 EOF
 
 # Enable ip forward
