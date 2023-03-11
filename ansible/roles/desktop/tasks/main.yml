@@ -93,7 +93,7 @@
       - libmagick-devel # jekyll dep
       - rbenv # ruby version manager
       - openssl-devel
-# - downgrade # package downgrader
+      - xournalpp # pdf editor, no form
 
 - name: install steam packages
   community.general.xbps:
