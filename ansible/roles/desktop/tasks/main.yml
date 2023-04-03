@@ -94,6 +94,7 @@
       - rbenv # ruby version manager
       - openssl-devel
       - xournalpp # pdf editor, no form
+      - okular # pdf editor, no img
 
 - name: install steam packages
   community.general.xbps:
