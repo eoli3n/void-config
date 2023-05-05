@@ -27,3 +27,4 @@
     - { role: zfs, tags: zfs }
     - { role: acpi, tags: acpi }
     - { role: bluetooth, tags: bluetooth }
+    - { role: network-simulation, tags: network-simulation }

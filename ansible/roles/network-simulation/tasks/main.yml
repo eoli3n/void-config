@@ -1,0 +1,9 @@
+---
+- name: install gns3 packages
+  community.general.xbps:
+    name: '{{item}}'
+  loop:
+      - gns3-gui
+      - gns3-server
+      - vpcs
+      - ubridge

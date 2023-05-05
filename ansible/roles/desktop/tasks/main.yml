@@ -95,9 +95,6 @@
       - openssl-devel
       - xournalpp # pdf editor, no form
       - okular # pdf editor, no img
-      - gns3-gui # network simulator
-      - gns3-server # network simulator
-      - vpcs # network simulator
 
 - name: install steam packages
   community.general.xbps:
