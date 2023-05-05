@@ -1,4 +1,7 @@
 ---
+# https://github.com/void-linux/void-packages/issues/43766
+# https://openclassrooms.com/fr/courses/2581701-simulez-des-architectures-reseaux-avec-gns3/4823146-installez-configurez-et-exploitez-un-logiciel-d-emulation-systemes-et-reseaux
+
 - name: install gns3 packages
   community.general.xbps:
     name: '{{item}}'
