@@ -26,6 +26,7 @@
       - nnn # terminal file manager
       # System
       - xtools # helpers for working with XBPS
+      - xmirror # easily select xbps mirror
       - htop # system monitor
       - net-tools # netstat
       - mtr # ping/traceroute diag tool
