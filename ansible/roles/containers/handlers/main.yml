@@ -1,0 +1,13 @@
+---
+- name: enable dockerd
+  community.general.runit:
+    name: '{{ item }}'
+    enabled: yes
+    state: stopped
+  loop:
+    - docker
+
+- name: disable dockerd at startup
+  file:
+    path: /var/service/docker/down
+    state: touch

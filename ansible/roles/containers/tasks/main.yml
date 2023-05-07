@@ -46,3 +46,6 @@
     name: '{{ user }}'
     groups: docker
     append: yes
+  notify:
+    - enable dockerd
+    - disable dockerd at startup
