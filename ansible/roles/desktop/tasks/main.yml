@@ -73,11 +73,7 @@
       - rdesktop # remote desktop client
       - remmina # remote desktop client
       - transmission-gtk # torrent downloader
-      - texlive-bin # latex
-      - texlive-core # latex
-      - texlive-latexextra # latex
-      - texlive-XeTeX # xelatex
-      - texlive-Xdvi # xelatex
+      - typst # replace texlive
       - variety # random backgrounds
       - papirus-icon-theme # icon theme
       - youtube-dl
