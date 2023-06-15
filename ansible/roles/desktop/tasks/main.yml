@@ -30,6 +30,7 @@
       - glfw-wayland
       - dumb_runtime_dir # XDG_RUNTIME_DIR when seatd
       - wlsunset # day/night gamma adjustments
+      - iwgtk # gui for iwd
       # Video
       - mesa # DRI 3D acceleration
       - mesa-dri # DRI 3D acceleration
