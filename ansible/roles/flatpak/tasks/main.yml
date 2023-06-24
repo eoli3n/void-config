@@ -23,6 +23,7 @@
     - com.mojang.Minecraft
     - com.github.Anuken.Mindustry
     - us.zoom.Zoom
+    - fi.skyjake.Lagrange # gemini browser
     #- com.microsoft.Teams
 
 - name: Install flatpak beta packages
