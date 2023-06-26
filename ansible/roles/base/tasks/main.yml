@@ -83,6 +83,7 @@
       - pre-commit # git pre-commit hooks manager
       - pv # progress bar
       - lzop # compression tool
+      - mailx # bsd mail client
 #- arch-audit # list vulnerabilities
 #- reflector # mirror sorter
 
