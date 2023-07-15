@@ -26,10 +26,11 @@
       #!/bin/sh
       vkpurge rm all
 
-- name: copy pre-install clean_xbps_cache kernel hook
+- name: copy pre-install clean_xbps_flatpak kernel hook
   copy:
-    dest: /etc/kernel.d/pre-install/30-clean_xbps_cache
+    dest: /etc/kernel.d/pre-install/30-clean_xbps_flatpak
     mode: 0755
     content: |
       #!/bin/sh
-      xbps-remove -O
+      xbps-remove -Ooy
+      flatpak uninstall --unused -y
