@@ -61,7 +61,7 @@
       - pwgen # random password generator
       - gopass # unix password manager
       - gopass-jsonapi
-      - pinentry-gtk # gtk gpg pinentry
+      - pinentry-gnome # gtk gpg pinentry
       - rsync # sync tool
       - syncthing # sync tool
       - rclone # sync tool
