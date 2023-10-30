@@ -77,6 +77,7 @@
       - python-pip # python2 package manager
       - python3-pip # python3 package manager
       - python3-netaddr # ipmath for ansible
+      - python3-devel
       - dmidecode # dump dmi table content
       - oath-toolkit # otp tool
       - pastebinit # pastebin wrapper
