@@ -1,0 +1,20 @@
+---
+- name: install desktop packages
+  community.general.xbps:
+    name: '{{item}}'
+  loop:
+      - rustup
+      - gtk-layer-shell
+      - gtk-layer-shell-devel
+      - pango
+      - pango-devel
+      - gdk-pixbuf
+      - gdk-pixbuf-devel
+      - cairo
+      - cairo-devel
+      - glib
+      - glib-devel
+      - libgcc
+      - libgcc-devel
+      - glibc
+      - glibc-devel

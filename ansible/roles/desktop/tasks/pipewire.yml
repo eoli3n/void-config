@@ -1,0 +1,29 @@
+---
+- name: install pipewire packages
+  community.general.xbps:
+    name: '{{item}}'
+  loop:
+      #- pulseaudio # audio server
+      - pipewire # audio server
+      - alsa-pipewire
+      - wireplumber
+      #- libao-pulse # fix bt for pipewire
+      - pavucontrol # pulseaudio ui
+      - pulseaudio-utils
+      - pamixer # alsa ui
+      - alsa-utils # alsa toolbox
+
+- name: configure pipewire alsa
+  file:
+    path: /etc/alsa/conf.d
+    state: directory
+    recurse: yes
+
+- name: symlink pipewire alsa
+  file:
+    src: '{{ item.src }}'
+    dest: '{{ item.dest }}'
+    state: link
+  loop:
+    - { src: /usr/share/alsa/alsa.conf.d/50-pipewire.conf, dest: /etc/alsa/conf.d/50-pipewire.conf }
+    - { src: /usr/share/alsa/alsa.conf.d/99-pipewire-default.conf, dest: /etc/alsa/conf.d/99-pipewire-default.conf }

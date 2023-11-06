@@ -1,0 +1,15 @@
+---
+- name: install steam packages
+  community.general.xbps:
+    name: '{{ item }}'
+  loop:
+      - steam # games manager
+      - xrandr # some games requires it
+      - mono
+      - libgcc-32bit
+      - libstdc++-32bit
+      - libdrm-32bit
+      - libglvnd-32bit
+      - mesa-dri-32bit
+      - mesa-vulkan-intel
+      - mesa-vulkan-intel-32bit

@@ -1,0 +1,81 @@
+---
+- name: install desktop packages
+  community.general.xbps:
+    name: '{{ item }}'
+  loop:
+      # DE
+      - sway # wayland wm and compositor
+      - swaybg # background manager for sway
+      - swaylock # session locker
+      - xorg-server-xwayland # xorg backend for wayland
+      - Waybar # bar for sway
+      - mako # notification daemon
+      - kanshi # autorandr for wayland
+      - grim # screenshots
+      - slurp # region selector
+      - wl-clipboard # clipboard manager
+      - wdisplays # arandr for wayland
+      - wf-recorder # screen recorder for wayland
+      - grimshot # grim+slurp wrapper
+      - waypipe # ssh -X for wayland
+      - wofi # rofi for wayland
+      - wob # bars for wayland
+      - xdg-desktop-portal-wlr # screen sharing for wayland
+      - brightnessctl # brightness manager
+      - qt5-wayland # enable qt5 wayland backend
+      - libappindicator # tray sway
+      - swayidle
+      - xdg-user-dirs
+      - xdg-utils
+      - glfw-wayland
+      - dumb_runtime_dir # XDG_RUNTIME_DIR when seatd
+      - wlsunset # day/night gamma adjustments
+      - iwgtk # gui for iwd
+      # Video
+      - mesa # DRI 3D acceleration
+      - mesa-dri # DRI 3D acceleration
+      - mesa-demos # glxgears command
+      - intel-media-driver # intel driver iHD
+      - libva-utils # hardware video acceleration
+      # Graphical apps
+      - imv # img visualizer
+      - kitty # terminal emulator
+      - firefox-i18n-fr # web browser
+      - chromium # web browser
+      - gimp # img editor
+      - evolution # mail/contact/agenda client
+      - seahorse # gnome keyring manager
+      - kolourpaint # img editor
+      - shotwell # photo manager
+      - swappy # screenshot editor
+      - libreoffice # libreoffice
+      - libreoffice-i18n-fr # libreoffice suite fr
+      - lxappearance # theme manager
+      - gnome-themes-extra # adwaita-dark theme
+      - mpv # video player
+      - nemo # file manager
+      - tumbler # thumbnailer
+      - openvpn # vpn client
+      - openconnect # globalprotect vpn client
+      - playerctl # music player cli controller
+      - rdesktop # remote desktop client
+      - remmina # remote desktop client
+      - transmission-gtk # torrent downloader
+      - typst # replace texlive
+      - variety # random backgrounds
+      - papirus-icon-theme # icon theme
+      - youtube-dl
+      - gnome-ssh-askpass # ssh askpass gui
+      - android-tools # android dir sync
+      - android-udev-rules # flash android
+      - scrcpy # remote desktop for android
+      - Signal-Desktop # messaging app
+      - x2goclient # linux remote desktop client
+      - torbrowser-launcher
+      - gnuplot # plot tool
+      - xournalpp # pdf editor, no form
+      - okular # pdf editor, no img
+      # Jekyll
+      - libmagick-devel # jekyll dep
+      - rbenv # ruby version manager
+      - openssl-devel
