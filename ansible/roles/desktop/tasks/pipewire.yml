@@ -1,7 +1,7 @@
 ---
 - name: install pipewire packages
   community.general.xbps:
-    name: '{{item}}'
+    name: '{{ item }}'
   loop:
       #- pulseaudio # audio server
       - pipewire # audio server

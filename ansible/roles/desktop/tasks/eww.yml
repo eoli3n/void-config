@@ -1,7 +1,7 @@
 ---
-- name: install desktop packages
+- name: install eww packages
   community.general.xbps:
-    name: '{{item}}'
+    name: '{{ item }}'
   loop:
       - rustup
       - gtk-layer-shell
