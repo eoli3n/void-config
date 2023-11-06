@@ -21,6 +21,7 @@
       - wofi # rofi for wayland
       - wob # bars for wayland
       - xdg-desktop-portal-wlr # screen sharing for wayland
+      - xdg-desktop-portal-gtk # fallback portal
       - brightnessctl # brightness manager
       - qt5-wayland # enable qt5 wayland backend
       - libappindicator # tray sway
