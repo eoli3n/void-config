@@ -40,7 +40,7 @@
       - libva-utils # hardware video acceleration
       # Graphical apps
       - imv # img visualizer
-      - kitty # terminal emulator
+      - wezterm # terminal emulator
       - firefox-i18n-fr # web browser
       - chromium # web browser
       - gimp # img editor
