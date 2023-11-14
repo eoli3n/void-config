@@ -23,6 +23,7 @@
     - { role: power, tags: power }
     - { role: themes-fonts, tags: themes-fonts }
     - { role: virtualization, tags: virtualization }
+    - { role: ansible, tags: ansible }
     - { role: containers, tags: containers }
     - { role: zfs, tags: zfs }
     - { role: acpi, tags: acpi }
