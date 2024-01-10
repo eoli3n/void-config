@@ -210,7 +210,7 @@ rd.vconsole.keymap=fr
 EOF
 
 # Set cmdline
-zfs set org.zfsbootmenu:commandline="ro quiet nowatchdog" zroot/ROOT/"$root_dataset"
+zfs set org.zfsbootmenu:commandline="ro quiet nowatchdog net.ifnames=0 zswap.enabled=0" zroot/ROOT/"$root_dataset"
 
 # Generate ZBM
 print 'Generate zbm'

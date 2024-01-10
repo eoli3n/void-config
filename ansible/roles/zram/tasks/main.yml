@@ -1,0 +1,16 @@
+---
+- name: install zramen
+  community.general.xbps:
+    name: zramen
+
+- name: configure zramen init
+  blockinfile:
+    path: /etc/rc.local
+    block: |
+      zramen -a zstd make
+
+- name: configure zramen destroy
+  blockinfile:
+    path: /etc/rc.shutdown
+    block: |
+      zramen toss

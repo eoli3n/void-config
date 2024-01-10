@@ -26,6 +26,7 @@
     - { role: ansible, tags: ansible }
     - { role: containers, tags: containers }
     - { role: zfs, tags: zfs }
+    - { role: zram, tags: zram }
     - { role: acpi, tags: acpi }
     - { role: bluetooth, tags: bluetooth }
     - { role: network-simulation, tags: network-simulation }
