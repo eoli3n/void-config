@@ -44,7 +44,7 @@
       - firefox-i18n-fr # web browser
       - chromium # web browser
       - gimp # img editor
-      - evolution # mail/contact/agenda client
+      - thunderbird # mail/contact/agenda client
       - seahorse # gnome keyring manager
       - kolourpaint # img editor
       - shotwell # photo manager
