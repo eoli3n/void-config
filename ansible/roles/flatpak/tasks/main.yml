@@ -25,7 +25,6 @@
     - us.zoom.Zoom
     - fi.skyjake.Lagrange # gemini browser
     - net.xmind.XMind # mind mapping
-    - io.github.seadve.Kooha # screen record as gif
     #- com.microsoft.Teams
 
 - name: Install flatpak beta packages
