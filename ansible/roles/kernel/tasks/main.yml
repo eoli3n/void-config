@@ -34,3 +34,12 @@
       #!/bin/sh
       xbps-remove -Ooy
       flatpak uninstall --unused -y
+
+- name: automatically boot latest lts version
+  copy:
+    dest: /etc/kernel.d/pre-install/40-boot_latest_lts
+    mode: 0755
+    content: |
+      #!/bin/sh
+      kernel_version=$(basename $(xbps-query -f linux$(xbps-query -x linux-lts | grep -Po 'linux\K[0-9.]+') | grep vmlinuz))
+      zfs set org.zfsbootmenu:kernel=${kernel_version} zroot/ROOT/voidlinux
