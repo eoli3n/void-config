@@ -63,6 +63,7 @@ packages=(
   openresolv # dns
   git
   ansible
+  linux-firmware
   )
 
 XBPS_ARCH=$ARCH xbps-install -y -S -r /mnt -R "$REPO" "${packages[@]}"
