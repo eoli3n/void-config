@@ -32,7 +32,6 @@
     mode: 0755
     content: |
       #!/bin/sh
-      xbps-remove -Ooy
       flatpak uninstall --unused -y
 
 - name: automatically boot latest lts version
