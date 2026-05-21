@@ -22,7 +22,7 @@ print () {
 root_dataset=$(cat /tmp/root_dataset)
 
 # Set mirror and architecture
-REPO=https://alpha.de.repo.voidlinux.org/current
+REPO=https://repo-default.voidlinux.org/current
 ARCH=x86_64
 
 # Copy keys

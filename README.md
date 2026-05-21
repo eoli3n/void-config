@@ -11,6 +11,8 @@
 
 - Clone me
 ```
+xbps-install -u xbps
+xbps-install -S git
 git clone https://github.com/eoli3n/void-config
 ```
 - Run OS installer at [scripts/install/](scripts/install/)

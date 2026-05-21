@@ -4,6 +4,11 @@ Boot latest [hrmpf void linux iso](https://github.com/leahneukirchen/hrmpf/relea
 
 ```bash
 $ loadkeys fr
+$ ip a
+$ ip link set wlan0 up
+$ iw dev wlan0 scan | grep SSID
+$ wpa_passphrase "{SSID}" "{password}" > /etc/wpa_supplicant/wpa_supplicant.conf
+$ wpa_supplicant -B -i wlan0 -c /etc/wpa_supplicant/wpa_supplicant.conf
 $ git clone https://github.com/eoli3n/void-config
 $ cd void-config/scripts/install
 $ ./01-configure.sh
