@@ -6,15 +6,15 @@
       - docker # high level container runtime
       - docker-compose # multi-container docker apps
       - podman # docker alternative without dockerd
-      - kubectl # kubernetes api cli client
-      - minikube # virtualized local kubernetes cluster
-      - k9s # UI to interact with Kubernetes clusters
-      - kubernetes-helm # kubernetes package manager
-      # - packer # golden images creator
-      - terraform # infrastructure as code
-      - k3s # Lightweight Kubernetes in a signle binary
-      - stern # tail multiple pods on Kubernetes
-      - podman-compose # mutli-container podman apps
+      #- kubectl # kubernetes api cli client
+      #- minikube # virtualized local kubernetes cluster
+      #- k9s # UI to interact with Kubernetes clusters
+      #- kubernetes-helm # kubernetes package manager
+      #- packer # golden images creator
+      #- terraform # infrastructure as code
+      #- k3s # Lightweight Kubernetes in a signle binary
+      #- stern # tail multiple pods on Kubernetes
+      #- podman-compose # mutli-container podman apps
       #- kubectx         # switch clusters/namespaces
       #- kustomize       # yaml templator
       #- kompose-bin     # docker-compose to manifest convertor
