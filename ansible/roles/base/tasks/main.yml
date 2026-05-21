@@ -74,6 +74,7 @@
       - shellcheck # sh linter
       - pastel # color viewer
       - python3-pip # python3 package manager
+      - python3-pipx
       - python3-netaddr # ipmath for ansible
       - python3-devel
       - dmidecode # dump dmi table content
