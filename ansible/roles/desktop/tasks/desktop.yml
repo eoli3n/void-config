@@ -24,7 +24,7 @@
       - xdg-desktop-portal-gtk # fallback portal
       - brightnessctl # brightness manager
       - qt5-wayland # enable qt5 wayland backend
-      - libappindicator # tray sway
+      #- libappindicator # tray sway
       - swayidle
       - xdg-user-dirs
       - xdg-utils
