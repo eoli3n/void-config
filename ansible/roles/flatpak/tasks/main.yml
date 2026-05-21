@@ -27,15 +27,15 @@
     - net.xmind.XMind # mind mapping
     - info.portfolio_performance.PortfolioPerformance
     - com.jgraph.drawio.desktop
+    #- org.freecadweb.FreeCAD
     #- com.microsoft.Teams
 
-- name: Install flatpak beta packages
-  community.general.flatpak:
-    name: '{{ item }}'
-    state: present
-    remote: flathub-beta
-  loop:
-    - org.freecadweb.FreeCAD
+#- name: Install flatpak beta packages
+#  community.general.flatpak:
+#    name: '{{ item }}'
+#    state: present
+#    remote: flathub-beta
+#  loop:
 
 #- name: Override Teams perms
 #  shell: |
