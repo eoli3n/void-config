@@ -89,7 +89,7 @@ EOF
 cat >> /mnt/etc/resolvconf.conf <<"EOF"
 resolv_conf=/etc/resolv.conf
 name_servers_append="1.1.1.1 9.9.9.9"
-name_server_blacklist="192.168.*"
+name_server_blacklist="192.168.* fd0f:ee:b0::1"
 EOF
 
 # Enable ip forward
