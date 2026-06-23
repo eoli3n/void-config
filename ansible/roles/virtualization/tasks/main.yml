@@ -15,6 +15,7 @@
       - libxslt-devel
       - libxml2-devel
       - pkg-config
+      - ruby-devel
   notify: restart libvirt
 
 - name: add user to libvirt group
