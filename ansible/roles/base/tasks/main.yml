@@ -24,6 +24,8 @@
       - senpai # irc client with ircv3/chathistory for soju bouncer
       - termdown # cli countdown timer
       - nnn # terminal file manager
+      - yubikey-manager
+      - openssh-sk-helper # using yubi for ssh-keygen
       # System
       - xtools # helpers for working with XBPS
       - xmirror # easily select xbps mirror
